@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Product;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -46,5 +47,8 @@ class DatabaseSeeder extends Seeder
         $this->call(WinnersTableSeeder::class);
         $this->call(WithdrawMethodsTableSeeder::class);
         $this->call(WithdrawalsTableSeeder::class);
+
+        Product::factory(100)->create();
+        Product::factory(20)->expired()->create();
     }
 }
