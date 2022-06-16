@@ -14,11 +14,14 @@ On the CLI, execute this command for a complete installation including a working
 
 ```
 wget https://getcomposer.org/download/latest-stable/composer.phar -O composer
-git clone https://github.com/Benlola/auction-react.git
+git clone https://github.com/Benlola/auction-bootstrap-jquery.git
 php composer install
 php composer dump-autoload
 php artisan migrate --seed
 php artisan optimize
+
+npm install
+npm run dev
 ```
 
 
