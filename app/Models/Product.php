@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    use hasFactory;
+
     protected $guarded = ['id'];
 
     protected $casts = [
@@ -43,7 +46,7 @@ class Product extends Model
 
     public function admin()
     {
-        return $this->belongsTo(Admin::class);
+        return $this->belongsTo(Admin::class, 'admin_id', 'id');
     }
 
     public function category()
