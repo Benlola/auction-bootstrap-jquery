@@ -52,11 +52,13 @@
                                             {{ showAmount($product->price) }} <span class="text--base">{{ __($general->cur_text) }}</span>
                                         </div>
                                     </div>
+                                    @if(isset($product->bids()->latest()->pluck('amount')[0]))
                                     <div class="product-price last-bid">
                                         <div class="fs-6 text-secondary">@lang('Last bid'):
                                             {{ showAmount($product->bids()->latest()->pluck('amount')[0]) }} <span class="text--base">{{ __($general->cur_text) }}</span>
                                         </div>
                                     </div>
+                                    @endif
                                     @if ($product->status == 1 && $product->started_at < now() && $product->expired_at > now())
                                         <div class="btn__area">
                                             <div class="cart-plus-minus input-group w-auto">
