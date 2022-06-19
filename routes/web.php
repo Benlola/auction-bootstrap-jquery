@@ -427,6 +427,7 @@ Route::namespace('Merchant')->prefix('merchant')->name('merchant.')->group(funct
             Route::get('product/winners', 'ProductController@productWinner')->name('bid.winners');
             Route::post('product/delivered', 'ProductController@deliveredProduct')->name('bid.delivered');
 
+
             Route::get('bid-logs', 'ProductController@bids')->name('bids');
             Route::get('transactions', 'MerchantController@transactions')->name('transactions');
 
@@ -572,3 +573,12 @@ Route::get('placeholder-image/{size}', 'SiteController@placeholderImage')->name(
 
 Route::get('/{slug}', 'SiteController@pages')->name('pages');
 Route::get('/', 'SiteController@index')->name('home');
+
+
+
+Route::controller(UploadController::class)
+    ->as("media.")
+    ->group(function () {
+        Route::post('/upload', 'store')->name('store');
+    });
+Route::get('remove/media/{media}', 'ProductController@removeMediaFile')->name('remove.media');

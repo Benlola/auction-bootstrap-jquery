@@ -20,7 +20,7 @@ class ProductFactory extends Factory
         return [
             'category_id' => 1,//Car Category::factory()
             'merchant_id' => 2,//Seller Merchant::factory()
-            'admin_id' => 0,
+            'admin_id' => 1,
             'name' => $this->faker->randomElement(['Porshe', 'Audi', 'Nissan', 'Mercedes-Benz', 'Acura', 'Opel', 'Toyota']),
             'price' => random_int(10000, 500000),
             'started_at' => $this->faker->randomElement([now(), now()->addDays(random_int(1,20))]),

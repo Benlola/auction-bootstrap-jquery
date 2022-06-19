@@ -24,7 +24,7 @@ class ProductsTableSeeder extends Seeder
                 'id' => 1,
                 'category_id' => 1,
                 'merchant_id' => 1,
-                'admin_id' => 0,
+                'admin_id' => 1,
                 'name' => 'Porshe Cayene',
                 'price' => '150.00000000',
                 'total_bid' => 1,

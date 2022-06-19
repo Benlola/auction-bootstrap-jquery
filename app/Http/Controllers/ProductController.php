@@ -12,6 +12,7 @@ use App\Models\Product;
 use App\Models\Review;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class ProductController extends Controller
 {
@@ -244,6 +245,13 @@ class ProductController extends Controller
         $review->save();
 
         return back()->withNotify($notify);
+
+    }
+
+    public function removeMediaFile(Media $media)
+    {
+        $media->delete();
+        return back()->withNotify(['success', 'Uploaded file removed successfully']);
 
     }
 }

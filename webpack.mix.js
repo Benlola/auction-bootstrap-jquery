@@ -11,6 +11,15 @@ const mix = require('laravel-mix');
  |
  */
 
+
+const nodeModules = [
+    'filepond/dist/',
+];
+
+for(let i = 0; i < nodeModules.length; i++) {
+    mix.copy(`node_modules/${nodeModules[i]}`, `public/assets/vendor/${nodeModules[i]}`).version();
+}
+
 mix.js('resources/js/app.js', 'public/js')
     .vue()
     .sass('resources/sass/app.scss', 'public/css');

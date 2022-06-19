@@ -28,7 +28,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app['request']->server->set('HTTPS', true);
+        if (App::environment('production')) {
+            $this->app['request']->server->set('HTTPS', true);
+        }
+
     }
 
     /**
@@ -82,9 +85,9 @@ class AppServiceProvider extends ServiceProvider
                 ]);
             });
 
-            if($general->force_ssl){
-                \URL::forceScheme('https');
-            }
+//            if($general->force_ssl){
+//                \URL::forceScheme('https');
+//            }
 
 
             Paginator::useBootstrap();
