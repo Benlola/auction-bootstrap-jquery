@@ -84,29 +84,10 @@
                                 <label class="font-weight-bold">@lang('Long Description') <span class="text-danger">*</span></label>
                                 <textarea rows="8" class="form-control border-radius-5 nicEdit" name="long_description">{{ $product->long_description }}</textarea>
                             </div>
-                            @foreach($product->getMedia('product')->chunk(6) ?? [] as  $chunk)
-                                <div class="row my-10">
-                                    @foreach ($chunk as  $file)
-                                        <div class="card position-relative col-md-2">
-                                            <div class="position-absolute my-2 mx-2">
-                                                <a href="{{ route("remove.media", $file) }}" onclick="return confirm('Are you sure?')" class="btn btn-danger pull-right btn-sm delete confirmable">
-                                                    delete
-                                                </a>
-                                            </div>
-                                            <div class="card-img-top">
-                                                <img class="rounded-md" alt="" src="{{ $file->getUrl('thumb') }}">
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            @endforeach
 
 
 
-                            <div class="form-group my-3">
-                                <label class="font-weight-bold">@lang('Media') </label>
-                                <input type="file" name="media[]" class="filepond" multiple/>
-                            </div>
+                            <x-media-library :model="$product" />
 
                             <div class="payment-method-body">
                                 <div class="row">
@@ -177,11 +158,9 @@
 @push('script-lib')
   <script src="{{ asset('assets/admin/js/vendor/datepicker.min.js') }}"></script>
   <script src="{{ asset('assets/admin/js/vendor/datepicker.en.js') }}"></script>
-  <script src="{{ asset('assets/vendor/filepond/dist/filepond.min.js') }}"></script>
 @endpush
 
 @push('script')
-    <link href="{{ asset('assets/vendor/filepond/dist/filepond.min.css') }}" rel="stylesheet" />
 
     <script>
 
@@ -323,20 +302,5 @@
             }).change();
 
         })(jQuery);
-
-        const inputElement = document.querySelector('.filepond');
-        const pond = FilePond.create(inputElement);
-        FilePond.setOptions({
-            server: {
-                headers: {
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                },
-                process: {
-                    url: '{{ route('media.store') }}',
-                },
-
-            }
-        });
-
     </script>
 @endpush

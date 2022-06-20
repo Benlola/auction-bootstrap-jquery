@@ -58,6 +58,7 @@ class LoginController extends Controller
 
         $this->validateLogin($request);
 
+
         if(isset($request->captcha)){
             if(!captchaVerify($request->captcha, $request->captcha_secret)){
                 $notify[] = ['error',"Invalid captcha"];

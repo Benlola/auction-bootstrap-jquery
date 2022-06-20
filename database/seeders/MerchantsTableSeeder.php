@@ -26,7 +26,7 @@ class MerchantsTableSeeder extends Seeder
                 'email' => 'seller@site.com',
                 'email_verified_at' => NULL,
                 'balance' => '2000.00000000',
-                'password' => '$2y$10$vFbiXJaIWQCEFI9Bvr5LI.LI.y2b9bjYqR2cvilelednsjHzxpreu',//Pa$$w0rd!
+                'password' => bcrypt('Pa$$w0rd!'),//Pa$$w0rd!
                 'country_code' => 'PN',
                 'image' => NULL,
                 'cover_image' => NULL,
@@ -38,7 +38,7 @@ class MerchantsTableSeeder extends Seeder
                 'status' => 1,
                 'ev' => 1,
                 'sv' => 1,
-                'ver_code' => NULL,
+                'ver_code' => 1,
                 'ver_code_send_at' => '0000-00-00 00:00:00',
                 'ts' => 0,
                 'tv' => 1,

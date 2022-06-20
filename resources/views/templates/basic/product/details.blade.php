@@ -10,6 +10,9 @@
                             <div class="product-thumb-area mb-5">
                                 <div class="product-thumb pe-md-4">
                                     <img src="{{getImage(imagePath()['product']['path'].'/'.$product->image,imagePath()['product']['size'])}}" alt="product">
+                                    @foreach($images as $index => $image)
+                                        <img src="{{ $image->getUrl('thumb') }}" alt="{{ $product->name }} #{{ $loop->iteration }}">
+                                    @endforeach
                                     <div class="meta-post mt-4">
                                         <div class="meta-item me-sm-auto">
                                             <span class="text--base"><i class="las la-gavel"></i></span> {{ __($product->total_bid) }}
@@ -52,13 +55,14 @@
                                             {{ showAmount($product->price) }} <span class="text--base">{{ __($general->cur_text) }}</span>
                                         </div>
                                     </div>
-                                    @if(isset($product->bids()->latest()->pluck('amount')[0]))
+
+                                    @isset($product->latest_bid)
                                     <div class="product-price last-bid">
                                         <div class="fs-6 text-secondary">@lang('Last bid'):
-                                            {{ showAmount($product->bids()->latest()->pluck('amount')[0]) }} <span class="text--base">{{ __($general->cur_text) }}</span>
+                                            {{ showAmount($product->latest_bid->amount) }} <span class="text--base">{{ __($general->cur_text) }}</span>
                                         </div>
                                     </div>
-                                    @endif
+                                    @endisset
                                     @if ($product->status == 1 && $product->started_at < now() && $product->expired_at > now())
                                         <div class="btn__area">
                                             <div class="cart-plus-minus input-group w-auto">

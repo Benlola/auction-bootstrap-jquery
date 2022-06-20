@@ -65,6 +65,11 @@ class Product extends Model implements HasMedia
         return $this->hasMany(Bid::class);
     }
 
+    public function latest_bid()
+    {
+        return $this->hasOne(Bid::class)->latest();
+    }
+
     public function reviews()
     {
         return $this->hasMany(Review::class);
