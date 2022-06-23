@@ -35,11 +35,11 @@
                                         <i class="las la-pen text-shadow"></i>
                                     </a>
 
-{{--                                    <form method="post" onclick="return confirm('Are you sure?')" action="{{route('admin.category.destroy',$category->id)}}">--}}
-{{--                                        @method('delete')--}}
-{{--                                        @csrf--}}
-{{--                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>--}}
-{{--                                    </form>--}}
+                                    <form method="post" onclick="return confirm('Are you sure?')" action="{{route('admin.category.destroy',$category->id)}}">
+                                        @method('delete')
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                    </form>
                                 </td>
                             </tr>
                             @empty
