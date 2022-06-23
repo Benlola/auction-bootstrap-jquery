@@ -86,11 +86,14 @@
                                 <textarea rows="8" class="form-control border-radius-5 nicEdit" name="long_description">{{ $product->long_description }}</textarea>
                             </div>
 
+                            <x-media-library :model="$product" />
+
+
                             <div class="row">
 
                                 <div class="col-lg-12">
                                     <div class="card border--primary mt-3">
-                                        <h5 class="card-header bg--primary  text-white">@lang('Specification')
+                                        <h5 class="card-hefader bg--primary  text-white">@lang('Specification')
                                             <button type="button" class="btn btn-sm btn-outline-light float-right addUserData"><i class="la la-fw la-plus"></i>@lang('Add New')
                                             </button>
                                         </h5>

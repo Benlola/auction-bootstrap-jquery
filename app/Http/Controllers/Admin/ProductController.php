@@ -10,6 +10,7 @@ use App\Models\Product;
 use App\Models\Winner;
 use App\Rules\FileTypeValidate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -130,6 +131,15 @@ class ProductController extends Controller
         $product->specification = $request->specification ?? null;
 
         $product->save();
+
+        foreach ($request->media ?? [] as $media) {
+            $data = json_decode($media);
+            foreach ($data as $value){
+                $path = sprintf("%s/%s", $value->folder, $value->name);
+                $real_path  = Storage::disk("uploads")->getAdapter()->getPathPrefix(). $path;
+                $product->addMedia($real_path)->toMediaCollection('product');
+            }
+        }
     }
 
 

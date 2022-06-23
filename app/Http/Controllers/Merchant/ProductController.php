@@ -110,7 +110,6 @@ class ProductController extends Controller
 
 
         foreach ($request->media ?? [] as $media) {
-
             $data = json_decode($media);
             foreach ($data as $value){
                 $path = sprintf("%s/%s", $value->folder, $value->name);
