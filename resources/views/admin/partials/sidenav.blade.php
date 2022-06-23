@@ -17,8 +17,8 @@
                         <span class="menu-title">@lang('Dashboard')</span>
                     </a>
                 </li>
-                <li class="sidebar-menu-item {{menuActive('admin.categories')}}">
-                    <a href="{{route('admin.categories')}}" class="nav-link ">
+                <li class="sidebar-menu-item {{menuActive('admin.category.index')}}">
+                    <a href="{{route('admin.category.index')}}" class="nav-link ">
                         <i class="menu-icon las la-bars"></i>
                         <span class="menu-title">@lang('Categories')</span>
                     </a>

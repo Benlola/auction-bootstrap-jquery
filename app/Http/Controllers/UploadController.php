@@ -18,20 +18,23 @@ class UploadController extends Controller
     public function store(Request $request)
     {
         $folder = uniqid();
-        foreach ($request->media ?? [] as $index => $media) {
+        foreach ($request->media ?? [] as $collection_name => $files) {
             try {
-                $file_name = $media->getClientOriginalName();
-                $files[$index] = [
-                    'folder' => $folder,
-                    'name'   => $media->getClientOriginalName(),
-                ];
-                $this->disk->putFileAs($folder, $media, $file_name);
+                foreach ($files as $file){
+                    $file_name = $file->getClientOriginalName();
+                    $result[$collection_name] = [
+                        'folder' => $folder,
+                        'name'   => $file_name,
+                    ];
+                    $this->disk->putFileAs($folder, $file, $file_name);
+                }
+
             } catch (\Exception $exp) {
                 return response()->json($exp->getMessage(), 400);
             }
         }
 
-        return $files ?? [];
+        return $result ?? [];
     }
 
 

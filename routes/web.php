@@ -89,8 +89,11 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
         Route::get('system-info','AdminController@systemInfo')->name('system.info');
 
         //Manage Category
-        Route::get('categories', 'CategoryController@index')->name('categories');
-        Route::post('category/store/{id?}', 'CategoryController@saveCategory')->name('category.store');
+
+        Route::resource('category', CategoryController::class);
+
+//        Route::get('categories', 'CategoryController@index')->name('categories');
+//        Route::post('category/store/{id?}', 'CategoryController@saveCategory')->name('category.store');
 
 
         //Manage Product

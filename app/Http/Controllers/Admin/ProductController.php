@@ -132,12 +132,14 @@ class ProductController extends Controller
 
         $product->save();
 
-        foreach ($request->media ?? [] as $media) {
-            $data = json_decode($media);
-            foreach ($data as $value){
-                $path = sprintf("%s/%s", $value->folder, $value->name);
-                $real_path  = Storage::disk("uploads")->getAdapter()->getPathPrefix(). $path;
-                $product->addMedia($real_path)->toMediaCollection('product');
+        foreach ($request->media ?? [] as $collection_name => $items) {
+            foreach ($items as $media){
+                $data = json_decode($media);
+                foreach ($data as $value){
+                    $path = sprintf("%s/%s", $value->folder, $value->name);
+                    $real_path  = Storage::disk("uploads")->getAdapter()->getPathPrefix(). $path;
+                    $product->addMedia($real_path)->toMediaCollection($collection_name);
+                }
             }
         }
     }

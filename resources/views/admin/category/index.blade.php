@@ -31,9 +31,15 @@
                                     @endif
                                 </td>
                                 <td data-label="@lang('Action')">
-                                    <button type="button" class="icon-btn editCategory" data-id="{{ $category->id }}" data-name="{{ __($category->name) }}" data-icon="{{ $category->icon }}" data-status="{{ $category->status }}" data-toggle="tooltip"  data-original-title="@lang('Edit')">
+                                    <a href="{{ route("admin.category.edit", $category) }}" class="icon-btn" data-icon="{{ $category->icon }}" data-status="{{ $category->status }}" data-toggle="tooltip"  data-original-title="@lang('Edit')">
                                         <i class="las la-pen text-shadow"></i>
-                                    </button>
+                                    </a>
+
+{{--                                    <form method="post" onclick="return confirm('Are you sure?')" action="{{route('admin.category.destroy',$category->id)}}">--}}
+{{--                                        @method('delete')--}}
+{{--                                        @csrf--}}
+{{--                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>--}}
+{{--                                    </form>--}}
                                 </td>
                             </tr>
                             @empty
@@ -98,7 +104,7 @@
 @endsection
 
 @push('breadcrumb-plugins')
-    <button type="button" class="btn btn-sm btn--primary box--shadow1 text--small addCategory"><i class="fa fa-fw fa-plus"></i>@lang('Add New')</button>
+    <a href="{{ route("admin.category.create") }}" class="btn btn-sm btn--primary box--shadow1 text--small"><i class="fa fa-fw fa-plus"></i>@lang('Add New')</a>
 @endpush
 
 @push('script-lib')
