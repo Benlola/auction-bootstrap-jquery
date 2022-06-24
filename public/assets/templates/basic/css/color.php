@@ -80,12 +80,7 @@ if (!$secondColor OR !checkhexcolor2($secondColor)) {
     border: 1px solid <?php echo $color; ?>66;
 }
 
-.auction__item {
-    box-shadow: 0 0 5px <?php echo $color; ?>b3;
-}
-.auction__item:hover {
-    box-shadow: 0 0 10px <?php echo $color; ?>e6;
-}
+
 
 .feature__item {
     border: 1px dashed <?php echo $color; ?>4d;
@@ -113,7 +108,7 @@ if (!$secondColor OR !checkhexcolor2($secondColor)) {
 }
 
 .contact-area .contact-wrapper{
-    border: 1px dashed <?php echo $color; ?>4d; 
+    border: 1px dashed <?php echo $color; ?>4d;
 }
 
 @media (max-width: 991px){

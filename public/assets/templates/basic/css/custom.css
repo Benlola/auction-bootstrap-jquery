@@ -66,11 +66,11 @@
     right: 0;
     bottom: 0;
     top: 0;
-    background: #001329;
+    background: #ffffffd6;
     z-index: 2;
     display: none;
     opacity: .9;
-	
+
 }
 
 .account__section-content .form-control {
@@ -80,12 +80,12 @@
     height: 50px;
 }
 .account__section-content .form-control option {
-    color: #001329;
+    color: #37485c;
 }
 
 
 .account__section-content .form-control:focus {
-    border-color: #c151cc;
+    border-color: #37485c;
 }
 
 .account__section-content label {
