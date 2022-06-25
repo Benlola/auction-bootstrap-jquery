@@ -77,13 +77,14 @@
 
     <script src="{{asset('assets/global/js/jquery-3.6.0.min.js')}}"></script>
     <script src="{{asset('assets/global/js/bootstrap.min.js')}}"></script>
+    <script src="{{ mix("js/app.js") }}"></script>
+
     <script src="{{ asset($activeTemplateTrue.'js/rafcounter.min.js') }}"></script>
     <script src="{{ asset($activeTemplateTrue.'js/lightbox.min.js') }}"></script>
     <script src="{{ asset($activeTemplateTrue.'js/owl.min.js') }}"></script>
     <script src="{{ asset($activeTemplateTrue.'js/masonry.pkgd.min.js') }}"></script>
     <script src="{{ asset($activeTemplateTrue.'js/countdown.min.js') }}"></script>
     <script src="{{ asset($activeTemplateTrue.'js/headline.js') }}"></script>
-    <script src="{{ asset($activeTemplateTrue.'js/main.js') }}"></script>
 
     @stack('script-lib')
 
