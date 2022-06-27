@@ -66,9 +66,11 @@
                                     @if ($product->status == 1 && $product->started_at < now() && $product->expired_at > now())
                                         <div class="btn__area">
                                             <div class="cart-plus-minus input-group w-auto">
+{{--                                                <example-component></example-component>--}}
                                                 <span class="input-group-text bg--base border-0 text-white">{{ $general->cur_sym }}</span>
                                                 <input type="number" placeholder="@lang('Enter your amount')" class="form-control" id="amount" min="0" step="any">
                                             </div>
+
                                             <div>
                                                 <button class="cmn--btn btn--sm bid_now" data-cur_sym="{{ $general->cur_sym }}">@lang('Bid Now')</button>
                                             </div>

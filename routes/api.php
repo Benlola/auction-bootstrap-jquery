@@ -59,3 +59,9 @@ Route::namespace('Api')->name('api.')->group(function(){
 	    });
 	});
 });
+
+Route::post("shoutout", function (Request $request){
+    $message = $request->input("message");
+    broadcast(new \App\Events\LastBid($message))->toOthers();
+    return response([], 200);
+});

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
     <title> {{ $general->sitename(__($pageTitle)) }}</title>
@@ -35,7 +36,7 @@
 
     @stack('fbComment')
 
-    <main class="main-body">
+    <main class="main-body" id="app">
 
         @include($activeTemplate.'partials.preloader')
 
@@ -77,7 +78,6 @@
 
     <script src="{{asset('assets/global/js/jquery-3.6.0.min.js')}}"></script>
     <script src="{{asset('assets/global/js/bootstrap.min.js')}}"></script>
-    <script src="{{ mix("js/app.js") }}"></script>
 
     <script src="{{ asset($activeTemplateTrue.'js/rafcounter.min.js') }}"></script>
     <script src="{{ asset($activeTemplateTrue.'js/lightbox.min.js') }}"></script>
@@ -85,6 +85,7 @@
     <script src="{{ asset($activeTemplateTrue.'js/masonry.pkgd.min.js') }}"></script>
     <script src="{{ asset($activeTemplateTrue.'js/countdown.min.js') }}"></script>
     <script src="{{ asset($activeTemplateTrue.'js/headline.js') }}"></script>
+    <script src="{{ mix("js/app.js") }}"></script>
 
     @stack('script-lib')
 
@@ -95,6 +96,10 @@
     @include('partials.notify')
 
     <script>
+        window.addEventListener('load', function(event) {
+            document.getElementById("preloader").style.display = "none"
+
+        });
         (function ($) {
             "use strict";
             $(".langSel").on("change", function() {
