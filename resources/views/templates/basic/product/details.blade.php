@@ -55,6 +55,7 @@
                                             {{ showAmount($product->price) }} <span class="text--base">{{ __($general->cur_text) }}</span>
                                         </div>
                                     </div>
+                                    <product-new-bid latest_bid="{{ $product->latest_bid }}" currency="{{ __($general->cur_text) }}"></product-new-bid>
 
                                     @isset($product->latest_bid)
                                     <div class="product-price last-bid">
