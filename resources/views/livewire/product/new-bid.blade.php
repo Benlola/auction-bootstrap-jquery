@@ -1,15 +1,15 @@
 <div>
     @isset($latest_bid)
-        <div class="product-price last-bid">
+        <div class="product-price last-bid" wire:poll="last_bid">
             <div class="fs-6 text-secondary">@lang('Last bid'):
-                {{ showAmount($latest_bid->amount) }} <span class="text--base">{{ __($general->cur_text) }}</span>
+                {{ showAmount($latest_bid) }} <span class="text--base">{{ __($general->cur_text) }}</span>
             </div>
         </div>
     @endisset
 
 
     @if ($product->status == 1 && $product->started_at < now() && $product->expired_at > now())
-        <form wire:submit.prevent="saveBid">
+        <form wire:submit.prevent="checkData">
             <div class="btn__area">
             <div class="cart-plus-minus input-group w-auto">
                 <span class="input-group-text bg--base border-0 text-white">{{ $general->cur_sym }}</span>
@@ -23,4 +23,5 @@
         </form>
     @endif
     </form>
+
 </div>

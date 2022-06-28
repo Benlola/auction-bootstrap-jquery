@@ -94,6 +94,46 @@
     @include('partials.notify')
 
     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            this.livewire.on('notify', data => {
+                iziToast[data.status]({
+                    message: data.message,
+                    position: "topRight"
+                });
+
+            })
+
+            this.livewire.on('confirm', data => {
+                iziToast.question({
+                    timeout: 20000,
+                    close: false,
+                    overlay: true,
+                    displayMode: 'once',
+                    id: 'question',
+                    zindex: 999,
+                    message: data.message,
+                    position: 'center',
+                    buttons: [
+                        ['<button><b>YES</b></button>', function (instance, toast) {
+
+                            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+
+                        }, true],
+                        ['<button>NO</button>', function (instance, toast) {
+
+                            instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+
+                        }],
+                    ],
+                    onClosing: function(instance, toast, closedBy){
+                        window.livewire.emit('save');
+                    },
+
+                });
+
+            })
+        });
+
         (function ($) {
             "use strict";
             $(".langSel").on("change", function() {

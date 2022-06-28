@@ -56,25 +56,27 @@
                                         </div>
                                     </div>
 
-                                    @isset($product->latest_bid)
-                                    <div class="product-price last-bid">
-                                        <div class="fs-6 text-secondary">@lang('Last bid'):
-                                            {{ showAmount($product->latest_bid->amount) }} <span class="text--base">{{ __($general->cur_text) }}</span>
-                                        </div>
-                                    </div>
-                                    @endisset
-                                    @if ($product->status == 1 && $product->started_at < now() && $product->expired_at > now())
-                                        <div class="btn__area">
-                                            <div class="cart-plus-minus input-group w-auto">
-                                                <span class="input-group-text bg--base border-0 text-white">{{ $general->cur_sym }}</span>
-                                                <input type="number" placeholder="@lang('Enter your amount')" class="form-control" id="amount" min="0" step="any">
-                                            </div>
-                                            <div>
-                                                <button class="cmn--btn btn--sm bid_now" data-cur_sym="{{ $general->cur_sym }}">@lang('Bid Now')</button>
-                                            </div>
-                                            <span class="text--danger empty-message">@lang('Please enter an amount to bid')</span>
-                                        </div>
-                                    @endif
+                                    <livewire:product.new-bid :product_id="$product->id" />
+
+{{--                                    @isset($product->latest_bid)--}}
+{{--                                    <div class="product-price last-bid">--}}
+{{--                                        <div class="fs-6 text-secondary">@lang('Last bid'):--}}
+{{--                                            {{ showAmount($product->latest_bid->amount) }} <span class="text--base">{{ __($general->cur_text) }}</span>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    @endisset--}}
+{{--                                    @if ($product->status == 1 && $product->started_at < now() && $product->expired_at > now())--}}
+{{--                                        <div class="btn__area">--}}
+{{--                                            <div class="cart-plus-minus input-group w-auto">--}}
+{{--                                                <span class="input-group-text bg--base border-0 text-white">{{ $general->cur_sym }}</span>--}}
+{{--                                                <input type="number" placeholder="@lang('Enter your amount')" class="form-control" id="amount" min="0" step="any">--}}
+{{--                                            </div>--}}
+{{--                                            <div>--}}
+{{--                                                <button class="cmn--btn btn--sm bid_now" data-cur_sym="{{ $general->cur_sym }}">@lang('Bid Now')</button>--}}
+{{--                                            </div>--}}
+{{--                                            <span class="text--danger empty-message">@lang('Please enter an amount to bid')</span>--}}
+{{--                                        </div>--}}
+{{--                                    @endif--}}
                                 </div>
                             </div>
                             <div class="max-banner mb-4">
@@ -392,20 +394,20 @@
         });
 
         $('.empty-message').hide();
-        $('.bid_now').on('click', function () {
-            var modal = $('#bidModal');
-            var cur_sym = $(this).data('cur_sym');
-            var amount = $('#amount').val();
-            modal.find('.message').html('@lang("Are you sure to bid on this product?")');
-            if(!amount){
-                modal.find('.message').html('@lang("Please enter an amount to bid")');
-                $('.empty-message').show();
-            }else{
-                $('.empty-message').hide();
-                modal.find('.amount').val(amount);
-                modal.modal('show');
-            }
-        });
+        {{--$('.bid_now').on('click', function () {--}}
+        {{--    var modal = $('#bidModal');--}}
+        {{--    var cur_sym = $(this).data('cur_sym');--}}
+        {{--    var amount = $('#amount').val();--}}
+        {{--    modal.find('.message').html('@lang("Are you sure to bid on this product?")');--}}
+        {{--    if(!amount){--}}
+        {{--        modal.find('.message').html('@lang("Please enter an amount to bid")');--}}
+        {{--        $('.empty-message').show();--}}
+        {{--    }else{--}}
+        {{--        $('.empty-message').hide();--}}
+        {{--        modal.find('.amount').val(amount);--}}
+        {{--        modal.modal('show');--}}
+        {{--    }--}}
+        {{--});--}}
     })(jQuery);
 </script>
 @endpush

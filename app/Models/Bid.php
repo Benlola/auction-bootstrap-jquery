@@ -3,27 +3,38 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Bid extends Model
 {
-    public function user()
+
+    protected $fillable
+        = [
+            'product_id',
+            'user_id',
+            'amount',
+        ];
+
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    public function product()
+    public function product(): BelongsTo
     {
         return $this->belongsTo(Product::class);
     }
 
 
-    public function winner()
+    public function winner(): HasOne
     {
         return $this->hasOne(Winner::class);
     }
 
     public function scopeLast()
     {
-        return $this->orderBy('created_at','desc')->limit(1)->pluck('amount');
+        return $this->orderBy('created_at', 'desc')->limit(1)->pluck('amount');
     }
+
 }
