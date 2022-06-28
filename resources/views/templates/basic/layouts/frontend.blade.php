@@ -24,7 +24,7 @@
 
 
     <link rel="icon" type="image/png" href="{{ getImage(imagePath()['logoIcon']['path'] .'/favicon.png') }}" sizes="16x16">
-
+    @livewireStyles
     @stack('style-lib')
 
     @stack('style')
@@ -116,6 +116,7 @@
         })(jQuery);
     </script>
 
+    @livewireScripts
 
 
 </body>
