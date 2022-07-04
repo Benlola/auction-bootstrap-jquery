@@ -2,7 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class CategoriesTableSeeder extends Seeder
 {
@@ -14,31 +17,19 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        
+        DB::table('categories')->delete();
 
-        \DB::table('categories')->delete();
-        
-        \DB::table('categories')->insert(array (
-            0 => 
-            array (
-                'id' => 1,
-                'name' => 'Cars',
-                'icon' => '<i class="las la-car-side"></i>',
-                'status' => 1,
-                'created_at' => '2022-06-14 22:11:12',
-                'updated_at' => '2022-06-14 22:11:12',
-            ),
-            1 => 
-            array (
-                'id' => 2,
-                'name' => 'Jewelry',
-                'icon' => '<i class="las la-crown"></i>',
-                'status' => 1,
-                'created_at' => '2022-06-14 22:13:22',
-                'updated_at' => '2022-06-14 22:13:22',
-            ),
-        ));
-        
-        
+        $insert_data = ['Cars', 'Jewelry'];
+        foreach ($insert_data as $name) {
+            Category::create([
+                'name'           => $name,
+                'icon'           => sprintf('<i class="las %s"></i>', $name == 'Cars' ? 'la-car-side' : 'la-crown'),
+                'status'         => 1,
+                'media_category' => $name == 'Cars' ? ['Interior', 'Exterior'] : null,
+                'created_at'     => Carbon::now(),
+                'updated_at'     => Carbon::now(),
+
+            ]);
+        }
     }
 }
