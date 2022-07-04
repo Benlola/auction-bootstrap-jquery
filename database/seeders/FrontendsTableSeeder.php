@@ -23,7 +23,7 @@ class FrontendsTableSeeder extends Seeder
             array (
                 'id' => 1,
                 'data_keys' => 'seo.data',
-                'data_values' => '{"seo_image":"1","keywords":["bid","auction","bidding","bidding platform","auction bidding","product bidding","car","jewerly"],"description":"Auction Bid Laravel is a multivendor auction bidding platform for your product.","social_title":"Auction Bid Laravel - Multivendor Auction Bidding Platform","social_description":"Auction Bid Laravel is a multivendor auction bidding platform for your product.","image":"62a9095a7a94a1655245146.png"}',
+                'data_values' => '{"seo_image":"1","keywords":["bid","auction","bidding","bidding platform","auction bidding","product bidding","car","jewerly"],"description":"Auction Bid System is a multivendor auction bidding platform for your product.","social_title":"Auction Bid System - Multivendor Auction Bidding Platform","social_description":"Auction Bid System is a multivendor auction bidding platform for your product.","image":"62a9095a7a94a1655245146.png"}',
                 'created_at' => '2020-07-05 02:42:52',
                 'updated_at' => '2022-06-14 22:19:52',
             ),

@@ -14,18 +14,18 @@ class GeneralSettingsTableSeeder extends Seeder
      */
     public function run()
     {
-        
+
 
         \DB::table('general_settings')->delete();
-        
+
         \DB::table('general_settings')->insert(array (
-            0 => 
+            0 =>
             array (
                 'id' => 1,
-                'sitename' => 'Auction Bid Laravel',
+                'sitename' => 'Auction Bid System',
                 'cur_text' => 'USD',
                 'cur_sym' => '$',
-                'email_from' => 'info@viserlab.com',
+                'email_from' => 'info@auctionbidsystem.com',
                 'email_template' => '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--[if !mso]><!-->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -142,7 +142,7 @@ img[class="img1"] { width: 100% !important; height: auto !important; }
 <!--preference-->
 <tr>
 <td class="preference-link" align="center" style="font-family: \'Open sans\', Arial, sans-serif; color:#95a5a6; font-size:14px;">
-© 2021 <a href="#">Website Name</a> . All Rights Reserved. 
+© 2021 <a href="#">Website Name</a> . All Rights Reserved.
 </td>
 </tr>
 <!--end preference-->
@@ -181,7 +181,7 @@ img[class="img1"] { width: 100% !important; height: auto !important; }
                 'updated_at' => '2022-06-15 21:16:07',
             ),
         ));
-        
-        
+
+
     }
 }

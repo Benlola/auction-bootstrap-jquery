@@ -14,18 +14,18 @@ class EmailLogsTableSeeder extends Seeder
      */
     public function run()
     {
-        
+
 
         \DB::table('email_logs')->delete();
-        
+
         \DB::table('email_logs')->insert(array (
-            0 => 
+            0 =>
             array (
                 'id' => 1,
                 'user_id' => 3,
                 'merchant_id' => 0,
                 'mail_sender' => 'php',
-                'email_from' => 'Auction Bid Laravel info@viserlab.com',
+                'email_from' => 'Auction Bid System info@auctionbidsystem.com',
                 'email_to' => 'kobex@mailinator.com',
                 'subject' => 'Your Account has been Credited',
                 'message' => '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -144,7 +144,7 @@ img[class="img1"] { width: 100% !important; height: auto !important; }
 <!--preference-->
 <tr>
 <td class="preference-link" align="center" style="font-family: \'Open sans\', Arial, sans-serif; color:#95a5a6; font-size:14px;">
-© 2021 <a href="#">Website Name</a> . All Rights Reserved. 
+© 2021 <a href="#">Website Name</a> . All Rights Reserved.
 </td>
 </tr>
 <!--end preference-->
@@ -167,13 +167,13 @@ img[class="img1"] { width: 100% !important; height: auto !important; }
                 'created_at' => '2022-06-14 22:35:34',
                 'updated_at' => '2022-06-14 22:35:34',
             ),
-            1 => 
+            1 =>
             array (
                 'id' => 2,
                 'user_id' => 0,
                 'merchant_id' => 1,
                 'mail_sender' => 'php',
-                'email_from' => 'Auction Bid Laravel info@viserlab.com',
+                'email_from' => 'Auction Bid System info@auctionbidsystem.com',
                 'email_to' => 'vygafazej@mailinator.com',
                 'subject' => 'Your Product has been Bided Successfully',
                 'message' => '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -310,7 +310,7 @@ img[class="img1"] { width: 100% !important; height: auto !important; }
 <!--preference-->
 <tr>
 <td class="preference-link" align="center" style="font-family: \'Open sans\', Arial, sans-serif; color:#95a5a6; font-size:14px;">
-© 2021 <a href="#">Website Name</a> . All Rights Reserved. 
+© 2021 <a href="#">Website Name</a> . All Rights Reserved.
 </td>
 </tr>
 <!--end preference-->
@@ -333,13 +333,13 @@ img[class="img1"] { width: 100% !important; height: auto !important; }
                 'created_at' => '2022-06-14 22:39:44',
                 'updated_at' => '2022-06-14 22:39:44',
             ),
-            2 => 
+            2 =>
             array (
                 'id' => 3,
                 'user_id' => 3,
                 'merchant_id' => 0,
                 'mail_sender' => 'php',
-                'email_from' => 'Auction Bid Laravel info@viserlab.com',
+                'email_from' => 'Auction Bid System info@auctionbidsystem.com',
                 'email_to' => 'kobex@mailinator.com',
                 'subject' => 'Deposit Request Submitted Successfully',
                 'message' => '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -458,7 +458,7 @@ img[class="img1"] { width: 100% !important; height: auto !important; }
 <!--preference-->
 <tr>
 <td class="preference-link" align="center" style="font-family: \'Open sans\', Arial, sans-serif; color:#95a5a6; font-size:14px;">
-© 2021 <a href="#">Website Name</a> . All Rights Reserved. 
+© 2021 <a href="#">Website Name</a> . All Rights Reserved.
 </td>
 </tr>
 <!--end preference-->
@@ -481,13 +481,13 @@ img[class="img1"] { width: 100% !important; height: auto !important; }
                 'created_at' => '2022-06-15 06:50:10',
                 'updated_at' => '2022-06-15 06:50:10',
             ),
-            3 => 
+            3 =>
             array (
                 'id' => 4,
                 'user_id' => 3,
                 'merchant_id' => 0,
                 'mail_sender' => 'php',
-                'email_from' => 'Auction Bid Laravel info@viserlab.com',
+                'email_from' => 'Auction Bid System info@auctionbidsystem.com',
                 'email_to' => 'kobex@mailinator.com',
                 'subject' => 'Your Deposit is Approved',
                 'message' => '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -606,7 +606,7 @@ img[class="img1"] { width: 100% !important; height: auto !important; }
 <!--preference-->
 <tr>
 <td class="preference-link" align="center" style="font-family: \'Open sans\', Arial, sans-serif; color:#95a5a6; font-size:14px;">
-© 2021 <a href="#">Website Name</a> . All Rights Reserved. 
+© 2021 <a href="#">Website Name</a> . All Rights Reserved.
 </td>
 </tr>
 <!--end preference-->
@@ -629,13 +629,13 @@ img[class="img1"] { width: 100% !important; height: auto !important; }
                 'created_at' => '2022-06-15 06:51:06',
                 'updated_at' => '2022-06-15 06:51:06',
             ),
-            4 => 
+            4 =>
             array (
                 'id' => 5,
                 'user_id' => 3,
                 'merchant_id' => 0,
                 'mail_sender' => 'php',
-                'email_from' => 'Auction Bid Laravel info@viserlab.com',
+                'email_from' => 'Auction Bid System info@auctionbidsystem.com',
                 'email_to' => 'kobex@mailinator.com',
                 'subject' => 'Deposit Request Submitted Successfully',
                 'message' => '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -754,7 +754,7 @@ img[class="img1"] { width: 100% !important; height: auto !important; }
 <!--preference-->
 <tr>
 <td class="preference-link" align="center" style="font-family: \'Open sans\', Arial, sans-serif; color:#95a5a6; font-size:14px;">
-© 2021 <a href="#">Website Name</a> . All Rights Reserved. 
+© 2021 <a href="#">Website Name</a> . All Rights Reserved.
 </td>
 </tr>
 <!--end preference-->
@@ -777,13 +777,13 @@ img[class="img1"] { width: 100% !important; height: auto !important; }
                 'created_at' => '2022-06-15 07:45:30',
                 'updated_at' => '2022-06-15 07:45:30',
             ),
-            5 => 
+            5 =>
             array (
                 'id' => 6,
                 'user_id' => 3,
                 'merchant_id' => 0,
                 'mail_sender' => 'php',
-                'email_from' => 'Auction Bid Laravel info@viserlab.com',
+                'email_from' => 'Auction Bid System info@auctionbidsystem.com',
                 'email_to' => 'kobex@mailinator.com',
                 'subject' => 'Your Deposit is Approved',
                 'message' => '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -902,7 +902,7 @@ img[class="img1"] { width: 100% !important; height: auto !important; }
 <!--preference-->
 <tr>
 <td class="preference-link" align="center" style="font-family: \'Open sans\', Arial, sans-serif; color:#95a5a6; font-size:14px;">
-© 2021 <a href="#">Website Name</a> . All Rights Reserved. 
+© 2021 <a href="#">Website Name</a> . All Rights Reserved.
 </td>
 </tr>
 <!--end preference-->
@@ -925,13 +925,13 @@ img[class="img1"] { width: 100% !important; height: auto !important; }
                 'created_at' => '2022-06-15 07:45:56',
                 'updated_at' => '2022-06-15 07:45:56',
             ),
-            6 => 
+            6 =>
             array (
                 'id' => 7,
                 'user_id' => 0,
                 'merchant_id' => 2,
                 'mail_sender' => 'php',
-                'email_from' => 'Auction Bid Laravel info@viserlab.com',
+                'email_from' => 'Auction Bid System info@auctionbidsystem.com',
                 'email_to' => 'seller@mailinator.com',
                 'subject' => 'Your Product has been Bided Successfully',
                 'message' => '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -1068,7 +1068,7 @@ img[class="img1"] { width: 100% !important; height: auto !important; }
 <!--preference-->
 <tr>
 <td class="preference-link" align="center" style="font-family: \'Open sans\', Arial, sans-serif; color:#95a5a6; font-size:14px;">
-© 2021 <a href="#">Website Name</a> . All Rights Reserved. 
+© 2021 <a href="#">Website Name</a> . All Rights Reserved.
 </td>
 </tr>
 <!--end preference-->
@@ -1091,13 +1091,13 @@ img[class="img1"] { width: 100% !important; height: auto !important; }
                 'created_at' => '2022-06-15 08:31:15',
                 'updated_at' => '2022-06-15 08:31:15',
             ),
-            7 => 
+            7 =>
             array (
                 'id' => 8,
                 'user_id' => 4,
                 'merchant_id' => 0,
                 'mail_sender' => 'php',
-                'email_from' => 'Auction Bid Laravel info@viserlab.com',
+                'email_from' => 'Auction Bid System info@auctionbidsystem.com',
                 'email_to' => 'savariuser@demo.com',
                 'subject' => 'Deposit Request Submitted Successfully',
                 'message' => '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -1216,7 +1216,7 @@ img[class="img1"] { width: 100% !important; height: auto !important; }
 <!--preference-->
 <tr>
 <td class="preference-link" align="center" style="font-family: \'Open sans\', Arial, sans-serif; color:#95a5a6; font-size:14px;">
-© 2021 <a href="#">Website Name</a> . All Rights Reserved. 
+© 2021 <a href="#">Website Name</a> . All Rights Reserved.
 </td>
 </tr>
 <!--end preference-->
@@ -1239,13 +1239,13 @@ img[class="img1"] { width: 100% !important; height: auto !important; }
                 'created_at' => '2022-06-15 09:27:27',
                 'updated_at' => '2022-06-15 09:27:27',
             ),
-            8 => 
+            8 =>
             array (
                 'id' => 9,
                 'user_id' => 4,
                 'merchant_id' => 0,
                 'mail_sender' => 'php',
-                'email_from' => 'Auction Bid Laravel info@viserlab.com',
+                'email_from' => 'Auction Bid System info@auctionbidsystem.com',
                 'email_to' => 'savariuser@demo.com',
                 'subject' => 'Your Deposit is Approved',
                 'message' => '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -1364,7 +1364,7 @@ img[class="img1"] { width: 100% !important; height: auto !important; }
 <!--preference-->
 <tr>
 <td class="preference-link" align="center" style="font-family: \'Open sans\', Arial, sans-serif; color:#95a5a6; font-size:14px;">
-© 2021 <a href="#">Website Name</a> . All Rights Reserved. 
+© 2021 <a href="#">Website Name</a> . All Rights Reserved.
 </td>
 </tr>
 <!--end preference-->
@@ -1388,7 +1388,7 @@ img[class="img1"] { width: 100% !important; height: auto !important; }
                 'updated_at' => '2022-06-15 09:27:45',
             ),
         ));
-        
-        
+
+
     }
 }
