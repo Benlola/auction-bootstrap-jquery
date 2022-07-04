@@ -2514,7 +2514,7 @@ textarea.form--control-2 {
 }
 
 .bg--section .faq__item {
-    background: #001329;
+    background: #fff;/*001329*/
 }
 
 @media screen and (min-width: 1800px) {
@@ -5867,30 +5867,30 @@ div[class*="col"]:nth-of-type(4n + 1) .feature__item-icon {
     background: #001631;
 }
 
-/*.form--label {*/
+.form--label {
 
-/*    color: #fff;*/
-/*    display: block;*/
-/*    cursor: pointer;*/
-/*    margin-bottom: 0;*/
-/*}*/
+    color: #fff;
+    display: block;
+    cursor: pointer;
+    margin-bottom: 0;
+}
 
 .form-group {
     margin-bottom: 28px;
 }
 
-/*.form--control {*/
-/*    background: transparent;*/
-/*    outline: none;*/
-/*    border: none;*/
-/*    border-bottom: 1px solid rgba(255, 255, 255, 0.3);*/
-/*    -webkit-border-radius: 0;*/
-/*    -moz-border-radius: 0;*/
-/*    border-radius: 0;*/
-/*    padding: 0;*/
-/*    height: 35px;*/
-/*    color: #fff;*/
-/*}*/
+.form--control {
+    background: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    padding: 0;
+    height: 35px;
+    color: #fff;
+}
 
 .form--control:focus {
     box-shadow: none;
@@ -6696,7 +6696,7 @@ button.cmn--btn:hover {
 }
 .post-item .post-content {
     padding: 25px;
-    /*background-color: #37485ce6;*/
+    background-color: #fff;
     border-radius: 0 0 7px 7px;
 }
 @media (max-width: 1199px) {
@@ -6726,14 +6726,14 @@ button.cmn--btn:hover {
     font-size: 14px;
 }
 .post-item .post-content .meta-post a {
-    color: #37485c;
+    color: #fff;
 }
 .post-item .post-content .meta-post i {
     margin-right: 5px;
 }
 .read-more {
     position: relative;
-    color: #37485c;
+    color: #000;
 }
 
 .read-more:hover::before {
@@ -6747,7 +6747,7 @@ button.cmn--btn:hover {
     content: "";
     width: 35px;
     height: 2px;
-    background: #fff;
+    background: #000;
     top: 48%;
     left: 110%;
     -webkit-transition: all ease 0.3s;
