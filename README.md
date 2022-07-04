@@ -38,7 +38,7 @@ APP_URL=https://myhostingdomain.com
 
 ```
 dashboard: https://myhostingdomain.com/admin
-user: admin@site.com
+user: admin
 password: Pa$$w0rd!
 ```
 **Seller:**
