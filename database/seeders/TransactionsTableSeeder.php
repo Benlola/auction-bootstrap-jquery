@@ -107,7 +107,7 @@ class TransactionsTableSeeder extends Seeder
             array (
                 'id' => 7,
                 'user_id' => 0,
-                'merchant_id' => 2,
+                'merchant_id' => 1,
                 'amount' => '2000.00000000',
                 'charge' => '0.00000000',
                 'post_balance' => '2000.00000000',
