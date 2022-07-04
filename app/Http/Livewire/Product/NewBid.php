@@ -43,7 +43,8 @@ class NewBid extends Component
     protected function rules(): array
     {
         return [
-            'amount' => 'required|numeric|gt:'.(int)$this->latest_bid ?? $this->product->price ?? 0,
+//            'amount' => 'required|numeric|gt:'.(int)$this->latest_bid ?? $this->product->price ?? 0,
+            'amount' => 'required|numeric|gt:0',
         ];
     }
 
