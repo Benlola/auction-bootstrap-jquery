@@ -14,12 +14,12 @@ class FrontendsTableSeeder extends Seeder
      */
     public function run()
     {
-        
+
 
         \DB::table('frontends')->delete();
-        
+
         \DB::table('frontends')->insert(array (
-            0 => 
+            0 =>
             array (
                 'id' => 1,
                 'data_keys' => 'seo.data',
@@ -27,7 +27,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2020-07-05 02:42:52',
                 'updated_at' => '2022-06-14 22:19:52',
             ),
-            1 => 
+            1 =>
             array (
                 'id' => 24,
                 'data_keys' => 'about.content',
@@ -35,7 +35,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2020-10-28 02:51:20',
                 'updated_at' => '2022-02-20 13:00:11',
             ),
-            2 => 
+            2 =>
             array (
                 'id' => 25,
                 'data_keys' => 'blog.content',
@@ -43,15 +43,15 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2020-10-28 02:51:34',
                 'updated_at' => '2022-02-26 07:54:57',
             ),
-            3 => 
+            3 =>
             array (
                 'id' => 26,
                 'data_keys' => 'blog.element',
-            'data_values' => '{"has_image":["1"],"title":"In the same way that starting to read more can make you a better writer","description_nic":"<p style=\\"margin-bottom:25px;color:rgb(164,189,206);font-family:Nunito, sans-serif;font-size:16px;\\">Website performance, or how fast web pages load onto a client\\u2019s browser can impact user satisfaction and visitor retention. Google also factors website performance in its ranking algorithm. Our designers and developers use best practice tools and techniques when it comes to building websites such as image optimisation, using content delivery networks and other enhancements to ensure fast loading times for both desktop and mobile.digital solutions company. Mettro\\u2019s web designers, developers, user experience designers, SEO specialists, and marketing experts are adept at fusing vision, design, and technology to provide you with custom digital solutions that will help you achieve your business goals.<\\/p><p style=\\"margin-bottom:25px;color:rgb(164,189,206);font-family:Nunito, sans-serif;font-size:16px;\\">We are a full-service web design, web development and digital solutions company. Mettro\\u2019s web designers, developers, user experience designers, SEO specialists, and marketing experts are adept at fusing vision, design, and technology to provide you with custom digital solutions that will help you achieve your business goals.<\\/p><p style=\\"margin-bottom:25px;color:rgb(164,189,206);font-family:Nunito, sans-serif;font-size:16px;\\">Website performance, or how fast web pages load onto a client\\u2019s browser can impact user satisfaction and visitor retention. Google also factors website performance in its ranking algorithm. Our designers and developers use best practice tools and techniques when it comes to building websites such as image optimisation, using content delivery networks and other enhancements to ensure fast loading times for both desktop and mobile..<\\/p><blockquote class=\\"mb-3 d-block\\" style=\\"background:rgba(1,28,61,0.9);padding:25px 20px;border-left:2px solid rgba(1,28,61,0.9);font-style:italic;color:rgb(164,189,206);font-family:Nunito, sans-serif;\\">Website performance, or how fast web pages load onto a client\\u2019s browser can impnetworks and other enhancements to ensure fast loading times for both desktop and mobile.<p class=\\"m-0\\" style=\\"margin-bottom:25px;font-size:20px;font-weight:600;margin-top:12px;\\">--- John Doe<\\/p><\\/blockquote><p style=\\"margin-bottom:25px;color:rgb(164,189,206);font-family:Nunito, sans-serif;font-size:16px;\\">We are a full-service web design, web development and digital solutions company. Mettro\\u2019s web designers, developers, user experience designers, SEO specialists, and marketing experts are adept at fusing vision, design, and technology to provide you with custom digital solutions that will help you achieve your business goals.<\\/p>","blog_image":"6219c1f7553b71645855223.jpg"}',
+            'data_values' => '{"has_image":["1"],"title":"In the same way that starting to read more can make you a better writer","description_nic":"<p style=\\"margin-bottom:25px;color:rgb(164,189,206);font-family:Nunito, sans-serif;font-size:16px;background-color:rgb(0,19,41);\\">Website performance, or how fast web pages load onto a client\\u2019s browser can impact user satisfaction and visitor retention. Google also factors website performance in its ranking algorithm. Our designers and developers use best practice tools and techniques when it comes to building websites such as image optimisation, using content delivery networks and other enhancements to ensure fast loading times for both desktop and mobile.digital solutions company. Mettro\\u2019s web designers, developers, user experience designers, SEO specialists, and marketing experts are adept at fusing vision, design, and technology to provide you with custom digital solutions that will help you achieve your business goals.<\\/p><p style=\\"margin-bottom:25px;color:rgb(164,189,206);font-family:Nunito, sans-serif;font-size:16px;background-color:rgb(0,19,41);\\">We are a full-service web design, web development and digital solutions company. Mettro\\u2019s web designers, developers, user experience designers, SEO specialists, and marketing experts are adept at fusing vision, design, and technology to provide you with custom digital solutions that will help you achieve your business goals.<\\/p><p style=\\"margin-bottom:25px;color:rgb(164,189,206);font-family:Nunito, sans-serif;font-size:16px;background-color:rgb(0,19,41);\\">Website performance, or how fast web pages load onto a client\\u2019s browser can impact user satisfaction and visitor retention. Google also factors website performance in its ranking algorithm. Our designers and developers use best practice tools and techniques when it comes to building websites such as image optimisation, using content delivery networks and other enhancements to ensure fast loading times for both desktop and mobile..<\\/p><blockquote class=\\"mb-3 d-block\\" style=\\"background:rgba(1,28,61,0.9);padding:25px 20px;border-left:2px solid rgba(1,28,61,0.9);font-style:italic;color:rgb(164,189,206);font-family:Nunito, sans-serif;\\">Website performance, or how fast web pages load onto a client\\u2019s browser can impnetworks and other enhancements to ensure fast loading times for both desktop and mobile.<p class=\\"m-0\\" style=\\"margin-bottom:25px;font-size:20px;font-weight:600;margin-top:12px;\\">--- John Doe<\\/p><\\/blockquote><p style=\\"margin-bottom:25px;color:rgb(164,189,206);font-family:Nunito, sans-serif;font-size:16px;background-color:rgb(0,19,41);\\">We are a full-service web design, web development and digital solutions company. Mettro\\u2019s web designers, developers, user experience designers, SEO specialists, and marketing experts are adept at fusing vision, design, and technology to provide you with custom digital solutions that will help you achieve your business goals.<\\/p>","blog_image":"6219c1f7553b71645855223.jpg"}',
                 'created_at' => '2020-10-28 02:57:19',
                 'updated_at' => '2022-02-26 08:00:23',
             ),
-            4 => 
+            4 =>
             array (
                 'id' => 27,
                 'data_keys' => 'contact_us.content',
@@ -59,7 +59,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2020-10-28 02:59:19',
                 'updated_at' => '2022-03-03 12:12:37',
             ),
-            5 => 
+            5 =>
             array (
                 'id' => 28,
                 'data_keys' => 'counter.content',
@@ -67,15 +67,15 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2020-10-28 03:04:02',
                 'updated_at' => '2020-10-28 03:04:02',
             ),
-            6 => 
+            6 =>
             array (
                 'id' => 30,
                 'data_keys' => 'blog.element',
-            'data_values' => '{"has_image":["1"],"title":"Maddison will learn from casino mistake","description_nic":"<p style=\\"margin-bottom:25px;color:rgb(164,189,206);font-family:Nunito, sans-serif;font-size:16px;\\">Website performance, or how fast web pages load onto a client\\u2019s browser can impact user satisfaction and visitor retention. Google also factors website performance in its ranking algorithm. Our designers and developers use best practice tools and techniques when it comes to building websites such as image optimisation, using content delivery networks and other enhancements to ensure fast loading times for both desktop and mobile.digital solutions company. Mettro\\u2019s web designers, developers, user experience designers, SEO specialists, and marketing experts are adept at fusing vision, design, and technology to provide you with custom digital solutions that will help you achieve your business goals.<\\/p><p style=\\"margin-bottom:25px;color:rgb(164,189,206);font-family:Nunito, sans-serif;font-size:16px;\\">We are a full-service web design, web development and digital solutions company. Mettro\\u2019s web designers, developers, user experience designers, SEO specialists, and marketing experts are adept at fusing vision, design, and technology to provide you with custom digital solutions that will help you achieve your business goals.<\\/p><p style=\\"margin-bottom:25px;color:rgb(164,189,206);font-family:Nunito, sans-serif;font-size:16px;\\">Website performance, or how fast web pages load onto a client\\u2019s browser can impact user satisfaction and visitor retention. Google also factors website performance in its ranking algorithm. Our designers and developers use best practice tools and techniques when it comes to building websites such as image optimisation, using content delivery networks and other enhancements to ensure fast loading times for both desktop and mobile..<\\/p><blockquote class=\\"mb-3 d-block\\" style=\\"background:rgba(1,28,61,0.9);padding:25px 20px;border-left:2px solid rgba(1,28,61,0.9);font-style:italic;color:rgb(164,189,206);font-family:Nunito, sans-serif;\\">Website performance, or how fast web pages load onto a client\\u2019s browser can impnetworks and other enhancements to ensure fast loading times for both desktop and mobile.<p class=\\"m-0\\" style=\\"margin-bottom:25px;font-size:20px;font-weight:600;margin-top:12px;\\">--- John Doe<\\/p><\\/blockquote><p style=\\"margin-bottom:25px;color:rgb(164,189,206);font-family:Nunito, sans-serif;font-size:16px;\\">We are a full-service web design, web development and digital solutions company. Mettro\\u2019s web designers, developers, user experience designers, SEO specialists, and marketing experts are adept at fusing vision, design, and technology to provide you with custom digital solutions that will help you achieve your business goals.<\\/p>","blog_image":"6219c1edf2da01645855213.jpg"}',
+            'data_values' => '{"has_image":["1"],"title":"Maddison will learn from casino mistake","description_nic":"<p style=\\"margin-bottom:25px;color:rgb(164,189,206);font-family:Nunito, sans-serif;font-size:16px;background-color:rgb(0,19,41);\\">Website performance, or how fast web pages load onto a client\\u2019s browser can impact user satisfaction and visitor retention. Google also factors website performance in its ranking algorithm. Our designers and developers use best practice tools and techniques when it comes to building websites such as image optimisation, using content delivery networks and other enhancements to ensure fast loading times for both desktop and mobile.digital solutions company. Mettro\\u2019s web designers, developers, user experience designers, SEO specialists, and marketing experts are adept at fusing vision, design, and technology to provide you with custom digital solutions that will help you achieve your business goals.<\\/p><p style=\\"margin-bottom:25px;color:rgb(164,189,206);font-family:Nunito, sans-serif;font-size:16px;background-color:rgb(0,19,41);\\">We are a full-service web design, web development and digital solutions company. Mettro\\u2019s web designers, developers, user experience designers, SEO specialists, and marketing experts are adept at fusing vision, design, and technology to provide you with custom digital solutions that will help you achieve your business goals.<\\/p><p style=\\"margin-bottom:25px;color:rgb(164,189,206);font-family:Nunito, sans-serif;font-size:16px;background-color:rgb(0,19,41);\\">Website performance, or how fast web pages load onto a client\\u2019s browser can impact user satisfaction and visitor retention. Google also factors website performance in its ranking algorithm. Our designers and developers use best practice tools and techniques when it comes to building websites such as image optimisation, using content delivery networks and other enhancements to ensure fast loading times for both desktop and mobile..<\\/p><blockquote class=\\"mb-3 d-block\\" style=\\"background:rgba(1,28,61,0.9);padding:25px 20px;border-left:2px solid rgba(1,28,61,0.9);font-style:italic;color:rgb(164,189,206);font-family:Nunito, sans-serif;\\">Website performance, or how fast web pages load onto a client\\u2019s browser can impnetworks and other enhancements to ensure fast loading times for both desktop and mobile.<p class=\\"m-0\\" style=\\"margin-bottom:25px;font-size:20px;font-weight:600;margin-top:12px;\\">--- John Doe<\\/p><\\/blockquote><p style=\\"margin-bottom:25px;color:rgb(164,189,206);font-family:Nunito, sans-serif;font-size:16px;background-color:rgb(0,19,41);\\">We are a full-service web design, web development and digital solutions company. Mettro\\u2019s web designers, developers, user experience designers, SEO specialists, and marketing experts are adept at fusing vision, design, and technology to provide you with custom digital solutions that will help you achieve your business goals.<\\/p>","blog_image":"6219c1edf2da01645855213.jpg"}',
                 'created_at' => '2020-10-31 02:39:05',
                 'updated_at' => '2022-02-26 08:00:14',
             ),
-            7 => 
+            7 =>
             array (
                 'id' => 31,
                 'data_keys' => 'social_icon.element',
@@ -83,7 +83,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2020-11-12 06:07:30',
                 'updated_at' => '2021-05-12 08:56:59',
             ),
-            8 => 
+            8 =>
             array (
                 'id' => 33,
                 'data_keys' => 'feature.content',
@@ -91,7 +91,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2021-01-04 01:40:54',
                 'updated_at' => '2021-01-04 01:40:55',
             ),
-            9 => 
+            9 =>
             array (
                 'id' => 34,
                 'data_keys' => 'feature.element',
@@ -99,7 +99,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2021-01-04 01:41:02',
                 'updated_at' => '2022-02-01 10:18:01',
             ),
-            10 => 
+            10 =>
             array (
                 'id' => 35,
                 'data_keys' => 'service.element',
@@ -107,7 +107,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2021-03-06 03:12:10',
                 'updated_at' => '2021-03-06 03:12:10',
             ),
-            11 => 
+            11 =>
             array (
                 'id' => 36,
                 'data_keys' => 'service.content',
@@ -115,7 +115,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2021-03-06 03:27:34',
                 'updated_at' => '2021-03-06 04:19:39',
             ),
-            12 => 
+            12 =>
             array (
                 'id' => 39,
                 'data_keys' => 'banner.content',
@@ -123,7 +123,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2021-05-02 09:09:30',
                 'updated_at' => '2022-03-07 15:58:15',
             ),
-            13 => 
+            13 =>
             array (
                 'id' => 41,
                 'data_keys' => 'cookie.data',
@@ -131,7 +131,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2020-07-05 02:42:52',
                 'updated_at' => '2022-03-03 12:26:19',
             ),
-            14 => 
+            14 =>
             array (
                 'id' => 42,
                 'data_keys' => 'policy_pages.element',
@@ -139,7 +139,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2021-06-09 11:50:42',
                 'updated_at' => '2022-03-03 11:35:27',
             ),
-            15 => 
+            15 =>
             array (
                 'id' => 43,
                 'data_keys' => 'policy_pages.element',
@@ -147,7 +147,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2021-06-09 11:51:18',
                 'updated_at' => '2022-03-03 11:37:36',
             ),
-            16 => 
+            16 =>
             array (
                 'id' => 44,
                 'data_keys' => 'feature.element',
@@ -155,7 +155,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-01 10:18:18',
                 'updated_at' => '2022-02-01 10:18:18',
             ),
-            17 => 
+            17 =>
             array (
                 'id' => 45,
                 'data_keys' => 'feature.element',
@@ -163,7 +163,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-01 10:18:37',
                 'updated_at' => '2022-02-01 10:18:37',
             ),
-            18 => 
+            18 =>
             array (
                 'id' => 46,
                 'data_keys' => 'feature.element',
@@ -171,7 +171,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-01 10:18:52',
                 'updated_at' => '2022-02-01 10:18:52',
             ),
-            19 => 
+            19 =>
             array (
                 'id' => 47,
                 'data_keys' => 'categories.content',
@@ -179,7 +179,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-01 10:25:09',
                 'updated_at' => '2022-02-01 10:25:09',
             ),
-            20 => 
+            20 =>
             array (
                 'id' => 48,
                 'data_keys' => 'categories.element',
@@ -187,7 +187,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-01 10:26:03',
                 'updated_at' => '2022-02-01 10:26:03',
             ),
-            21 => 
+            21 =>
             array (
                 'id' => 49,
                 'data_keys' => 'categories.element',
@@ -195,7 +195,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-01 10:26:17',
                 'updated_at' => '2022-02-01 10:26:17',
             ),
-            22 => 
+            22 =>
             array (
                 'id' => 50,
                 'data_keys' => 'categories.element',
@@ -203,7 +203,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-01 10:26:26',
                 'updated_at' => '2022-02-01 10:26:26',
             ),
-            23 => 
+            23 =>
             array (
                 'id' => 51,
                 'data_keys' => 'categories.element',
@@ -211,7 +211,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-01 10:26:50',
                 'updated_at' => '2022-02-01 10:26:50',
             ),
-            24 => 
+            24 =>
             array (
                 'id' => 52,
                 'data_keys' => 'categories.element',
@@ -219,7 +219,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-01 10:27:10',
                 'updated_at' => '2022-02-01 10:27:10',
             ),
-            25 => 
+            25 =>
             array (
                 'id' => 53,
                 'data_keys' => 'categories.element',
@@ -227,7 +227,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-01 10:27:33',
                 'updated_at' => '2022-02-01 10:27:33',
             ),
-            26 => 
+            26 =>
             array (
                 'id' => 54,
                 'data_keys' => 'categories.element',
@@ -235,7 +235,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-01 10:27:40',
                 'updated_at' => '2022-02-01 10:27:40',
             ),
-            27 => 
+            27 =>
             array (
                 'id' => 55,
                 'data_keys' => 'categories.element',
@@ -243,7 +243,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-01 10:28:18',
                 'updated_at' => '2022-02-01 10:28:18',
             ),
-            28 => 
+            28 =>
             array (
                 'id' => 56,
                 'data_keys' => 'categories.element',
@@ -251,7 +251,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-01 10:28:26',
                 'updated_at' => '2022-02-01 10:28:26',
             ),
-            29 => 
+            29 =>
             array (
                 'id' => 57,
                 'data_keys' => 'categories.element',
@@ -259,7 +259,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-01 10:28:45',
                 'updated_at' => '2022-02-01 10:28:53',
             ),
-            30 => 
+            30 =>
             array (
                 'id' => 58,
                 'data_keys' => 'winner.content',
@@ -267,7 +267,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-01 11:01:48',
                 'updated_at' => '2022-02-01 11:02:13',
             ),
-            31 => 
+            31 =>
             array (
                 'id' => 59,
                 'data_keys' => 'how_to_bid.content',
@@ -275,7 +275,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-01 11:12:30',
                 'updated_at' => '2022-02-01 11:12:30',
             ),
-            32 => 
+            32 =>
             array (
                 'id' => 60,
                 'data_keys' => 'how_to_bid.element',
@@ -283,7 +283,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-01 11:14:42',
                 'updated_at' => '2022-02-01 11:14:42',
             ),
-            33 => 
+            33 =>
             array (
                 'id' => 61,
                 'data_keys' => 'how_to_bid.element',
@@ -291,7 +291,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-01 11:14:55',
                 'updated_at' => '2022-02-01 11:14:55',
             ),
-            34 => 
+            34 =>
             array (
                 'id' => 62,
                 'data_keys' => 'how_to_bid.element',
@@ -299,7 +299,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-01 11:15:07',
                 'updated_at' => '2022-02-01 11:15:07',
             ),
-            35 => 
+            35 =>
             array (
                 'id' => 63,
                 'data_keys' => 'testimonial.content',
@@ -307,7 +307,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-01 11:19:29',
                 'updated_at' => '2022-02-01 11:19:29',
             ),
-            36 => 
+            36 =>
             array (
                 'id' => 64,
                 'data_keys' => 'testimonial.element',
@@ -315,7 +315,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-01 11:26:45',
                 'updated_at' => '2022-02-22 15:22:33',
             ),
-            37 => 
+            37 =>
             array (
                 'id' => 65,
                 'data_keys' => 'testimonial.element',
@@ -323,7 +323,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-01 11:27:33',
                 'updated_at' => '2022-02-22 15:22:15',
             ),
-            38 => 
+            38 =>
             array (
                 'id' => 66,
                 'data_keys' => 'testimonial.element',
@@ -331,7 +331,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-01 11:28:25',
                 'updated_at' => '2022-02-22 15:22:21',
             ),
-            39 => 
+            39 =>
             array (
                 'id' => 67,
                 'data_keys' => 'testimonial.element',
@@ -339,7 +339,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-01 11:29:10',
                 'updated_at' => '2022-02-22 15:22:28',
             ),
-            40 => 
+            40 =>
             array (
                 'id' => 68,
                 'data_keys' => 'sponsors.element',
@@ -347,7 +347,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-01 11:34:38',
                 'updated_at' => '2022-02-28 08:39:59',
             ),
-            41 => 
+            41 =>
             array (
                 'id' => 69,
                 'data_keys' => 'sponsors.element',
@@ -355,7 +355,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-01 11:34:43',
                 'updated_at' => '2022-02-28 08:40:45',
             ),
-            42 => 
+            42 =>
             array (
                 'id' => 70,
                 'data_keys' => 'sponsors.element',
@@ -363,7 +363,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-01 11:34:48',
                 'updated_at' => '2022-02-28 08:40:51',
             ),
-            43 => 
+            43 =>
             array (
                 'id' => 71,
                 'data_keys' => 'sponsors.element',
@@ -371,7 +371,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-01 11:34:54',
                 'updated_at' => '2022-02-28 08:40:58',
             ),
-            44 => 
+            44 =>
             array (
                 'id' => 72,
                 'data_keys' => 'sponsors.element',
@@ -379,7 +379,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-01 11:34:58',
                 'updated_at' => '2022-02-28 08:41:03',
             ),
-            45 => 
+            45 =>
             array (
                 'id' => 73,
                 'data_keys' => 'sponsors.element',
@@ -387,7 +387,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-01 11:35:03',
                 'updated_at' => '2022-02-28 08:41:09',
             ),
-            46 => 
+            46 =>
             array (
                 'id' => 74,
                 'data_keys' => 'auth.content',
@@ -395,7 +395,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-01 12:17:23',
                 'updated_at' => '2022-02-01 12:17:23',
             ),
-            47 => 
+            47 =>
             array (
                 'id' => 75,
                 'data_keys' => 'header.content',
@@ -403,7 +403,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-20 09:55:56',
                 'updated_at' => '2022-02-20 09:57:57',
             ),
-            48 => 
+            48 =>
             array (
                 'id' => 76,
                 'data_keys' => 'faq.content',
@@ -411,79 +411,79 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-20 10:45:20',
                 'updated_at' => '2022-02-20 10:45:20',
             ),
-            49 => 
+            49 =>
             array (
                 'id' => 77,
                 'data_keys' => 'faq.element',
-            'data_values' => '{"question":"Eligendi, aut ut sunt amet aperiam cum doloremque ?","answer":"<div class=\\"faq__title\\" style=\\"padding:20px 45px 20px 20px;margin-right:20px;color:rgb(164,189,206);font-family:Nunito, sans-serif;\\"><h5 class=\\"title\\" style=\\"line-height:1.2;font-size:20px;color:rgb(193,81,204);font-family:Jost, sans-serif;\\"><\\/h5><p style=\\"margin-top:-12px;margin-bottom:20px;color:rgb(164,189,206);font-size:16px;font-family:Nunito, sans-serif;\\"><span class=\\"text--base\\" style=\\"font-weight:bolder;font-family:Jost, sans-serif;color:rgb(193,81,204);\\">irst :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p><p style=\\"margin-top:-12px;color:rgb(164,189,206);font-size:16px;font-family:Nunito, sans-serif;margin-bottom:-7px;\\"><span class=\\"text--base\\" style=\\"font-weight:bolder;font-family:Jost, sans-serif;color:rgb(193,81,204);\\">Second :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p><\\/div>"}',
+            'data_values' => '{"question":"Eligendi, aut ut sunt amet aperiam cum doloremque ?","answer":"<div class=\\"faq__title\\" style=\\"padding:20px 45px 20px 20px;margin-right:20px;color:rgb(164,189,206);font-family:Nunito, sans-serif;\\"><h5 class=\\"title\\" style=\\"line-height:1.2;font-size:20px;color:rgb(193,81,204);font-family:Jost, sans-serif;\\"><\\/h5><p style=\\"margin-top:-12px;margin-bottom:20px;color:rgb(164,189,206);font-size:16px;font-family:Nunito, sans-serif;background-color:rgb(0,19,41);\\"><span class=\\"text--base\\" style=\\"font-weight:bolder;font-family:Jost, sans-serif;color:rgb(193,81,204);\\">irst :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p><p style=\\"margin-top:-12px;color:rgb(164,189,206);font-size:16px;font-family:Nunito, sans-serif;background-color:rgb(0,19,41);margin-bottom:-7px;\\"><span class=\\"text--base\\" style=\\"font-weight:bolder;font-family:Jost, sans-serif;color:rgb(193,81,204);\\">Second :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p><\\/div>"}',
                 'created_at' => '2022-02-20 10:45:45',
                 'updated_at' => '2022-03-06 09:19:06',
             ),
-            50 => 
+            50 =>
             array (
                 'id' => 78,
                 'data_keys' => 'faq.element',
-            'data_values' => '{"question":"Aut ut sunt amet aperiam cum doloremque distinctio ?","answer":"<p style=\\"margin-top:-12px;margin-bottom:20px;color:rgb(164,189,206);font-family:Nunito, sans-serif;font-size:16px;\\"><span class=\\"text--base\\" style=\\"font-weight:bolder;font-family:Jost, sans-serif;color:rgb(193,81,204);\\">First :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p><p style=\\"margin-top:-12px;color:rgb(164,189,206);font-family:Nunito, sans-serif;font-size:16px;margin-bottom:-7px;\\"><span class=\\"text--base\\" style=\\"font-weight:bolder;font-family:Jost, sans-serif;color:rgb(193,81,204);\\">Second :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p>"}',
+            'data_values' => '{"question":"Aut ut sunt amet aperiam cum doloremque distinctio ?","answer":"<p style=\\"margin-top:-12px;margin-bottom:20px;color:rgb(164,189,206);font-family:Nunito, sans-serif;font-size:16px;background-color:rgb(0,19,41);\\"><span class=\\"text--base\\" style=\\"font-weight:bolder;font-family:Jost, sans-serif;color:rgb(193,81,204);\\">First :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p><p style=\\"margin-top:-12px;color:rgb(164,189,206);font-family:Nunito, sans-serif;font-size:16px;background-color:rgb(0,19,41);margin-bottom:-7px;\\"><span class=\\"text--base\\" style=\\"font-weight:bolder;font-family:Jost, sans-serif;color:rgb(193,81,204);\\">Second :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p>"}',
                 'created_at' => '2022-02-20 10:47:20',
                 'updated_at' => '2022-03-06 09:19:26',
             ),
-            51 => 
+            51 =>
             array (
                 'id' => 79,
                 'data_keys' => 'faq.element',
-            'data_values' => '{"question":"Cum asperiores eligendi, aut ut sunt amet aperiam cum?","answer":"<p style=\\"margin-top:-12px;margin-bottom:20px;color:rgb(164,189,206);font-family:Nunito, sans-serif;font-size:16px;\\"><span class=\\"text--base\\" style=\\"font-weight:bolder;font-family:Jost, sans-serif;color:rgb(193,81,204);\\">irst :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p><p style=\\"margin-top:-12px;color:rgb(164,189,206);font-family:Nunito, sans-serif;font-size:16px;margin-bottom:-7px;\\"><span class=\\"text--base\\" style=\\"font-weight:bolder;font-family:Jost, sans-serif;color:rgb(193,81,204);\\">Second :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p>"}',
+            'data_values' => '{"question":"Cum asperiores eligendi, aut ut sunt amet aperiam cum?","answer":"<p style=\\"margin-top:-12px;margin-bottom:20px;color:rgb(164,189,206);font-family:Nunito, sans-serif;font-size:16px;background-color:rgb(0,19,41);\\"><span class=\\"text--base\\" style=\\"font-weight:bolder;font-family:Jost, sans-serif;color:rgb(193,81,204);\\">irst :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p><p style=\\"margin-top:-12px;color:rgb(164,189,206);font-family:Nunito, sans-serif;font-size:16px;background-color:rgb(0,19,41);margin-bottom:-7px;\\"><span class=\\"text--base\\" style=\\"font-weight:bolder;font-family:Jost, sans-serif;color:rgb(193,81,204);\\">Second :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p>"}',
                 'created_at' => '2022-02-20 10:47:33',
                 'updated_at' => '2022-03-06 09:19:42',
             ),
-            52 => 
+            52 =>
             array (
                 'id' => 80,
                 'data_keys' => 'faq.element',
-            'data_values' => '{"question":"Adipisicing elit. Et quia ipsa quidem, ea in consectetur?","answer":"<p style=\\"margin-top:-12px;margin-bottom:20px;color:rgb(164,189,206);font-family:Nunito, sans-serif;font-size:16px;\\"><span class=\\"text--base\\" style=\\"font-weight:bolder;font-family:Jost, sans-serif;color:rgb(193,81,204);\\">First :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p><p style=\\"margin-top:-12px;color:rgb(164,189,206);font-family:Nunito, sans-serif;font-size:16px;margin-bottom:-7px;\\"><span class=\\"text--base\\" style=\\"font-weight:bolder;font-family:Jost, sans-serif;color:rgb(193,81,204);\\">Second :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p>"}',
+            'data_values' => '{"question":"Adipisicing elit. Et quia ipsa quidem, ea in consectetur?","answer":"<p style=\\"margin-top:-12px;margin-bottom:20px;color:rgb(164,189,206);font-family:Nunito, sans-serif;font-size:16px;background-color:rgb(0,19,41);\\"><span class=\\"text--base\\" style=\\"font-weight:bolder;font-family:Jost, sans-serif;color:rgb(193,81,204);\\">First :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p><p style=\\"margin-top:-12px;color:rgb(164,189,206);font-family:Nunito, sans-serif;font-size:16px;background-color:rgb(0,19,41);margin-bottom:-7px;\\"><span class=\\"text--base\\" style=\\"font-weight:bolder;font-family:Jost, sans-serif;color:rgb(193,81,204);\\">Second :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p>"}',
                 'created_at' => '2022-02-20 11:05:19',
                 'updated_at' => '2022-03-06 09:19:50',
             ),
-            53 => 
+            53 =>
             array (
                 'id' => 81,
                 'data_keys' => 'faq.element',
-            'data_values' => '{"question":"Officiis iste minima, nemo, qui veritatis velit nesciunt?","answer":"<p style=\\"margin-top:-12px;margin-bottom:20px;color:rgb(164,189,206);font-size:16px;font-family:Nunito, sans-serif;\\"><span class=\\"text--base\\" style=\\"font-weight:bolder;font-family:Jost, sans-serif;color:rgb(193,81,204);\\">First :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p><p style=\\"margin-top:-12px;color:rgb(164,189,206);font-size:16px;font-family:Nunito, sans-serif;margin-bottom:-7px;\\"><span class=\\"text--base\\" style=\\"font-weight:bolder;font-family:Jost, sans-serif;color:rgb(193,81,204);\\">Second :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p>"}',
+            'data_values' => '{"question":"Officiis iste minima, nemo, qui veritatis velit nesciunt?","answer":"<p style=\\"margin-top:-12px;margin-bottom:20px;color:rgb(164,189,206);font-size:16px;font-family:Nunito, sans-serif;background-color:rgb(0,19,41);\\"><span class=\\"text--base\\" style=\\"font-weight:bolder;font-family:Jost, sans-serif;color:rgb(193,81,204);\\">First :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p><p style=\\"margin-top:-12px;color:rgb(164,189,206);font-size:16px;font-family:Nunito, sans-serif;background-color:rgb(0,19,41);margin-bottom:-7px;\\"><span class=\\"text--base\\" style=\\"font-weight:bolder;font-family:Jost, sans-serif;color:rgb(193,81,204);\\">Second :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p>"}',
                 'created_at' => '2022-02-20 11:07:42',
                 'updated_at' => '2022-03-06 09:19:56',
             ),
-            54 => 
+            54 =>
             array (
                 'id' => 82,
                 'data_keys' => 'faq.element',
-            'data_values' => '{"question":"Aut ut sunt amet aperiam cum doloremque distinctio?","answer":"<p style=\\"margin-top:-12px;margin-bottom:20px;color:rgb(164,189,206);font-size:16px;font-family:Nunito, sans-serif;\\"><span class=\\"text--base\\" style=\\"font-weight:bolder;font-family:Jost, sans-serif;color:rgb(193,81,204);\\">First :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p><p style=\\"margin-top:-12px;color:rgb(164,189,206);font-size:16px;font-family:Nunito, sans-serif;margin-bottom:-7px;\\"><span class=\\"text--base\\" style=\\"font-weight:bolder;font-family:Jost, sans-serif;color:rgb(193,81,204);\\">Second :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p>"}',
+            'data_values' => '{"question":"Aut ut sunt amet aperiam cum doloremque distinctio?","answer":"<p style=\\"margin-top:-12px;margin-bottom:20px;color:rgb(164,189,206);font-size:16px;font-family:Nunito, sans-serif;background-color:rgb(0,19,41);\\"><span class=\\"text--base\\" style=\\"font-weight:bolder;font-family:Jost, sans-serif;color:rgb(193,81,204);\\">First :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p><p style=\\"margin-top:-12px;color:rgb(164,189,206);font-size:16px;font-family:Nunito, sans-serif;background-color:rgb(0,19,41);margin-bottom:-7px;\\"><span class=\\"text--base\\" style=\\"font-weight:bolder;font-family:Jost, sans-serif;color:rgb(193,81,204);\\">Second :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p>"}',
                 'created_at' => '2022-02-20 11:07:53',
                 'updated_at' => '2022-03-06 09:20:06',
             ),
-            55 => 
+            55 =>
             array (
                 'id' => 83,
                 'data_keys' => 'faq.element',
-            'data_values' => '{"question":"Distinctio asperiores eligendi, aut ut sunt amet aperiam?","answer":"<p style=\\"margin-top:-12px;margin-bottom:20px;color:rgb(164,189,206);font-size:16px;font-family:Nunito, sans-serif;\\"><span class=\\"text--base\\" style=\\"font-weight:bolder;font-family:Jost, sans-serif;color:rgb(193,81,204);\\">First :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p><p style=\\"margin-top:-12px;color:rgb(164,189,206);font-size:16px;font-family:Nunito, sans-serif;margin-bottom:-7px;\\"><span class=\\"text--base\\" style=\\"font-weight:bolder;font-family:Jost, sans-serif;color:rgb(193,81,204);\\">Second :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p>"}',
+            'data_values' => '{"question":"Distinctio asperiores eligendi, aut ut sunt amet aperiam?","answer":"<p style=\\"margin-top:-12px;margin-bottom:20px;color:rgb(164,189,206);font-size:16px;font-family:Nunito, sans-serif;background-color:rgb(0,19,41);\\"><span class=\\"text--base\\" style=\\"font-weight:bolder;font-family:Jost, sans-serif;color:rgb(193,81,204);\\">First :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p><p style=\\"margin-top:-12px;color:rgb(164,189,206);font-size:16px;font-family:Nunito, sans-serif;background-color:rgb(0,19,41);margin-bottom:-7px;\\"><span class=\\"text--base\\" style=\\"font-weight:bolder;font-family:Jost, sans-serif;color:rgb(193,81,204);\\">Second :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p>"}',
                 'created_at' => '2022-02-20 11:07:59',
                 'updated_at' => '2022-03-06 09:20:18',
             ),
-            56 => 
+            56 =>
             array (
                 'id' => 84,
                 'data_keys' => 'faq.element',
-            'data_values' => '{"question":"Nulla dolore provident? Enim iste odio, eaque, adipisci?","answer":"<p style=\\"margin-top:-12px;margin-bottom:20px;color:rgb(164,189,206);font-size:16px;font-family:Nunito, sans-serif;\\"><span class=\\"text--base\\" style=\\"font-weight:bolder;font-family:Jost, sans-serif;color:rgb(193,81,204);\\">First :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p><p style=\\"margin-top:-12px;color:rgb(164,189,206);font-size:16px;font-family:Nunito, sans-serif;margin-bottom:-7px;\\"><span class=\\"text--base\\" style=\\"font-weight:bolder;font-family:Jost, sans-serif;color:rgb(193,81,204);\\">Second :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p>"}',
+            'data_values' => '{"question":"Nulla dolore provident? Enim iste odio, eaque, adipisci?","answer":"<p style=\\"margin-top:-12px;margin-bottom:20px;color:rgb(164,189,206);font-size:16px;font-family:Nunito, sans-serif;background-color:rgb(0,19,41);\\"><span class=\\"text--base\\" style=\\"font-weight:bolder;font-family:Jost, sans-serif;color:rgb(193,81,204);\\">First :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p><p style=\\"margin-top:-12px;color:rgb(164,189,206);font-size:16px;font-family:Nunito, sans-serif;background-color:rgb(0,19,41);margin-bottom:-7px;\\"><span class=\\"text--base\\" style=\\"font-weight:bolder;font-family:Jost, sans-serif;color:rgb(193,81,204);\\">Second :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p>"}',
                 'created_at' => '2022-02-20 11:08:06',
                 'updated_at' => '2022-03-06 09:20:25',
             ),
-            57 => 
+            57 =>
             array (
                 'id' => 85,
                 'data_keys' => 'faq.element',
-            'data_values' => '{"question":"Minus nisi deserunt ea rerum ipsam ipsum eum. Quis tene?","answer":"<p style=\\"margin-top:-12px;margin-bottom:20px;color:rgb(164,189,206);font-size:16px;font-family:Nunito, sans-serif;\\"><span class=\\"text--base\\" style=\\"font-weight:bolder;font-family:Jost, sans-serif;color:rgb(193,81,204);\\">First :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p><p style=\\"margin-top:-12px;color:rgb(164,189,206);font-size:16px;font-family:Nunito, sans-serif;margin-bottom:-7px;\\"><span class=\\"text--base\\" style=\\"font-weight:bolder;font-family:Jost, sans-serif;color:rgb(193,81,204);\\">Second :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p>"}',
+            'data_values' => '{"question":"Minus nisi deserunt ea rerum ipsam ipsum eum. Quis tene?","answer":"<p style=\\"margin-top:-12px;margin-bottom:20px;color:rgb(164,189,206);font-size:16px;font-family:Nunito, sans-serif;background-color:rgb(0,19,41);\\"><span class=\\"text--base\\" style=\\"font-weight:bolder;font-family:Jost, sans-serif;color:rgb(193,81,204);\\">First :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p><p style=\\"margin-top:-12px;color:rgb(164,189,206);font-size:16px;font-family:Nunito, sans-serif;background-color:rgb(0,19,41);margin-bottom:-7px;\\"><span class=\\"text--base\\" style=\\"font-weight:bolder;font-family:Jost, sans-serif;color:rgb(193,81,204);\\">Second :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p>"}',
                 'created_at' => '2022-02-20 11:08:18',
                 'updated_at' => '2022-03-06 09:20:31',
             ),
-            58 => 
+            58 =>
             array (
                 'id' => 86,
                 'data_keys' => 'about.element',
@@ -491,7 +491,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-20 12:58:17',
                 'updated_at' => '2022-02-20 12:58:17',
             ),
-            59 => 
+            59 =>
             array (
                 'id' => 87,
                 'data_keys' => 'about.element',
@@ -499,7 +499,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-20 12:58:28',
                 'updated_at' => '2022-02-20 12:58:28',
             ),
-            60 => 
+            60 =>
             array (
                 'id' => 88,
                 'data_keys' => 'about.element',
@@ -507,7 +507,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-20 12:58:41',
                 'updated_at' => '2022-02-20 12:58:41',
             ),
-            61 => 
+            61 =>
             array (
                 'id' => 89,
                 'data_keys' => 'counter.element',
@@ -515,7 +515,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-20 13:49:16',
                 'updated_at' => '2022-02-20 13:49:16',
             ),
-            62 => 
+            62 =>
             array (
                 'id' => 90,
                 'data_keys' => 'counter.element',
@@ -523,7 +523,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-20 13:50:01',
                 'updated_at' => '2022-02-20 13:50:01',
             ),
-            63 => 
+            63 =>
             array (
                 'id' => 91,
                 'data_keys' => 'counter.element',
@@ -531,7 +531,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-20 13:53:52',
                 'updated_at' => '2022-02-20 13:53:52',
             ),
-            64 => 
+            64 =>
             array (
                 'id' => 92,
                 'data_keys' => 'counter.element',
@@ -539,7 +539,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-20 13:54:19',
                 'updated_at' => '2022-02-20 13:54:19',
             ),
-            65 => 
+            65 =>
             array (
                 'id' => 93,
                 'data_keys' => 'quick_banner.element',
@@ -547,7 +547,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-22 14:58:48',
                 'updated_at' => '2022-03-06 09:13:06',
             ),
-            66 => 
+            66 =>
             array (
                 'id' => 94,
                 'data_keys' => 'quick_banner.element',
@@ -555,7 +555,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-22 14:59:09',
                 'updated_at' => '2022-03-06 09:13:20',
             ),
-            67 => 
+            67 =>
             array (
                 'id' => 95,
                 'data_keys' => 'quick_banner.element',
@@ -563,7 +563,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-22 14:59:18',
                 'updated_at' => '2022-03-06 09:14:07',
             ),
-            68 => 
+            68 =>
             array (
                 'id' => 96,
                 'data_keys' => 'login.content',
@@ -571,7 +571,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-24 08:30:33',
                 'updated_at' => '2022-02-24 08:30:34',
             ),
-            69 => 
+            69 =>
             array (
                 'id' => 97,
                 'data_keys' => 'register.content',
@@ -579,7 +579,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-24 08:31:11',
                 'updated_at' => '2022-02-24 08:31:12',
             ),
-            70 => 
+            70 =>
             array (
                 'id' => 98,
                 'data_keys' => '2fa_verify.content',
@@ -587,7 +587,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-24 08:37:16',
                 'updated_at' => '2022-02-24 08:37:16',
             ),
-            71 => 
+            71 =>
             array (
                 'id' => 99,
                 'data_keys' => 'code_verify.content',
@@ -595,7 +595,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-24 08:37:23',
                 'updated_at' => '2022-02-24 08:37:23',
             ),
-            72 => 
+            72 =>
             array (
                 'id' => 100,
                 'data_keys' => 'email_verify.content',
@@ -603,7 +603,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-24 08:37:31',
                 'updated_at' => '2022-02-24 08:37:32',
             ),
-            73 => 
+            73 =>
             array (
                 'id' => 101,
                 'data_keys' => 'reset_password.content',
@@ -611,7 +611,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-24 08:37:37',
                 'updated_at' => '2022-02-24 08:37:38',
             ),
-            74 => 
+            74 =>
             array (
                 'id' => 102,
                 'data_keys' => 'reset_password_email.content',
@@ -619,7 +619,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-24 08:37:44',
                 'updated_at' => '2022-02-24 08:37:44',
             ),
-            75 => 
+            75 =>
             array (
                 'id' => 103,
                 'data_keys' => 'sms_verify.content',
@@ -627,7 +627,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-24 08:37:49',
                 'updated_at' => '2022-02-24 08:37:49',
             ),
-            76 => 
+            76 =>
             array (
                 'id' => 104,
                 'data_keys' => 'blog.element',
@@ -635,7 +635,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-26 08:21:44',
                 'updated_at' => '2022-02-26 08:23:11',
             ),
-            77 => 
+            77 =>
             array (
                 'id' => 105,
                 'data_keys' => 'blog.element',
@@ -643,7 +643,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-26 08:21:57',
                 'updated_at' => '2022-02-26 08:21:58',
             ),
-            78 => 
+            78 =>
             array (
                 'id' => 106,
                 'data_keys' => 'blog.element',
@@ -651,7 +651,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-26 08:22:18',
                 'updated_at' => '2022-02-26 08:22:18',
             ),
-            79 => 
+            79 =>
             array (
                 'id' => 107,
                 'data_keys' => 'blog.element',
@@ -659,7 +659,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-02-26 08:22:31',
                 'updated_at' => '2022-02-26 08:22:31',
             ),
-            80 => 
+            80 =>
             array (
                 'id' => 108,
                 'data_keys' => 'quick_banner.element',
@@ -667,7 +667,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-03-03 08:51:48',
                 'updated_at' => '2022-03-06 09:14:20',
             ),
-            81 => 
+            81 =>
             array (
                 'id' => 109,
                 'data_keys' => 'live_auction.content',
@@ -675,7 +675,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-03-03 09:04:04',
                 'updated_at' => '2022-03-03 09:04:04',
             ),
-            82 => 
+            82 =>
             array (
                 'id' => 110,
                 'data_keys' => 'recently_expired.content',
@@ -683,7 +683,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-03-03 09:04:05',
                 'updated_at' => '2022-03-03 09:04:05',
             ),
-            83 => 
+            83 =>
             array (
                 'id' => 111,
                 'data_keys' => 'upcoming_auction.content',
@@ -691,7 +691,7 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-03-03 09:04:07',
                 'updated_at' => '2022-03-03 09:04:07',
             ),
-            84 => 
+            84 =>
             array (
                 'id' => 112,
                 'data_keys' => 'breadcrumb.content',
@@ -699,16 +699,16 @@ class FrontendsTableSeeder extends Seeder
                 'created_at' => '2022-03-06 13:56:07',
                 'updated_at' => '2022-03-06 14:01:53',
             ),
-            85 => 
+            85 =>
             array (
                 'id' => 113,
                 'data_keys' => 'faq.element',
-            'data_values' => '{"question":"Aperiam cum doloremque distias periores eligendi?","answer":"<p style=\\"margin-top:-12px;margin-bottom:20px;color:rgb(164,189,206);font-size:16px;font-family:Nunito, sans-serif;\\"><span class=\\"text--base\\" style=\\"color:rgb(193,81,204);font-weight:bolder;font-family:Jost, sans-serif;\\">irst :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p><p style=\\"margin-top:-12px;margin-bottom:-7px;color:rgb(164,189,206);font-size:16px;font-family:Nunito, sans-serif;\\"><span class=\\"text--base\\" style=\\"color:rgb(193,81,204);font-weight:bolder;font-family:Jost, sans-serif;\\">Second :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p>"}',
+            'data_values' => '{"question":"Aperiam cum doloremque distias periores eligendi?","answer":"<p style=\\"margin-top:-12px;margin-bottom:20px;color:rgb(164,189,206);font-size:16px;font-family:Nunito, sans-serif;background-color:rgb(0,19,41);\\"><span class=\\"text--base\\" style=\\"color:rgb(193,81,204);font-weight:bolder;font-family:Jost, sans-serif;\\">irst :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p><p style=\\"margin-top:-12px;margin-bottom:-7px;color:rgb(164,189,206);font-size:16px;font-family:Nunito, sans-serif;background-color:rgb(0,19,41);\\"><span class=\\"text--base\\" style=\\"color:rgb(193,81,204);font-weight:bolder;font-family:Jost, sans-serif;\\">Second :\\u00a0<\\/span>Obcaecati aperiam cumque corporis, deleniti officiis deserunt cum dignissimos totam corrupti natus amet. deleniti officiis deserunt cum dignissimos totam corrupti natus amet.<\\/p>"}',
                 'created_at' => '2022-03-07 07:01:16',
                 'updated_at' => '2022-03-07 07:01:16',
             ),
         ));
-        
-        
+
+
     }
 }

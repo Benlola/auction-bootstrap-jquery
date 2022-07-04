@@ -1844,7 +1844,7 @@ body.bg--section {
 .cmn--card .card-header .card-title {
     text-align: center;
     margin: 0;
-    color: #fff;
+    color: #37485c;
     font-size: 18px;
 }
 
@@ -2801,6 +2801,10 @@ textarea.form--control-2 {
     justify-content: space-between;
     padding: 15px;
     background: #001631;
+}
+
+.dashboard__header-top .page-title {
+    color: #ffffff;
 }
 
 .dashboard__header-top-right {
@@ -7061,3 +7065,108 @@ button.cmn--btn:hover {
     background: #001329;
     z-index: 11;
 }
+
+
+.btn:focus{
+    outline:none;
+    box-shadow:none;
+}
+.btn-primary{
+    background-color: #000 !important;
+    border:none;
+}
+.btn-danger {
+    color: #fff !important;
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+}
+.support-btn{
+    height: 39px;
+}
+.support-input-group{
+    margin-top: 15px;
+}
+.error{
+    color: #dc3545;
+}
+.input-group label.error{
+    top: 100%;
+    position: absolute;
+}
+
+#overlay {
+    position: absolute;
+    top: 260px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+    z-index: 3;
+    width: 100px;
+    height: 100px;
+}
+
+.cv-spinner {
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px #ddd solid;
+    border-top: 4px #2e93e6 solid;
+    border-radius: 50%;
+    animation: sp-anime .8s infinite linear;
+}
+
+@keyframes sp-anime {
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+
+.overlay-2 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: #ffffffd6;
+    z-index: 2;
+    display: none;
+    opacity: .9;
+
+}
+/*
+.account__section-content .form-control {
+    background-color: transparent;
+    color: #fff;
+    border-color: #28364a;
+    height: 50px;
+}
+*/
+.account__section-content .form-control {
+    background-color: #f3f3f3;
+    color: #37485c;
+    /*border-color: #28364a;*/
+    height: 50px;
+    border: 1px solid #37485c47;
+}
+.account__section-content .form-control option {
+    color: #37485c;
+}
+
+
+.account__section-content .form-control:focus {
+    border-color: #37485c;
+}
+
+.account__section-content label {
+    margin-bottom: 3px;
+}
+
+
