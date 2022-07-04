@@ -33,10 +33,13 @@ function systemDetails()
 
 function getLatestVersion()
 {
+    return null;
+    /* For testing
     return json_encode([
-        'version' => '1.1',
+        'version' => '1.0',
         'details' => 'Best Auction App'
     ]);
+    */
     /*
     $param['purchasecode'] = env("PURCHASECODE");
     $param['website'] = @$_SERVER['HTTP_HOST'] . @$_SERVER['REQUEST_URI'] . ' - ' . env("APP_URL");

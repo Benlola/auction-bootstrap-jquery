@@ -198,7 +198,7 @@
 
 
         <div class="col-xl-3 col-sm-6 mb-30">
-            <div class="dashboard-w1 bg--teal b-radius--10 box-shadow" >
+            <div class="dashboard-w1 bg--teal b-radius--5 box-shadow" >
                 <div class="icon">
                     <i class="lab la-product-hunt"></i>
                 </div>

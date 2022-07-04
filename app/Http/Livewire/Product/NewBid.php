@@ -61,11 +61,14 @@ class NewBid extends Component
         if (auth()->check()) {
             $user = auth()->user();
 
-            if ($this->product->price > $this->amount) {
-                $this->addError('amount', 'Bid amount must be greater than product price');
+            //dd($this->product->price, $this->amount);
+
+            if ((int)$this->product->price > (int)$this->amount) {
+                $this->addError('amount', 'Bid amount must be greater than product price 65');
 
                 return back();
             }
+
             if ($this->amount > $user->balance ?? 0) {
                 $this->addError('amount', 'Insufficient Balance');
 
@@ -79,11 +82,12 @@ class NewBid extends Component
                 return back();
             }
 
+            if($this->product->latest_bid) {
+                if ( $this->amount <= (int) $this->product->latest_bid->amount) {
+                    $this->addError( 'amount', 'Bid amount must be greater than last bid' );
 
-            if ($this->amount <= (int)$this->product->latest_bid->amount) {
-                $this->addError('amount', 'Bid amount must be greater than last bid');
-
-                return back();
+                    return back();
+                }
             }
 
             $this->confirm($this->product->id, __("Are you sure to bid on this product?"), 'saveBid');
@@ -102,7 +106,7 @@ class NewBid extends Component
             $user = auth()->user();
 
             if ($this->product->price > $this->amount) {
-                $this->addError('amount', 'Bid amount must be greater than product price');
+                $this->addError('amount', 'Bid amount must be greater than product price 105');
 
                 return back();
             }
@@ -120,11 +124,14 @@ class NewBid extends Component
             }
 
 
-            if ($this->amount <= (int)$this->product->latest_bid->amount) {
-                $this->addError('amount', 'Bid amount must be greater than last bid');
+            if($this->product->latest_bid){
+                if ($this->amount <= (int)$this->product->latest_bid->amount) {
+                    $this->addError('amount', 'Bid amount must be greater than last bid');
 
-                return back();
+                    return back();
+                }
             }
+
 
             $this->confirm($this->product->id, __("Are you sure to bid on this product?"), 'saveBid');
 

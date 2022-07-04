@@ -4864,11 +4864,11 @@ th.w-85 {
 
 .sidebar.capsule--rounded .sidebar__menu > .sidebar-menu-item > a {
     margin-right: 5px;
-    border-radius: 0 999px 999px 0;
-    -webkit-border-radius: 0 999px 999px 0;
-    -moz-border-radius: 0 999px 999px 0;
-    -ms-border-radius: 0 999px 999px 0;
-    -o-border-radius: 0 999px 999px 0;
+    border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+    -moz-border-radius: 0 5px 5px 0;
+    -ms-border-radius: 0 5px 5px 0;
+    -o-border-radius: 0 5px 5px 0;
 }
 
 .sidebar.capsule--rounded
@@ -4887,11 +4887,11 @@ th.w-85 {
     > a {
     margin-right: 15px;
     margin-top: 2px;
-    border-radius: 0 999px 999px 0;
-    -webkit-border-radius: 0 999px 999px 0;
-    -moz-border-radius: 0 999px 999px 0;
-    -ms-border-radius: 0 999px 999px 0;
-    -o-border-radius: 0 999px 999px 0;
+    border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+    -moz-border-radius: 0 5px 5px 0;
+    -ms-border-radius: 0 5px 5px 0;
+    -o-border-radius: 0 5px 5px 0;
 }
 
 .sidebar.capsule--rounded2 .sidebar__menu > .sidebar-menu-item > a {
@@ -5291,8 +5291,14 @@ th.w-85 {
 }
 
 .sidebar[class*="overlay"] .sidebar__logo {
+    /*
     border-color: rgba(255, 255, 255, 0.15);
+    */
+    border-color: #ffffff26;
+    background: #fff;
+    height: 68px;
 }
+
 
 .sidebar[class*="overlay"] .sidebar__menu .sidebar__menu-header {
     color: #c3c3c3;

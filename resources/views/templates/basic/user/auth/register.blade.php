@@ -112,7 +112,7 @@
 
                     <button type="submit" class="cmn--btn w-100">@lang('Register')</button>
                 </form>
-                <div class="mt-5 text-center text--white">
+                <div class="mt-5 text-center">
                     @lang('Already have an Account ? ')<a href="{{ route('user.login') }}" class="text--base">@lang('Login')</a>
                 </div>
             </div>

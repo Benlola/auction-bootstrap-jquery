@@ -23,7 +23,7 @@
                                 <td data-label="@lang('User')">
                                     <span class="font-weight-bold">{{ $trx->user->fullname }}</span><br>
                                     <span class="small"> <a href="{{ route('admin.users.detail', $trx->user_id) }}"><span>@</span>{{ $trx->user->username }}</a> </span>
- 
+
                                 </td>
 
                                 <td data-label="@lang('Trx')">
@@ -41,9 +41,9 @@
                                 </td>
 
                                 <td data-label="@lang('Post Balance')" class="budget">
-                                  
+
                                         {{ showAmount($trx->post_balance) }} {{ __($general->cur_text) }}
-                            
+
                                </td>
 
                                <td data-label="@lang('Detail')">{{ __($trx->details) }}</td>

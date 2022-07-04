@@ -97,7 +97,7 @@ class ProductController extends Controller
         $user = auth()->user();
 
         if ($product->price > $request->amount) {
-            $notify[] = ['error', 'Bid amount must be greater than product price'];
+            $notify[] = ['error', 'Bid amount must be greater than product price 100'];
 
             return back()->withNotify($notify);
         }
