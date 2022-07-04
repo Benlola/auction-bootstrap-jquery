@@ -50,7 +50,7 @@
                                     <p class="mb-4 mt-0">
                                         {{ __(shortDescription($product->short_description)) }}
                                     </p>
-                                    <div class="product-price mb-1">
+                                    <div class="product-price mb-3">
                                         <div>
                                             {{ showAmount($product->price) }} <span class="text--base">{{ __($general->cur_text) }}</span>
                                         </div>

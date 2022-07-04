@@ -20,7 +20,7 @@
                     <button class="cmn--btn btn--sm bid_now" type="submit"
                             data-cur_sym="{{ $general->cur_sym }}">@lang('Bid Now')</button>
                 </div>
-                @error('amount') <span class="text--danger empty-message">{{ $message }}</span> @enderror
+                @error('amount') <span class="text--danger empty-message">{!! $message !!}</span> @enderror
             </div>
         </form>
     @endif

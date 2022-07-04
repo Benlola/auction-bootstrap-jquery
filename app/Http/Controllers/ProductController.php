@@ -103,7 +103,7 @@ class ProductController extends Controller
         }
 
         if ($request->amount > $user->balance) {
-            $notify[] = ['error', 'Insufficient Balance'];
+            $notify[] = ['error', __('Insufficient Balance, :as add balance :ae',['as'=>'<a href="'.route('user.deposit').'">','ae'=>'</a>'])];
 
             return back()->withNotify($notify);
         }

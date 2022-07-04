@@ -12,8 +12,7 @@ use Exception;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
-class NewBid extends Component
-{
+class NewBid extends Component {
 
     use MessagesTrait;
 
@@ -26,82 +25,81 @@ class NewBid extends Component
     private $general;
 
     protected $listeners = [
-        'save' => 'save',
+        'save'     => 'save',
         'bidAdded' => 'updateLastBid'
     ];
 
 
-    public function mount(int $product_id)
-    {
-        $this->product = Product::find($product_id);
+    public function mount( int $product_id ) {
+        $this->product = Product::find( $product_id );
 
         $this->general = GeneralSetting::first();
 
         $this->latest_bid = $this->product->latest_bid->amount ?? null;
     }
 
-    protected function rules(): array
-    {
+    protected function rules(): array {
         return [
-//            'amount' => 'required|numeric|gt:'.(int)$this->latest_bid ?? $this->product->price ?? 0,
-'amount' => 'required|numeric|gt:0',
+            //'amount' => 'required|numeric|gt:'.(int)$this->latest_bid ?? $this->product->price ?? 0,
+            'amount' => 'required|numeric|gt:0',
         ];
     }
 
 
-    public function render()
-    {
-        return view('livewire.product.new-bid', [
+    public function render() {
+        return view( 'livewire.product.new-bid', [
             'product' => $this->product,
-        ]);
+        ] );
     }
 
 
-    public function checkData()
-    {
-        if (auth()->check()) {
+    public function checkData() {
+        if ( auth()->check() ) {
             $this->resetErrorBag();
 
             $user = auth()->user();
 
-            if ((int)$this->amount < (int)$this->product->price ) {
-                $this->addError('amount', 'Bid amount must be greater than product price');
-                return back();
-            }
-
-            if ($this->amount > $user->balance ?? 0) {
-                $this->addError('amount', 'Insufficient Balance');
+            if ( (int) $this->amount < (int) $this->product->price ) {
+                $this->addError( 'amount', __( 'Bid amount must be greater than product price' ) );
 
                 return back();
             }
 
-            $bid = Bid::where('product_id', $this->product->id)->where('user_id', $user->id)->exists();
-            if ($bid) {
-                $this->addError('amount', 'You already bidden on this product');
+            if ( $this->amount > $user->balance ?? 0 ) {
+                $this->addError( 'amount', __( 'Insufficient Balance, :as add balance :ae', [
+                    'as' => '<a href="' . route( 'user.deposit' ) . '">',
+                    'ae' => '</a>'
+                ] ) );
 
                 return back();
             }
 
-            if($this->product->latest_bid) {
-                if ( $this->amount <= (int) $this->product->latest_bid->amount) {
-                    $this->addError( 'amount', 'Bid amount must be greater than last bid' );
+            $bid = Bid::where( 'product_id', $this->product->id )->where( 'user_id', $user->id )->exists();
+            if ( $bid ) {
+                $this->addError( 'amount', __( 'You already bidden on this product' ) );
+
+                return back();
+            }
+
+            if ( $this->product->latest_bid ) {
+                if ( $this->amount <= (int) $this->product->latest_bid->amount ) {
+                    $this->addError( 'amount', __( 'Bid amount must be greater than last bid' ) );
 
                     return back();
                 }
             }
 
-            $this->confirm($this->product->id, __("Are you sure to bid on this product?"), 'saveBid');
+            $this->confirm( $this->product->id, __( "Are you sure to bid on this product?" ), 'saveBid' );
         } else {
-            $this->redirect("/login");
+            $this->redirect( "/login" );
         }
     }
 
 
-    public function save()
-    {
+    public function save() {
         $validatedData = $this->validate();
 
-        $this->confirm($this->product->id, __("Are you sure to bid on this product?"), 'saveBid');
+        $this->confirm( $this->product->id, __( "Are you sure to bid on this product?" ), 'saveBid' );
 
         try {
             DB::beginTransaction();
@@ -135,16 +133,16 @@ class NewBid extends Component
             );
 
 
-            if ($this->product->admin) {
+            if ( $this->product->admin ) {
                 $adminNotification            = new AdminNotification();
                 $adminNotification->user_id   = auth()->user()->id;
-                $adminNotification->title     = 'A user has been bidden on your product';
-                $adminNotification->click_url = urlPath('admin.product.bids', $this->product->id);
+                $adminNotification->title     = __( 'A user has been bidden on your product' );
+                $adminNotification->click_url = urlPath( 'admin.product.bids', $this->product->id );
                 $adminNotification->save();
                 DB::commit();
-                $this->message("Bidden successfully");
+                $this->message( __( 'Bidden successfully' ) );
                 $this->amount = '';
-                $this->emit('bidAdded');
+                $this->emit( 'bidAdded' );
 
                 return redirect()->back();
             }
@@ -160,39 +158,37 @@ class NewBid extends Component
                     'amount'       => $validatedData['amount'],
                     'post_balance' => $this->product->merchant->balance,
                     'trx_type'     => '+',
-                    'details'      => showAmount($validatedData['amount']).' '.$this->general->cur_text.' Added for Bid',
+                    'details'      => __(':amount :current_text Added for Bid',['amount'=>showAmount( $validatedData['amount'] ), 'current_text'=>$this->general->cur_text]),
                     'trx'          => $trx,
                 ]
             );
 
-            notify($this->product->merchant, 'BID_COMPLETE', [
+            notify( $this->product->merchant, 'BID_COMPLETE', [
                 'trx'           => $trx,
-                'amount'        => showAmount($validatedData['amount']),
+                'amount'        => showAmount( $validatedData['amount'] ),
                 'currency'      => $this->general->cur_text,
                 'product'       => $this->product->name,
-                'product_price' => showAmount($this->product->price),
-                'post_balance'  => showAmount($this->product->merchant->balance),
-            ], 'merchant');
+                'product_price' => showAmount( $this->product->price ),
+                'post_balance'  => showAmount( $this->product->merchant->balance ),
+            ], 'merchant' );
 
             DB::commit();
-            $this->emit('bidAdded');
-            $this->message("Bidden successfully");
+            $this->emit( 'bidAdded' );
+            $this->message( __( 'Bidden successfully' ) );
 
             return redirect()->back();
-        } catch (Exception $exception) {
+        } catch ( Exception $exception ) {
             DB::rollback();
             //            $this->addError('amount', 'Oops something went wrong');
-            $this->addError('amount', $exception->getMessage());
+            $this->addError( 'amount', $exception->getMessage() );
         }
     }
 
-    public function updateLastBid()
-    {
+    public function updateLastBid() {
         $this->latest_bid = $this->product->latest_bid->amount;
     }
 
-    public function last_bid()
-    {
+    public function last_bid() {
         $this->latest_bid = $this->product->latest_bid->amount;
     }
 
