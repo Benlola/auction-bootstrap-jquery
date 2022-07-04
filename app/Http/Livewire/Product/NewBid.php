@@ -64,7 +64,7 @@ class NewBid extends Component
             //dd($this->product->price, $this->amount);
 
             if ((int)$this->product->price > (int)$this->amount) {
-                $this->addError('amount', 'Bid amount must be greater than product price 65');
+                $this->addError('amount', 'Bid amount must be greater than product price');
 
                 return back();
             }
@@ -106,7 +106,7 @@ class NewBid extends Component
             $user = auth()->user();
 
             if ($this->product->price > $this->amount) {
-                $this->addError('amount', 'Bid amount must be greater than product price 105');
+                $this->addError('amount', 'Bid amount must be greater than product price');
 
                 return back();
             }
