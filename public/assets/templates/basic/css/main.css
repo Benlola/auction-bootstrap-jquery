@@ -2514,7 +2514,7 @@ textarea.form--control-2 {
 }
 
 .bg--section .faq__item {
-    background: #001329;
+    background: #fff;/*001329*/
 }
 
 @media screen and (min-width: 1800px) {
@@ -6692,7 +6692,7 @@ button.cmn--btn:hover {
 }
 .post-item .post-content {
     padding: 25px;
-    background-color: #37485ce6;
+    background-color: #fff;
     border-radius: 0 0 7px 7px;
 }
 @media (max-width: 1199px) {
@@ -6729,7 +6729,7 @@ button.cmn--btn:hover {
 }
 .read-more {
     position: relative;
-    color: #fff;
+    color: #000;
 }
 
 .read-more:hover::before {
@@ -6743,7 +6743,7 @@ button.cmn--btn:hover {
     content: "";
     width: 35px;
     height: 2px;
-    background: #fff;
+    background: #000;
     top: 48%;
     left: 110%;
     -webkit-transition: all ease 0.3s;
