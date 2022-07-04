@@ -60,13 +60,12 @@ class NewBid extends Component
     public function checkData()
     {
         if (auth()->check()) {
+            $this->resetErrorBag();
+
             $user = auth()->user();
 
-            //dd($this->product->price, $this->amount);
-
-            if ((int)$this->product->price > (int)$this->amount) {
-                $this->addError('amount', 'Bid amount must be greater than product price 65');
-
+            if ((int)$this->amount < (int)$this->product->price ) {
+                $this->addError('amount', 'Bid amount must be greater than product price');
                 return back();
             }
 
