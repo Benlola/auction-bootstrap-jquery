@@ -96,7 +96,7 @@ img[class="img1"] { width: 100% !important; height: auto !important; }
 <tr>
 <td align="center" style="vertical-align:top;font-size:0;">
 <a href="#">
-<img style="display:block; line-height:0px; font-size:0px; border:0px;" src="https://i.imgur.com/Z1qtvtV.png" alt="img">
+<img style="display:block; line-height:0px; font-size:0px; border:0px;" src="https://benlola.com/wp-content/uploads/2022/04/logo-no-background-png.png" alt="img">
 </a>
 </td>
 </tr>
