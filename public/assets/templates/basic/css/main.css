@@ -5863,30 +5863,30 @@ div[class*="col"]:nth-of-type(4n + 1) .feature__item-icon {
     background: #001631;
 }
 
-.form--label {
+/*.form--label {*/
 
-    color: #fff;
-    display: block;
-    cursor: pointer;
-    margin-bottom: 0;
-}
+/*    color: #fff;*/
+/*    display: block;*/
+/*    cursor: pointer;*/
+/*    margin-bottom: 0;*/
+/*}*/
 
 .form-group {
     margin-bottom: 28px;
 }
 
-.form--control {
-    background: transparent;
-    outline: none;
-    border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    border-radius: 0;
-    padding: 0;
-    height: 35px;
-    color: #fff;
-}
+/*.form--control {*/
+/*    background: transparent;*/
+/*    outline: none;*/
+/*    border: none;*/
+/*    border-bottom: 1px solid rgba(255, 255, 255, 0.3);*/
+/*    -webkit-border-radius: 0;*/
+/*    -moz-border-radius: 0;*/
+/*    border-radius: 0;*/
+/*    padding: 0;*/
+/*    height: 35px;*/
+/*    color: #fff;*/
+/*}*/
 
 .form--control:focus {
     box-shadow: none;
@@ -6692,7 +6692,7 @@ button.cmn--btn:hover {
 }
 .post-item .post-content {
     padding: 25px;
-    background-color: #37485ce6;
+    /*background-color: #37485ce6;*/
     border-radius: 0 0 7px 7px;
 }
 @media (max-width: 1199px) {
@@ -6722,14 +6722,14 @@ button.cmn--btn:hover {
     font-size: 14px;
 }
 .post-item .post-content .meta-post a {
-    color: #fff;
+    color: #37485c;
 }
 .post-item .post-content .meta-post i {
     margin-right: 5px;
 }
 .read-more {
     position: relative;
-    color: #fff;
+    color: #37485c;
 }
 
 .read-more:hover::before {
