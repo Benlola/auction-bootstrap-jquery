@@ -43,7 +43,8 @@ class NewBid extends Component
     protected function rules(): array
     {
         return [
-            'amount' => 'required|numeric|gt:'.(int)$this->latest_bid ?? $this->product->price ?? 0,
+//            'amount' => 'required|numeric|gt:'.(int)$this->latest_bid ?? $this->product->price ?? 0,
+'amount' => 'required|numeric|gt:0',
         ];
     }
 
@@ -59,13 +60,12 @@ class NewBid extends Component
     public function checkData()
     {
         if (auth()->check()) {
+            $this->resetErrorBag();
+
             $user = auth()->user();
 
-            //dd($this->product->price, $this->amount);
-
-            if ((int)$this->product->price > (int)$this->amount) {
+            if ((int)$this->amount < (int)$this->product->price ) {
                 $this->addError('amount', 'Bid amount must be greater than product price');
-
                 return back();
             }
 
@@ -100,40 +100,14 @@ class NewBid extends Component
     public function save()
     {
         $validatedData = $this->validate();
+
+        $this->confirm($this->product->id, __("Are you sure to bid on this product?"), 'saveBid');
+
         try {
             DB::beginTransaction();
 
             $user = auth()->user();
 
-            if ($this->product->price > $this->amount) {
-                $this->addError('amount', 'Bid amount must be greater than product price');
-
-                return back();
-            }
-            if ($this->amount > $user->balance ?? 0) {
-                $this->addError('amount', 'Insufficient Balance');
-
-                return back();
-            }
-
-            $bid = Bid::where('product_id', $this->product->id)->where('user_id', $user->id)->exists();
-            if ($bid) {
-                $this->addError('amount', 'You already bidden on this product');
-
-                return back();
-            }
-
-
-            if($this->product->latest_bid){
-                if ($this->amount <= (int)$this->product->latest_bid->amount) {
-                    $this->addError('amount', 'Bid amount must be greater than last bid');
-
-                    return back();
-                }
-            }
-
-
-            $this->confirm($this->product->id, __("Are you sure to bid on this product?"), 'saveBid');
 
             Bid::create(
                 [

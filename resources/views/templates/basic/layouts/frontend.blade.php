@@ -115,19 +115,17 @@
                     position: 'center',
                     buttons: [
                         ['<button><b>YES</b></button>', function (instance, toast) {
-
+                            window.livewire.emit('save');
                             instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
 
-                        }, true],
+                        }],
                         ['<button>NO</button>', function (instance, toast) {
 
                             instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
 
-                        }],
+                        }, true],
                     ],
-                    onClosing: function(instance, toast, closedBy){
-                        window.livewire.emit('save');
-                    },
+
 
                 });
 
