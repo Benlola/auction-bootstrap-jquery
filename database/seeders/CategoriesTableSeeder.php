@@ -25,7 +25,7 @@ class CategoriesTableSeeder extends Seeder
                 'name'           => $name,
                 'icon'           => sprintf('<i class="las %s"></i>', $name == 'Cars' ? 'la-car-side' : 'la-crown'),
                 'status'         => 1,
-                'media_category' => $name == 'Cars' ? ['Interior', 'Exterior'] : null,
+                'media_category' => $name == 'Cars' ? ['main', 'exterior', 'interior', 'mechanical', 'documents', 'other'] : null,
                 'created_at'     => Carbon::now(),
                 'updated_at'     => Carbon::now(),
 
