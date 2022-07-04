@@ -14,15 +14,15 @@ class TransactionsTableSeeder extends Seeder
      */
     public function run()
     {
-        
+
 
         \DB::table('transactions')->delete();
-        
+
         \DB::table('transactions')->insert(array (
-            0 => 
+            0 =>
             array (
                 'id' => 1,
-                'user_id' => 3,
+                'user_id' => 1,
                 'merchant_id' => 0,
                 'amount' => '2500.00000000',
                 'charge' => '0.00000000',
@@ -33,10 +33,10 @@ class TransactionsTableSeeder extends Seeder
                 'created_at' => '2022-06-14 22:35:34',
                 'updated_at' => '2022-06-14 22:35:34',
             ),
-            1 => 
+            1 =>
             array (
                 'id' => 2,
-                'user_id' => 3,
+                'user_id' => 1,
                 'merchant_id' => 0,
                 'amount' => '170.00000000',
                 'charge' => '0.00000000',
@@ -47,7 +47,7 @@ class TransactionsTableSeeder extends Seeder
                 'created_at' => '2022-06-14 22:39:44',
                 'updated_at' => '2022-06-14 22:39:44',
             ),
-            2 => 
+            2 =>
             array (
                 'id' => 3,
                 'user_id' => 0,
@@ -61,10 +61,10 @@ class TransactionsTableSeeder extends Seeder
                 'created_at' => '2022-06-14 22:39:44',
                 'updated_at' => '2022-06-14 22:39:44',
             ),
-            3 => 
+            3 =>
             array (
                 'id' => 4,
-                'user_id' => 3,
+                'user_id' => 1,
                 'merchant_id' => 0,
                 'amount' => '2500.00000000',
                 'charge' => '10.00000000',
@@ -75,10 +75,10 @@ class TransactionsTableSeeder extends Seeder
                 'created_at' => '2022-06-15 06:51:06',
                 'updated_at' => '2022-06-15 06:51:06',
             ),
-            4 => 
+            4 =>
             array (
                 'id' => 5,
-                'user_id' => 3,
+                'user_id' => 1,
                 'merchant_id' => 0,
                 'amount' => '2000.00000000',
                 'charge' => '30.00000000',
@@ -89,10 +89,10 @@ class TransactionsTableSeeder extends Seeder
                 'created_at' => '2022-06-15 07:45:56',
                 'updated_at' => '2022-06-15 07:45:56',
             ),
-            5 => 
+            5 =>
             array (
                 'id' => 6,
-                'user_id' => 3,
+                'user_id' => 1,
                 'merchant_id' => 0,
                 'amount' => '2000.00000000',
                 'charge' => '0.00000000',
@@ -103,7 +103,7 @@ class TransactionsTableSeeder extends Seeder
                 'created_at' => '2022-06-15 08:31:15',
                 'updated_at' => '2022-06-15 08:31:15',
             ),
-            6 => 
+            6 =>
             array (
                 'id' => 7,
                 'user_id' => 0,
@@ -117,10 +117,10 @@ class TransactionsTableSeeder extends Seeder
                 'created_at' => '2022-06-15 08:31:15',
                 'updated_at' => '2022-06-15 08:31:15',
             ),
-            7 => 
+            7 =>
             array (
                 'id' => 8,
-                'user_id' => 4,
+                'user_id' => 1,
                 'merchant_id' => 0,
                 'amount' => '50000.00000000',
                 'charge' => '10.00000000',
@@ -132,7 +132,7 @@ class TransactionsTableSeeder extends Seeder
                 'updated_at' => '2022-06-15 09:27:45',
             ),
         ));
-        
-        
+
+
     }
 }
