@@ -182,7 +182,7 @@
                                                     </div>
                                                     <div class="review-form-group mb-20 col-12 d-flex flex-wrap">
 
-                                                        <textarea name="description" placeholder="@lang('Write your review')..." class="form-control form--control" id="review-comments">{{ $review ? __($review->description) : old('description') }}</textarea>
+                                                        <textarea name="description" placeholder="@lang('Write your review')..." class="form-control" id="review-comments">{{ $review ? __($review->description) : old('description') }}</textarea>
                                                     </div>
                                                     <div class="review-form-group mb-20 col-12 d-flex flex-wrap">
                                                         <button type="submit" class="cmn--btn w-100">@lang('Submit Review')</button>

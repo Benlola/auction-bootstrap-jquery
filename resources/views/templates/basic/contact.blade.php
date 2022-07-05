@@ -65,32 +65,32 @@
                         @csrf
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label for="name" class="form--label">@lang('Name')</label>
-                                <input type="text" name="name" id="name" class="form-control form--control"
+                                <label for="name" class="form-label">@lang('Name')</label>
+                                <input type="text" name="name" id="name" class="form-control"
                                     value="{{ auth()->user() ? auth()->user()->fullname : old('name') }}"
                                     @if (auth()->user()) readonly @endif required>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label for="email" class="form--label">@lang('Email')</label>
-                                <input type="text" name="email" id="email" class="form-control form--control"
+                                <label for="email" class="form-label">@lang('Email')</label>
+                                <input type="text" name="email" id="email" class="form-control"
                                     value="{{ auth()->user() ? auth()->user()->email : old('email') }}"
                                     @if (auth()->user()) readonly @endif required>
                             </div>
                         </div>
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <label for="subject" class="form--label">@lang('Subject')</label>
-                                <input type="text" name="subject" id="subject" class="form-control form--control"
+                                <label for="subject" class="form-label">@lang('Subject')</label>
+                                <input type="text" name="subject" id="subject" class="form-control"
                                     value="{{ old('subject') }}">
                             </div>
                         </div>
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <label for="message" class="form--label">@lang('Message')</label>
+                                <label for="message" class="form-label">@lang('Message')</label>
                                 <textarea name="message" id="message"
-                                    class="form-control form--control">{{ old('message') }}</textarea>
+                                    class="form-control">{{ old('message') }}</textarea>
                             </div>
                         </div>
                         <div class="col-sm-12">

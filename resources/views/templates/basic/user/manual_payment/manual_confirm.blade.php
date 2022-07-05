@@ -28,7 +28,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label><strong>{{__(inputTitle($v->field_level))}} @if($v->validation == 'required') <span class="text-danger">*</span>  @endif</strong></label>
-                                            <input type="text" class="form-control form--control" name="{{$k}}" value="{{old($k)}}" placeholder="{{__($v->field_level)}}">
+                                            <input type="text" class="form-control" name="{{$k}}" value="{{old($k)}}" placeholder="{{__($v->field_level)}}">
                                         </div>
                                     </div>
                                 @elseif($v->type == "textarea")

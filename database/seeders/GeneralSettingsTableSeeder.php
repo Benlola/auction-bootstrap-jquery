@@ -22,10 +22,10 @@ class GeneralSettingsTableSeeder extends Seeder
             0 =>
             array (
                 'id' => 1,
-                'sitename' => 'Auction Bid System',
+                'sitename' => 'Bid Manager',
                 'cur_text' => 'USD',
                 'cur_sym' => '$',
-                'email_from' => 'info@auctionbidsystem.com',
+                'email_from' => 'info@bidmanager.com',
                 'email_template' => '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--[if !mso]><!-->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">

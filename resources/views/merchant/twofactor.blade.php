@@ -10,7 +10,7 @@
                         </div>
                         <div class="card-body">
                             <div class="form-group mx-auto text-center">
-                                
+
                                 <button  class="btn btn-block w-100 btn-lg btn-danger" data-toggle="modal" data-target="#disableModal">
                                     @lang('Disable Two Factor Authenticator')</button>
                             </div>

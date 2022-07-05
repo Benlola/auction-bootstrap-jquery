@@ -23,7 +23,7 @@ class FrontendsTableSeeder extends Seeder
             array (
                 'id' => 1,
                 'data_keys' => 'seo.data',
-                'data_values' => '{"seo_image":"1","keywords":["bid","auction","bidding","bidding platform","auction bidding","product bidding","car","jewerly"],"description":"Auction Bid System is a multivendor auction bidding platform for your product.","social_title":"Auction Bid System - Multivendor Auction Bidding Platform","social_description":"Auction Bid System is a multivendor auction bidding platform for your product.","image":"62a9095a7a94a1655245146.png"}',
+                'data_values' => '{"seo_image":"1","keywords":["bid","auction","bidding","bidding platform","auction bidding","product bidding","car","jewerly"],"description":"Bid Manager is a system for your product.","social_title":"Bid Manager - Auction Bidding System","social_description":"Bid Manager is a system for your product.","image":"62a9095a7a94a1655245146.png"}',
                 'created_at' => '2020-07-05 02:42:52',
                 'updated_at' => '2022-06-14 22:19:52',
             ),
@@ -119,7 +119,7 @@ class FrontendsTableSeeder extends Seeder
             array (
                 'id' => 39,
                 'data_keys' => 'banner.content',
-                'data_values' => '{"has_image":"1","heading":"Multivendor Auction Bidding Platform","subheading":"Dolor sit amet consectetur adipisicing elit. Eligendi sit commodi ex, id recusandae rerum quae optio quaerat totam consequuntur ad illo ducimus magnam nulla.","button":"Become a user","button_url":"register","link":"Become a Merchant","link_url":"merchant\\/register","background_image":"61f8f23878ae61643704888.jpg"}',
+                'data_values' => '{"has_image":"1","heading":"Bid Manager System","subheading":"Dolor sit amet consectetur adipisicing elit. Eligendi sit commodi ex, id recusandae rerum quae optio quaerat totam consequuntur ad illo ducimus magnam nulla.","button":"Become a user","button_url":"register","link":"Become a Merchant","link_url":"merchant\\/register","background_image":"61f8f23878ae61643704888.jpg"}',
                 'created_at' => '2021-05-02 09:09:30',
                 'updated_at' => '2022-03-07 15:58:15',
             ),

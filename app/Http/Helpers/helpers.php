@@ -26,7 +26,7 @@ function sidebarVariation(){
 
 function systemDetails()
 {
-    $system['name'] = 'viserbid';
+    $system['name'] = 'auctionbidsystem';
     $system['version'] = '1.0'; //3.1.51
     return $system;
 }

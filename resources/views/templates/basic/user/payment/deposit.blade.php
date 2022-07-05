@@ -54,7 +54,7 @@
                         <div class="form-group">
                             <label>@lang('Enter Amount'):</label>
                             <div class="input-group">
-                                <input id="amount" type="text" class="form-control form--control-2" name="amount" placeholder="@lang('Amount')" required  value="{{old('amount')}}">
+                                <input id="amount" type="text" class="form-control" name="amount" placeholder="@lang('Amount')" required  value="{{old('amount')}}">
                                 <span class="input-group-text bg--base text-white border-0">{{__($general->cur_text)}}</span>
                             </div>
                         </div>

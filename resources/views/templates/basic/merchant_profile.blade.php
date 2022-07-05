@@ -139,11 +139,11 @@
                     <input type="hidden" value="{{ $merchant->id }}" name="merchant_id">
                     <div class="review-form-group mb-20 col-md-6">
                         <label for="your-name" class="review-label">@lang('Name')</label>
-                        <input type="text" class="form-control form--control" id="your-name" value="{{ auth()->user()->fullname }}" readonly>
+                        <input type="text" class="form-control" id="your-name" value="{{ auth()->user()->fullname }}" readonly>
                     </div>
                     <div class="review-form-group mb-20 col-md-6">
                         <label for="your-email" class="review-label">@lang('Email')</label>
-                        <input type="text" class="form-control form--control" id="your-email" value="{{ auth()->user()->email }}" readonly>
+                        <input type="text" class="form-control" id="your-email" value="{{ auth()->user()->email }}" readonly>
                     </div>
                     <div class="review-form-group mb-20 col-md-6 d-flex flex-wrap">
                         <label class="review-label mb-0 me-3">@lang('Your Ratings') :</label>
@@ -184,7 +184,7 @@
                     </div>
                     <div class="review-form-group mb-20 col-12 d-flex flex-wrap">
                         <label class="review-label" for="review-comments">@lang('Say something about this merchant')</label>
-                        <textarea name="description" class="form-control form--control" id="review-comments">{{ $review ? __($review->description) : old('description') }}</textarea>
+                        <textarea name="description" class="form-control" id="review-comments">{{ $review ? __($review->description) : old('description') }}</textarea>
                     </div>
                     <div class="review-form-group mb-20 col-12 d-flex flex-wrap">
                         <button type="submit" class="cmn--btn w-100">@lang('Submit Review')</button>

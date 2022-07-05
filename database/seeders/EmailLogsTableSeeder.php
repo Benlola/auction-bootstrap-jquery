@@ -25,7 +25,7 @@ class EmailLogsTableSeeder extends Seeder
                 'user_id' => 3,
                 'merchant_id' => 0,
                 'mail_sender' => 'php',
-                'email_from' => 'Auction Bid System info@auctionbidsystem.com',
+                'email_from' => 'Bid Manager info@bidmanager.com',
                 'email_to' => 'kobex@mailinator.com',
                 'subject' => 'Your Account has been Credited',
                 'message' => '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -173,7 +173,7 @@ img[class="img1"] { width: 100% !important; height: auto !important; }
                 'user_id' => 0,
                 'merchant_id' => 1,
                 'mail_sender' => 'php',
-                'email_from' => 'Auction Bid System info@auctionbidsystem.com',
+                'email_from' => 'Bid Manager info@bidmanager.com',
                 'email_to' => 'vygafazej@mailinator.com',
                 'subject' => 'Your Product has been Bided Successfully',
                 'message' => '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -339,7 +339,7 @@ img[class="img1"] { width: 100% !important; height: auto !important; }
                 'user_id' => 3,
                 'merchant_id' => 0,
                 'mail_sender' => 'php',
-                'email_from' => 'Auction Bid System info@auctionbidsystem.com',
+                'email_from' => 'Bid Manager info@bidmanager.com',
                 'email_to' => 'kobex@mailinator.com',
                 'subject' => 'Deposit Request Submitted Successfully',
                 'message' => '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -487,7 +487,7 @@ img[class="img1"] { width: 100% !important; height: auto !important; }
                 'user_id' => 3,
                 'merchant_id' => 0,
                 'mail_sender' => 'php',
-                'email_from' => 'Auction Bid System info@auctionbidsystem.com',
+                'email_from' => 'Bid Manager info@bidmanager.com',
                 'email_to' => 'kobex@mailinator.com',
                 'subject' => 'Your Deposit is Approved',
                 'message' => '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -635,7 +635,7 @@ img[class="img1"] { width: 100% !important; height: auto !important; }
                 'user_id' => 3,
                 'merchant_id' => 0,
                 'mail_sender' => 'php',
-                'email_from' => 'Auction Bid System info@auctionbidsystem.com',
+                'email_from' => 'Bid Manager info@bidmanager.com',
                 'email_to' => 'kobex@mailinator.com',
                 'subject' => 'Deposit Request Submitted Successfully',
                 'message' => '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -783,7 +783,7 @@ img[class="img1"] { width: 100% !important; height: auto !important; }
                 'user_id' => 3,
                 'merchant_id' => 0,
                 'mail_sender' => 'php',
-                'email_from' => 'Auction Bid System info@auctionbidsystem.com',
+                'email_from' => 'Bid Manager info@bidmanager.com',
                 'email_to' => 'kobex@mailinator.com',
                 'subject' => 'Your Deposit is Approved',
                 'message' => '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -931,7 +931,7 @@ img[class="img1"] { width: 100% !important; height: auto !important; }
                 'user_id' => 0,
                 'merchant_id' => 2,
                 'mail_sender' => 'php',
-                'email_from' => 'Auction Bid System info@auctionbidsystem.com',
+                'email_from' => 'Bid Manager info@bidmanager.com',
                 'email_to' => 'seller@mailinator.com',
                 'subject' => 'Your Product has been Bided Successfully',
                 'message' => '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -1097,7 +1097,7 @@ img[class="img1"] { width: 100% !important; height: auto !important; }
                 'user_id' => 4,
                 'merchant_id' => 0,
                 'mail_sender' => 'php',
-                'email_from' => 'Auction Bid System info@auctionbidsystem.com',
+                'email_from' => 'Bid Manager info@bidmanager.com',
                 'email_to' => 'savariuser@demo.com',
                 'subject' => 'Deposit Request Submitted Successfully',
                 'message' => '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -1245,7 +1245,7 @@ img[class="img1"] { width: 100% !important; height: auto !important; }
                 'user_id' => 4,
                 'merchant_id' => 0,
                 'mail_sender' => 'php',
-                'email_from' => 'Auction Bid System info@auctionbidsystem.com',
+                'email_from' => 'Bid Manager info@bidmanager.com',
                 'email_to' => 'savariuser@demo.com',
                 'subject' => 'Your Deposit is Approved',
                 'message' => '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">

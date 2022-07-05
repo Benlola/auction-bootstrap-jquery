@@ -21,8 +21,8 @@
                 </div>
                 <div class="card-body">
                     <div class="two-factor-content">
-                        <div class="input--group input-group referral-group mb-4">
-                            <input type="text" class="form-control form--control" value="{{$secret}}" readonly="" id="referralURL">
+                        <div class="input-group referral-group mb-4">
+                            <input type="text" class="form-control" value="{{$secret}}" readonly="" id="referralURL">
                             <button class="cmn--btn copytext" id="copyBoard" type="button"><i class="las la-copy"></i></button>
                         </div>
                         <div class="two-factor-scan text-center mb-4">
@@ -43,7 +43,7 @@
             </div>
             <div class="card-body">
                 <div class="two-factor-content">
-                   
+
                     <p class="two__fact__text">
                         @lang('Google Authenticator is a multifactor app for mobile devices. It generates timed codes used during the 2-step verification process. To use Google Authenticator, install the Google Authenticator application on your mobile device.')
                     </p>
@@ -70,7 +70,7 @@
                     <div class="modal-body ">
                         <div class="form-group">
                             <input type="hidden" name="key" value="{{$secret}}">
-                            <input type="text" class="form-control form--control-2" name="code" placeholder="@lang('Enter Google Authenticator Code')">
+                            <input type="text" class="form-control" name="code" placeholder="@lang('Enter Google Authenticator Code')">
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -96,7 +96,7 @@
                     @csrf
                     <div class="modal-body">
                         <div class="form-group">
-                            <input type="text" class="form-control form--control-2" name="code" placeholder="@lang('Enter Google Authenticator Code')">
+                            <input type="text" class="form-control" name="code" placeholder="@lang('Enter Google Authenticator Code')">
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -106,7 +106,7 @@
                 </form>
             </div>
         </div>
-    </div> 
+    </div>
 @endpush
 
 @push('script')

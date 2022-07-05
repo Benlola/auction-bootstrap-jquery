@@ -28,21 +28,21 @@
                 <form action="{{ route('ticket.reply', $my_ticket->id) }}" method="POST" enctype="multipart/form-data" class="message__chatbox__form row">
                     @csrf
                     <input type="hidden" name="replayTicket" value="1">
-                    <div class="form--group col-sm-12">
-                        <label for="message" class="form--label-2">@lang('Message')</label>
-                        <textarea id="message" name="message" class="form-control form--control-2">{{ old('message') }}</textarea>
+                    <div class="form-group col-sm-12">
+                        <label for="message" class="form-label">@lang('Message')</label>
+                        <textarea id="message" name="message" class="form-control">{{ old('message') }}</textarea>
                     </div>
                     <div class="form--group col-sm-12">
                         <div class="d-flex">
                             <div class="left-group col p-0">
-                                <label for="file2" class="form--label-2">@lang('Attachments')</label>
-                                <input type="file" class="overflow-hidden form-control form--control-2 mb-2" name="attachments[]" id="file2">
+                                <label for="file2" class="form-label">@lang('Attachments')</label>
+                                <input type="file" class="overflow-hidden form-control mb-2" name="attachments[]" id="file2">
                                 <div id="fileUploadsContainer"></div>
                                 <span class="info fs--14">@lang('Allowed File Extensions'): .@lang('jpg'), .@lang('jpeg'), .@lang('png'), .@lang('pdf'), .@lang('doc'), .@lang('docx')</span>
                             </div>
                             <div class="add-area">
-                                <label class="form--label-2 d-block">&nbsp;</label>
-                                <button class="cmn--btn btn--sm bg--primary ms-2 ms-md-4 form--control-2 addFile" type="button"><i class="las la-plus"></i></button>
+                                <label class="form-label d-block">&nbsp;</label>
+                                <button class="cmn--btn btn--sm bg--primary ms-2 ms-md-4 form-control addFile" type="button"><i class="las la-plus"></i></button>
                             </div>
                         </div>
                     </div>
@@ -157,7 +157,7 @@
             $('.addFile').on('click',function(){
                 $("#fileUploadsContainer").append(
                     `<div class="input-group mb-2">
-                        <input type="file" class="overflow-hidden form-control form--control-2" name="attachments[]">
+                        <input type="file" class="overflow-hidden form-control" name="attachments[]">
                         <span class="input-group-text btn btn-danger remove-btn d-flex align-item-center justify-content-center"><i class="las la-times"></i></span>
                     </div>`
                 )

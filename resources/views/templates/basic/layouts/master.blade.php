@@ -10,7 +10,7 @@
     <title> {{ $general->sitename(__($pageTitle)) }}</title>
 
     @include('partials.seo')
-    
+
 
     <link rel="stylesheet" href="{{ asset('assets/global/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset($activeTemplateTrue.'css/animate.css') }}">
@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="{{ asset($activeTemplateTrue.'css/color.php')}}?color={{ $general->base_color }}">
 
     <link rel="shortcut icon" href="{{ getImage(imagePath()['logoIcon']['path'] .'/favicon.png') }}" type="image/x-icon">
-   
+
     @stack('style-lib')
 
     @stack('style')
@@ -42,14 +42,15 @@
 
         <div class="overlay"></div>
         <a href="#0" class="scrollToTop"><i class="las la-angle-up"></i></a>
-        
-        
+
+
         <main class="dashboard-section bg--section">
             @include($activeTemplate.'partials.sidenav')
             <article class="dashboard__article">
                 <div class="dashboard__header  ">
                     <div class="dashboard__header-top">
                         <h4 class="page-title mt-0">{{ __($pageTitle) }}</h4>
+                        <a class="d-sm-none d-lg-inline-block btn btn-secondary" href="{{ url()->to('/') }}" title="@lang('Go to Site')">@lang('Go to Site')</a>
                         <div class="dashboard__header__bar d-lg-none">
                             <div class="header-bar">
                                 <span></span>
@@ -107,9 +108,9 @@
                 $(':submit', this).attr('disabled', 'disabled');
             }
             });
-            
+
         })(jQuery);
-        
+
     </script>
 
 </body>

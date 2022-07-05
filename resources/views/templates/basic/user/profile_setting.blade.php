@@ -14,7 +14,7 @@
                     <span class="subtitle">@lang('Username'): {{ __($user->username) }}</span>
                     <div class="mt-4">
                         <label class="btn btn--primary" for="profile-image">@lang('Update Profile Picture')</label>
-                        <input type="file" name="image" class="form-control form--control" id="profile-image" hidden>
+                        <input type="file" name="image" class="form-control" id="profile-image" hidden>
                     </div>
                 </div>
                 <div class="remove-image">
@@ -22,43 +22,43 @@
                 </div>
             </div>
             <div class="profile-form-area row">
-                <div class="form--group col-md-6">
-                    <label class="form--label-2" for="first-name">@lang('First Name')</label>
-                    <input type="text" class="form-control form--control-2" name="firstname" id="first-name" value="{{ auth()->user()->firstname }}">
+                <div class="form-group col-md-6">
+                    <label class="form-label" for="first-name">@lang('First Name')</label>
+                    <input type="text" class="form-control" name="firstname" id="first-name" value="{{ auth()->user()->firstname }}">
                 </div>
-                <div class="form--group col-md-6">
-                    <label class="form--label-2" for="last-name">@lang('Last Name')</label>
-                    <input type="text" class="form-control form--control-2" name="lastname" id="last-name" value="{{ auth()->user()->lastname }}">
+                <div class="form-group col-md-6">
+                    <label class="form-label" for="last-name">@lang('Last Name')</label>
+                    <input type="text" class="form-control" name="lastname" id="last-name" value="{{ auth()->user()->lastname }}">
                 </div>
-                <div class="form--group col-md-6">
-                    <label class="form--label-2" for="email">@lang('Email')</label>
-                    <input type="text" class="form-control form--control-2" id="email" value="{{ auth()->user()->email }}" readonly>
+                <div class="form-group col-md-6">
+                    <label class="form-label" for="email">@lang('Email')</label>
+                    <input type="text" class="form-control" id="email" value="{{ auth()->user()->email }}" readonly>
                 </div>
-                <div class="form--group col-md-6">
-                    <label class="form--label-2" for="mobile">@lang('Mobile')</label>
-                    <input type="text" class="form-control form--control-2" id="mobile" value="{{ auth()->user()->mobile }}" readonly>
+                <div class="form-group col-md-6">
+                    <label class="form-label" for="mobile">@lang('Mobile')</label>
+                    <input type="text" class="form-control" id="mobile" value="{{ auth()->user()->mobile }}" readonly>
                 </div>
-                <div class="form--group col-md-6">
-                    <label class="form--label-2" for="address">@lang('Address')</label>
-                    <input type="text" class="form-control form--control-2" id="address" name="address" value="{{ auth()->user()->address->address }}">
+                <div class="form-group col-md-6">
+                    <label class="form-label" for="address">@lang('Address')</label>
+                    <input type="text" class="form-control" id="address" name="address" value="{{ auth()->user()->address->address }}">
                 </div>
-                <div class="form--group col-md-6">
-                    <label class="form--label-2" for="state">@lang('State')</label>
-                    <input type="text" class="form-control form--control-2" id="state" name="state" value="{{ auth()->user()->address->state }}">
+                <div class="form-group col-md-6">
+                    <label class="form-label" for="state">@lang('State')</label>
+                    <input type="text" class="form-control" id="state" name="state" value="{{ auth()->user()->address->state }}">
                 </div>
-                <div class="form--group col-md-4">
-                    <label class="form--label-2" for="city">@lang('Zip Code')</label>
-                    <input type="text" class="form-control form--control-2" id="city" name="zip" value="{{ auth()->user()->address->zip }}">
+                <div class="form-group col-md-4">
+                    <label class="form-label" for="city">@lang('Zip Code')</label>
+                    <input type="text" class="form-control" id="city" name="zip" value="{{ auth()->user()->address->zip }}">
                 </div>
-                <div class="form--group col-md-4">
-                    <label class="form--label-2" for="city">@lang('City')</label>
-                    <input type="text" class="form-control form--control-2" id="city" name="city" value="{{ auth()->user()->address->city }}">
+                <div class="form-group col-md-4">
+                    <label class="form-label" for="city">@lang('City')</label>
+                    <input type="text" class="form-control" id="city" name="city" value="{{ auth()->user()->address->city }}">
                 </div>
-                <div class="form--group col-md-4">
-                    <label class="form--label-2" for="country">@lang('Country')</label>
-                    <input type="text" class="form-control form--control-2" id="country" value="{{ auth()->user()->address->country }}" readonly>
+                <div class="form-group col-md-4">
+                    <label class="form-label" for="country">@lang('Country')</label>
+                    <input type="text" class="form-control" id="country" value="{{ auth()->user()->address->country }}" readonly>
                 </div>
-                <div class="form--group w-100 col-md-6 mb-0 text-end">
+                <div class="form-group w-100 col-md-6 mb-0 text-end">
                     <button type="submit" class="cmn--btn">@lang('Update Profile')</button>
                 </div>
             </div>
