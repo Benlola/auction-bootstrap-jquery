@@ -59,6 +59,9 @@ class NewBid extends Component {
 
             $user = auth()->user();
 
+            //Sanitize amount
+            $this->amount = filter_var(str_replace(['.','+','-'],'',$this->amount), FILTER_SANITIZE_NUMBER_INT);
+
             if ( (int) $this->amount < (int) $this->product->price ) {
                 $this->addError( 'amount', __( 'Bid amount must be greater than product price' ) );
 
@@ -74,8 +77,8 @@ class NewBid extends Component {
                 return back();
             }
 
-            $bid = Bid::where( 'product_id', $this->product->id )->where( 'user_id', $user->id )->exists();
-            if ( $bid ) {
+            $bid = Bid::where( 'product_id', $this->product->id )->latest()->first();
+            if ( $bid->user_id === $user->id ) {
                 $this->addError( 'amount', __( 'You already bidden on this product' ) );
 
                 return back();
