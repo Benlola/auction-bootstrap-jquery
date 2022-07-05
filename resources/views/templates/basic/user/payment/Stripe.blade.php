@@ -21,7 +21,7 @@
                                 <div class="col-md-6">
                                     <label for="name">@lang('Name on Card')</label>
                                     <div class="input-group">
-                                        <input type="text" class="form-control form--control-2 form-control-lg custom-input" name="name" placeholder="@lang('Name on Card')" autocomplete="off" autofocus/>
+                                        <input type="text" class="form-control form-control-lg custom-input" id="name" name="name" placeholder="@lang('Name on Card')" autocomplete="off" autofocus/>
                                         <span class="input-group-text bg--base text-white border-0"><i class="fa fa-font"></i></span>
                                     </div>
 
@@ -29,7 +29,7 @@
                                 <div class="col-md-6">
                                     <label for="cardNumber">@lang('Card Number')</label>
                                     <div class="input-group">
-                                        <input type="tel" class="form-control form--control-2 form-control-lg custom-input" name="cardNumber" placeholder="@lang('Valid Card Number')" autocomplete="off" required autofocus/>
+                                        <input type="tel" class="form-control form-control-lg custom-input" id="cardNumber" name="cardNumber" placeholder="@lang('Valid Card Number')" autocomplete="off" required autofocus/>
                                         <span class="input-group-text bg--base text-white border-0"><i class="fa fa-credit-card"></i></span>
                                     </div>
                                 </div>
@@ -38,11 +38,11 @@
                             <div class="row mt-4">
                                 <div class="col-md-6">
                                     <label for="cardExpiry">@lang('Expiration Date')</label>
-                                    <input type="tel" class="form-control form--control-2 form-control-lg input-sz custom-input" name="cardExpiry" placeholder="@lang('MM / YYYY')" autocomplete="off" required/>
+                                    <input type="tel" class="form-control form-control-lg input-sz custom-input" id="cardExpiry" name="cardExpiry" placeholder="@lang('MM / YYYY')" autocomplete="off" required/>
                                 </div>
                                 <div class="col-md-6 ">
                                     <label for="cardCVC">@lang('CVC Code')</label>
-                                    <input type="tel" class="form-control form--control-2 form-control-lg input-sz custom-input" name="cardCVC" placeholder="@lang('CVC')" autocomplete="off" required/>
+                                    <input type="tel" class="form-control form-control-lg input-sz custom-input" id="cardCVC" name="cardCVC" placeholder="@lang('CVC')" autocomplete="off" required/>
                                 </div>
                             </div>
                             <br>

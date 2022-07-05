@@ -120,8 +120,11 @@ if (!$secondColor OR !checkhexcolor2($secondColor)) {
 .dashboard__item{
     box-shadow: 0 0 10px <?php echo $color; ?>1a;
     border: 1px dashed <?php echo $color; ?>4d;
+    color: <?php echo $color; ?>;
 }
-
+.cmn--table thead th{
+    color: <?php echo $color; ?>;
+}
 .spinner {
     border-top: 4px solid <?php echo $color; ?>;
 }

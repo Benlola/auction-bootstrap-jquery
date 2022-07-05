@@ -10,12 +10,12 @@
             </div>
             <div class="card-body py-4">
                 <div class="form-group mb-3">
-                    <label for="old-password" class="form--label-2">@lang('Old Password')</label>
-                    <input type="password" name="current_password" name="old-password" id="old-password" class="form-control form--control-2" required>
+                    <label for="old-password" class="form-label">@lang('Old Password')</label>
+                    <input type="password" name="old-password" id="old-password" class="form-control" required>
                 </div>
                 <div class="form-group mb-3 hover-input-popup">
-                    <label for="new-password" class="form--label-2">@lang('New Password')</label>
-                    <input type="password" name="password" id="new-password" class="form-control form--control-2" required>
+                    <label for="new-password" class="form-label">@lang('New Password')</label>
+                    <input type="password" name="password" id="new-password" class="form-control" required>
                     @if($general->secure_password)
                         <div class="input-popup">
                             <p class="error lower">@lang('1 small letter minimum')</p>
@@ -27,8 +27,8 @@
                     @endif
                 </div>
                 <div class="form-group mb-0">
-                    <label for="confirm-password" class="form--label-2">@lang('Confirm New Password')</label>
-                    <input type="password" name="password_confirmation" id="confirm-password" class="form-control form--control-2" required>
+                    <label for="confirm-password" class="form-label">@lang('Confirm New Password')</label>
+                    <input type="password" name="password_confirmation" id="confirm-password" class="form-control" required>
                 </div>
             </div>
             <div class="card-footer text-end">

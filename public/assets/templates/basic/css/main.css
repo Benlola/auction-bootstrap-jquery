@@ -1885,19 +1885,19 @@ body.bg--section {
 }
 
 .cmn--table {
-    color: #a4bdce;
+    color: #37485c;/*#a4bdce*/
     text-align: center;
 }
 
 .cmn--table thead {
-    background: rgba(255, 255, 255, 0.1);
+    background: #f3f3f3;
 }
 
 .cmn--table thead th {
 
     text-align: center;
     border: none;
-    color: #fff;
+    color: #37485c;
     padding: 1.1rem 1rem 0.93rem;
     font-weight: 500;
     text-transform: capitalize;
@@ -1928,7 +1928,7 @@ body.bg--section {
 }
 
 .cmn--table tbody tr:nth-of-type(even) {
-    background: #001631;
+    background: #f3f3f3;
 }
 
 @media (max-width: 1199px) {
