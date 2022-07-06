@@ -1,11 +1,17 @@
 <div>
-    @isset($latest_bid)
+    @if(isset($latest_bid))
         <div class="product-price last-bid" wire:poll="last_bid">
-            <div class="fs-6 text-secondary">@lang('Last bid'):
+            <div class="">@lang('Current bid'):
                 {{ showAmount($latest_bid) }} <span class="text--base">{{ __($general->cur_text) }}</span>
             </div>
         </div>
-    @endisset
+    @else
+        <div class="product-price mb-3">
+            <div>
+                {{ showAmount($product->price) }} <span class="text--base">{{ __($general->cur_text) }}</span>
+            </div>
+        </div>
+    @endif
 
 
 
