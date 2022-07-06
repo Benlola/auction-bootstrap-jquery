@@ -23,11 +23,14 @@ class NewBid extends Component {
     public $product;
 
     private $general;
+    public $percent_rules;
 
     protected $listeners = [
         'save'     => 'save',
         'bidAdded' => 'updateLastBid'
     ];
+
+
 
 
     public function mount( int $product_id ) {
@@ -36,6 +39,29 @@ class NewBid extends Component {
         $this->general = GeneralSetting::first();
 
         $this->latest_bid = $this->product->latest_bid->amount ?? null;
+
+        $this->percent_rules = [
+            [
+                'condition' => [1,500],
+                'rule' => 50
+            ],
+            [
+                'condition' => [500,1000],
+                'rule' => 100
+            ],
+            [
+                'condition' => [1000,5000],
+                'rule' => 250
+            ],
+            [
+                'condition' => [5000,10000],
+                'rule' => 500
+            ],
+            [
+                'condition' => [10000],
+                'rule' => 1000
+            ]
+        ];
     }
 
     protected function rules(): array {
@@ -78,14 +104,14 @@ class NewBid extends Component {
             }
 
             $bid = Bid::where( 'product_id', $this->product->id )->latest()->first();
-            if ( $bid->user_id === $user->id ) {
+            if ( $bid && $bid->user_id === $user->id ) {
                 $this->addError( 'amount', __( 'You already bidden on this product' ) );
 
                 return back();
             }
 
             if ( $this->product->latest_bid ) {
-                if ( $this->amount <= (int) $this->product->latest_bid->amount ) {
+                if ( $this->checkRules($this)  ) {
                     $this->addError( 'amount', __( 'Bid amount must be greater than last bid' ) );
 
                     return back();
@@ -193,6 +219,20 @@ class NewBid extends Component {
 
     public function last_bid() {
         $this->latest_bid = $this->product->latest_bid->amount;
+    }
+
+    private function checkRules($a) {
+        /*
+         * Rules for %
+         * 1) 1-500 = 50
+         * 2) 500-1 000=100
+         * 3) 1 000-5 000=250
+         * 4) 5 000-10 000=500
+         * 5) more than 10 000 = 1000
+         * */
+
+        //Fixme: Add rules and condition from Adly
+        if($a->amount <= ((int) $a->product->latest_bid->amount, )+procent) return true;
     }
 
 }
