@@ -17,7 +17,7 @@
                                         <div class="meta-item me-sm-auto">
                                             <span class="text--base"><i class="las la-gavel"></i></span> {{ __($product->total_bid) }}
                                         </div>
-                                        <div class="meta-item me-0">
+                                        <div class="meta-item me-0 d-none">
                                             <span class="text--base"><i class="lar la-share-square"></i></span>
                                             <ul class="social-share">
                                                 <li>
