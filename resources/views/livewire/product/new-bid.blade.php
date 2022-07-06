@@ -8,8 +8,16 @@
     @endisset
 
 
+
     @if ($product->status == 1 && $product->started_at < now() && $product->expired_at > now())
         <form wire:submit.prevent="checkData">
+            <div class="mb-2">Quick bid</div>
+            <div class="mb-2">
+                <button value="{{ $next_bid_price }}" wire:model="next_bid_price" name="quick_amount" class="cmn--btn btn--sm" type="submit">
+                    {{ $general->cur_sym }} {{ number_format($next_bid_price, 2, '.', '.') }}
+                </button>
+            </div>
+
             <div class="btn__area">
                 <div class="cart-plus-minus input-group w-auto">
                     <span class="input-group-text bg--base border-0 text-white">{{ $general->cur_sym }}</span>

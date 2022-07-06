@@ -25,6 +25,7 @@ class NewBid extends Component
 
     private $general;
     public $percent_rules;
+    public $next_bid_price;
 
     protected $listeners
         = [
@@ -40,6 +41,8 @@ class NewBid extends Component
         $this->general = GeneralSetting::first();
 
         $this->latest_bid = $this->product->latest_bid->amount ?? null;
+
+        $this->next_bid_price = $this->getNextBidPrice();
 
         $this->percent_rules = [
             [
@@ -69,7 +72,8 @@ class NewBid extends Component
     {
         return [
             //'amount' => 'required|numeric|gt:'.(int)$this->latest_bid ?? $this->product->price ?? 0,
-            'amount' => 'required|numeric|gt:0',
+            'next_bid_price' => 'nullable',
+            'amount'         => 'required|numeric|gt:0',
         ];
     }
 
@@ -88,7 +92,9 @@ class NewBid extends Component
             $this->resetErrorBag();
 
             $user = auth()->user();
-
+            if ($this->next_bid_price != null) {
+                $this->amount = $this->next_bid_price;
+            }
             //Sanitize amount
             $this->amount = filter_var(str_replace(['.', '+', '-'], '', $this->amount), FILTER_SANITIZE_NUMBER_INT);
 
@@ -117,12 +123,12 @@ class NewBid extends Component
                 return back();
             }
 
+            if ($this->product->latest_bid) {
+                if ($this->checkRules($this->amount)) {
+                    $this->addError('amount', __('Bid amount must be greater than last bid'));
 
-            $sss = $this->checkRules();
-            dd($sss);
-            if ($this->checkRules($bid)) {
-                $this->addError('amount', __('Bid amount must be greater than last bid'));
-                return back();
+                    return back();
+                }
             }
 
 //            if ( $this->product->latest_bid ) {
@@ -235,14 +241,23 @@ class NewBid extends Component
     public function updateLastBid()
     {
         $this->latest_bid = $this->product->latest_bid->amount;
+        $this->next_bid_price = $this->getNextBidPrice();
+
     }
 
     public function last_bid()
     {
-        $this->latest_bid = $this->product->latest_bid->amount;
+        $this->latest_bid = $this->product->latest_bid->amount ?? 0;
     }
 
-    private function checkRules(): bool
+    private function getNextBidPrice(): int
+    {
+        $value = nextBidPrice($this->product->latest_bid->amount ?? $this->product->price);
+
+        return $this->product->price + $value;
+    }
+
+    private function checkRules($amount): bool
     {
         /*
          * Rules for %
@@ -252,11 +267,10 @@ class NewBid extends Component
          * 4) 5 000-10 000=500
          * 5) more than 10 000 = 1000
          * */
-        $amount = (int)$this->amount;
         //Fixme: Add rules and condition from Adly
         foreach ($this->percent_rules as $rule) {
-            if (in_range($amount, $rule['condition'][0], $rule['condition'][1] ?? $rule['condition'][0], TRUE)) {
-                if ($amount + $rule['rule'] >= (int) $this->product->amount){
+            if (in_range($amount, $rule['condition'][0], $rule['condition'][1] ?? $rule['condition'][0], true)) {
+                if ($amount + $rule['rule'] >= (int)$this->product->amount) {
                     return false;
                 }
             }
