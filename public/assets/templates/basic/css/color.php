@@ -122,9 +122,21 @@ if (!$secondColor OR !checkhexcolor2($secondColor)) {
     border: 1px dashed <?php echo $color; ?>4d;
     color: <?php echo $color; ?>;
 }
+
 .cmn--table thead th{
     color: <?php echo $color; ?>;
 }
+
 .spinner {
     border-top: 4px solid <?php echo $color; ?>;
+}
+
+div[class*="col"]:nth-of-type(4n + 1) .feature__item-icon,
+.feature__item-icon{
+    background: <?php echo $color; ?> !important;
+    border-color: <?php echo $color; ?> !important;
+}
+
+.category__item-icon{
+    color: <?php echo $color; ?>;
 }

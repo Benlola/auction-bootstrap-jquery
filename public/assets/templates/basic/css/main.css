@@ -534,14 +534,14 @@ b {
 .badge--warning,
 .btn--white,
 .badge--white {
-    color: #dcf3ff;
+    color: #37485c;
 }
 
 .btn--warning:hover,
 .badge--warning:hover,
 .btn--white:hover,
 .badge--white:hover {
-    color: #dcf3ff;
+    color: #37485c;
 }
 
 .btn--black,
@@ -553,7 +553,7 @@ b {
 .btn--title,
 .badge--title,
 .bg--title {
-    background-color: #dcf3ff !important;
+    background-color: #37485c !important;
 }
 
 .btn--1,
@@ -575,7 +575,7 @@ b {
 }
 
 .text--danger {
-    color: #37485c !important;
+    color: #c84b4b !important;
 }
 
 .text--warning {
@@ -614,7 +614,7 @@ b {
 }
 
 .text--title {
-    color: #dcf3ff !important;
+    color: #37485c !important;
 }
 
 .text--1 {
@@ -1191,7 +1191,7 @@ body.bg--section {
 
     .menu-area .menu .login-reg-btn > a:nth-of-type(even) {
         background: #fff;
-        color: #dcf3ff;
+        color: #37485c;
     }
 
     .menu-area .menu .login-reg-btn .logout--btn {
@@ -1204,7 +1204,7 @@ body.bg--section {
 
     .menu-area .menu .login-reg-btn .logout--btn:nth-of-type(even) {
         background: #fff;
-        color: #dcf3ff;
+        color: #37485c;
     }
 }
 
@@ -1320,7 +1320,7 @@ body.bg--section {
 
     .menu-area .menu li .submenu li a {
         padding: 10px;
-        color: #dcf3ff;
+        color: #37485c;
         text-transform: capitalize;
     }
 
@@ -1773,7 +1773,7 @@ body.bg--section {
     font-size: 30px;
     line-height: 50px;
     text-align: center;
-    color: #dcf3ff;
+    color: #37485c;
     background: #c151cc;
     display: block;
     color: #fff;
@@ -1963,7 +1963,7 @@ body.bg--section {
     .cmn--table tbody tr td::before {
         font-weight: 700;
 
-        color: #dcf3ff;
+        color: #37485c;
         text-align: left;
         content: attr(data-label);
     }
@@ -2484,7 +2484,7 @@ textarea.form--control-2 {
     content: "";
     width: 20px;
     height: 2px;
-    background: #dcf3ff;
+    background: #37485c;
     -webkit-transition: all ease 0.3s;
     -moz-transition: all ease 0.3s;
     transition: all ease 0.3s;
@@ -2730,7 +2730,7 @@ textarea.form--control-2 {
 }
 
 .side__menu-select option {
-    color: #dcf3ff;
+    color: #37485c;
     background: #001631;
 }
 
@@ -2926,7 +2926,7 @@ textarea.form--control-2 {
     display: flex;
     align-items: center;
     border-right: 1px solid rgba(255, 255, 255, 0.2);
-    color: #dcf3ff;
+    color: #37485c;
 }
 
 .dashboard__header-bottom ul li a i {
@@ -3130,7 +3130,7 @@ textarea.form--control-2 {
     padding: 15px 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     display: block;
-    color: #dcf3ff;
+    color: #37485c;
     font-weight: 700;
 }
 
@@ -3296,7 +3296,7 @@ textarea.form--control-2 {
 
 .Bid__buy__sell__item-header .watchlist__btn {
     line-height: 1;
-    color: #dcf3ff;
+    color: #37485c;
     font-size: 22px;
     width: 30px;
     text-align: right;
@@ -3377,7 +3377,7 @@ textarea.form--control-2 {
     border-radius: 0 0 5px 5px;
     display: block;
     padding: 3px 5px;
-    color: #dcf3ff;
+    color: #37485c;
     background: #001631;
 }
 
@@ -3433,7 +3433,7 @@ textarea.form--control-2 {
 
 .editor__item .editors-bottom a i {
     line-height: 1;
-    color: #dcf3ff;
+    color: #37485c;
     font-size: 20px;
 }
 
@@ -3602,7 +3602,7 @@ textarea.form--control-2 {
 
 .copy__item-header .watchlist__btn {
     line-height: 1;
-    color: #dcf3ff;
+    color: #37485c;
     font-size: 22px;
     width: 30px;
     text-align: right;
@@ -3735,7 +3735,7 @@ textarea.form--control-2 {
 
 .document__card-item .thumb {
     font-size: 50px;
-    color: #dcf3ff;
+    color: #37485c;
 }
 
 .document__card-item .cont * {
@@ -4027,7 +4027,7 @@ input[type="checkbox"] {
 
 .custom--card .card-header {
     border: none;
-    background: #dcf3ff;
+    background: #37485c;
 }
 
 .custom--card .card-header .card-title {
@@ -5170,7 +5170,7 @@ div[class*="col"]:nth-of-type(4n + 1) .feature__item-icon {
     border: none;
     text-align: right;
     font-weight: 500;
-    color: #dcf3ff;
+    color: #37485c;
     padding-right: 0;
     outline: none;
     box-shadow: none;
@@ -5401,7 +5401,7 @@ div[class*="col"]:nth-of-type(4n + 1) .feature__item-icon {
 
 .specification-table tr th {
 
-    color: #dcf3ff;
+    color: #37485c;
 }
 
 .specification-wrapper .title {
@@ -5565,7 +5565,7 @@ div[class*="col"]:nth-of-type(4n + 1) .feature__item-icon {
 }
 
 .review-label {
-    color: #dcf3ff;
+    color: #37485c;
 }
 
 .border--1 {
@@ -5669,7 +5669,7 @@ div[class*="col"]:nth-of-type(4n + 1) .feature__item-icon {
     text-align: center;
     background: #001631;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #dcf3ff;
+    color: #37485c;
     font-size: 22px;
     cursor: pointer;
     -webkit-transition: all ease 0.3s;
@@ -6134,7 +6134,7 @@ textarea.form--control {
 
     .vendor__single__item .content .title__area .title {
         display: block;
-        color: #dcf3ff;
+        color: #37485c;
     }
 }
 
@@ -6154,7 +6154,7 @@ textarea.form--control {
 
     .vendor__single__item .content .title__area .title {
         display: block;
-        color: #dcf3ff;
+        color: #37485c;
     }
 }
 
@@ -6668,7 +6668,7 @@ button.cmn--btn:hover {
     -moz-border-radius: 3px;
     border-radius: 3px;
     background: rgba(255, 255, 255, 0.1);
-    color: #dcf3ff;
+    color: #37485c;
     padding: 0;
     line-height: 40px;
     display: block;
@@ -7095,8 +7095,8 @@ button.cmn--btn:hover {
 }
 .btn-danger {
     color: #fff !important;
-    background-color: #dc3545 !important;
-    border-color: #dc3545 !important;
+    background-color: #c84b4b !important;
+    border-color: #c84b4b !important;
 }
 .support-btn{
     height: 39px;
@@ -7105,7 +7105,7 @@ button.cmn--btn:hover {
     margin-top: 15px;
 }
 .error{
-    color: #dc3545;
+    color: #c84b4b;
 }
 .input-group label.error{
     top: 100%;
