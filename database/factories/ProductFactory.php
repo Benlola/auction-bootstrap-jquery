@@ -25,7 +25,7 @@ class ProductFactory extends Factory
             'price' => random_int(10000, 60000),
             'started_at' => $this->faker->randomElement([now(), now()->addDays(random_int(1,20))]),
             'expired_at' => now()->addDays(random_int(30,50)),
-            'image' => $this->faker->randomElement(['62a90aa5e227a1655245477.jpeg','62a90aadsdsg27a1g655245477.jpeg','562a90a7a5efd654fd57245477.jpeg']),
+            'image' => $this->faker->randomElement(['62a90aa5e227a1655245477.jpeg','62c85c9591a4e1657298069.jpeg','62c85cc74125d1657298119.png']),
             'short_description' => $this->faker->realText('250'),
             'long_description' => $this->faker->realText('650'),
             'specification' => [
