@@ -31,7 +31,7 @@ class FrontendsTableSeeder extends Seeder
             array (
                 'id' => 24,
                 'data_keys' => 'about.content',
-                'data_values' => '{"has_image":"1","heading":"Know About US","subheading":"Praesentium ipsam modi nostrum, quibusdam voluptas minus qui quas dicta consequuntur placeat animi cumque","description":"Libero exercitationem fugit dignissimos facilis suscipit voluptatibus error consectetur amet sed necessitatibus in dolor, ut non. Temporibus, maiores? Reprehenderit quae inventore obcaecati! Libero exercitationem fugit dignissimos facilis suscipit voluptatibus error consectetur amet sed necessitatibus in dolor, ut non. Temporibus, maiores? Reprehenderit quae inventore obcaecati!","video_url":"https:\\/\\/www.youtube.com\\/watch?v=WOb4cj7izpE","about_image":"6212259ed1dbb1645356446.jpg"}',
+                'data_values' => '{"has_image":"1","heading":"Know About US","subheading":"Praesentium ipsam modi nostrum, quibusdam voluptas minus qui quas dicta consequuntur placeat animi cumque","description":"Libero exercitationem fugit dignissimos facilis suscipit voluptatibus error consectetur amet sed necessitatibus in dolor, ut non. Temporibus, maiores? Reprehenderit quae inventore obcaecati! Libero exercitationem fugit dignissimos facilis suscipit voluptatibus error consectetur amet sed necessitatibus in dolor, ut non. Temporibus, maiores? Reprehenderit quae inventore obcaecati!","video_url":"https:\\/\\/www.youtube.com\\/watch?v=5qap5aO4i9A","about_image":"6212259ed1dbb1645356446.jpg"}',
                 'created_at' => '2020-10-28 02:51:20',
                 'updated_at' => '2022-02-20 13:00:11',
             ),
