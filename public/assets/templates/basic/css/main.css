@@ -4408,6 +4408,7 @@ div[class*="col"]:nth-of-type(4n + 1) .feature__item-icon {
     padding: 18px 0 15px;
     /*border-bottom: 1px dashed rgba(193, 81, 204, 0.3);*/
     font-size: 18px;
+    min-height: 85px;/*Only for testing 2 lines*/
 }
 
 .auction__item-title a {
