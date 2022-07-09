@@ -118,7 +118,7 @@ class NewBid extends Component
 
             $bid = Bid::where('product_id', $this->product->id)->latest()->first();
             if ($bid && $bid->user_id === $user->id) {
-                $this->addError('amount', __('You already bidden on this product'));
+                $this->addError('amount', __('You already bid on this product'));
 
                 return back();
             }
@@ -144,7 +144,6 @@ class NewBid extends Component
             $this->redirect("/login");
         }
     }
-
 
     public function save()
     {
@@ -187,7 +186,7 @@ class NewBid extends Component
             if ($this->product->admin) {
                 $adminNotification = new AdminNotification();
                 $adminNotification->user_id = auth()->user()->id;
-                $adminNotification->title = __('A user has been bidden on your product');
+                $adminNotification->title = __('A user has been bid on your product');
                 $adminNotification->click_url = urlPath('admin.product.bids', $this->product->id);
                 $adminNotification->save();
                 DB::commit();
@@ -200,7 +199,6 @@ class NewBid extends Component
 
             $this->product->merchant->balance += $validatedData['amount'];
             $this->product->merchant->save();
-
 
             Transaction::create(
                 [
@@ -233,7 +231,6 @@ class NewBid extends Component
             return redirect()->back();
         } catch (Exception $exception) {
             DB::rollback();
-            //            $this->addError('amount', 'Oops something went wrong');
             $this->addError('amount', $exception->getMessage());
         }
     }
@@ -252,6 +249,7 @@ class NewBid extends Component
 
     private function getNextBidPrice(): int
     {
+
         $value = nextBidPrice($this->product->latest_bid->amount ?? $this->product->price);
 
         return $this->product->price + $value;

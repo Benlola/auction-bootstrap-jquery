@@ -6,10 +6,21 @@
             <div class="container">
                 <div class="row gy-5 justify-content-between">
                     <div class="col-lg-8">
+                        <x-front.show-car-gallery :product="$product"/>
+
+                        <div class="mt-4">
+                            <h1 class="title mt-0 mb-2" style="font-size: 40px">{{ __($product->name) }}</h1>
+                            <div class="ratings mb-4">
+                                {!! displayAvgRating($product->avg_rating) !!} ({{ $product->review_count }})
+                            </div>
+                            <p class="mb-4 mt-0">
+                                {{ __(shortDescription($product->short_description)) }}
+                            </p>
+                        </div>
                         <div class="product__single-item">
+                            {{--
                             <div class="product-thumb-area mb-5">
                                 <div class="product-thumb pe-md-4">
-                                    <img src="{{getImage(imagePath()['product']['path'].'/'.$product->image,imagePath()['product']['size'])}}" alt="product">
                                     @foreach($images as $index => $image)
                                         <img src="{{ $image->getUrl('thumb') }}" alt="{{ $product->name }} #{{ $loop->iteration }}">
                                     @endforeach
@@ -42,66 +53,30 @@
                                     </div>
                                 </div>
                                 <div class="product-content">
-                                    <h5 class="title mt-0 mb-2">{{ __($product->name) }}</h5>
-                                    <div class="ratings mb-4">
-                                        @php echo displayAvgRating($product->avg_rating); @endphp
-                                        ({{ $product->review_count }})
-                                    </div>
-                                    <p class="mb-4 mt-0">
-                                        {{ __(shortDescription($product->short_description)) }}
-                                    </p>
 
 
-                                    <livewire:product.new-bid :product_id="$product->id" />
 
-{{--                                    @isset($product->latest_bid)--}}
-{{--                                    <div class="product-price last-bid">--}}
-{{--                                        <div class="fs-6 text-secondary">@lang('Last bid'):--}}
-{{--                                            {{ showAmount($product->latest_bid->amount) }} <span class="text--base">{{ __($general->cur_text) }}</span>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                    @endisset--}}
-{{--                                    @if ($product->status == 1 && $product->started_at < now() && $product->expired_at > now())--}}
-{{--                                        <div class="btn__area">--}}
-{{--                                            <div class="cart-plus-minus input-group w-auto">--}}
-{{--                                                <span class="input-group-text bg--base border-0 text-white">{{ $general->cur_sym }}</span>--}}
-{{--                                                <input type="number" placeholder="@lang('Enter your amount')" class="form-control" id="amount" min="0" step="any">--}}
-{{--                                            </div>--}}
-{{--                                            <div>--}}
-{{--                                                <button class="cmn--btn btn--sm bid_now" data-cur_sym="{{ $general->cur_sym }}">@lang('Bid Now')</button>--}}
-{{--                                            </div>--}}
-{{--                                            <span class="text--danger empty-message">@lang('Please enter an amount to bid')</span>--}}
-{{--                                        </div>--}}
-{{--                                    @endif--}}
                                 </div>
                             </div>
+                            --}}
                             <div class="max-banner mb-4">
                                 @php
                                     showAd('780x80')
                                 @endphp
                             </div>
                             <div class="content">
-                                <ul class="nav nav-tabs nav--tabs">
-                                    <li>
-                                        <a href="#description" class="active" data-bs-toggle="tab">@lang('Description')</a>
-                                    </li>
-                                    <li>
-                                        <a href="#specification" data-bs-toggle="tab">@lang('Specification')</a>
-                                    </li>
-                                    <li>
-                                        <a href="#reviews" data-bs-toggle="tab">@lang('Reviews')({{ $product->reviews->count() }})</a>
-                                    </li>
-                                    <li>
-                                        <a href="#related-products" data-bs-toggle="tab">@lang('Related Products')</a>
-                                    </li>
-                                </ul>
-                                <div class="tab-content">
-                                    <div class="tab-pane fade fade  show active" id="description">
+
+                                <div class="mt-5">
+
+
+                                    <div class="mt-5" id="description">
+                                        <h5 class="title">@lang('Description')</h5>
                                         @php
                                             echo $product->long_description
                                         @endphp
                                     </div>
-                                    <div class="tab-pane fade" id="specification">
+
+                                    <div class="mt-5" id="specification">
                                         <div class="specification-wrapper">
                                             <h5 class="title">@lang('Specification')</h5>
                                             <div class="table-wrapper">
@@ -123,7 +98,10 @@
                                         </div>
                                     </div>
 
-                                    <div class="tab-pane fade" id="reviews">
+                                    <x-front.product-gallery :product="$product" />
+
+                                    <div class="mt-5" id="reviews">
+                                        <h5 class="title pb-4">@lang('Reviews') <span class="text-secondary fw-normal fs-6">({{ $product->reviews->count() }})</span></h5>
                                         <div class="review-area"></div>
 
                                         @if($product->bids->where('user_id', auth()->id())->count())
@@ -181,61 +159,11 @@
                                                         <textarea name="description" placeholder="@lang('Write your review')..." class="form-control" id="review-comments">{{ $review ? __($review->description) : old('description') }}</textarea>
                                                     </div>
                                                     <div class="review-form-group mb-20 col-12 d-flex flex-wrap">
-                                                        <button type="submit" class="cmn--btn w-100">@lang('Submit Review')</button>
+                                                        <button type="submit" class="cmn--btn">@lang('Submit Review')</button>
                                                     </div>
                                                 </form>
                                             </div>
                                         @endif
-                                    </div>
-                                    <div class="tab-pane" id="related-products">
-                                        <div class="slide-wrapper">
-                                            <div class="related-slider owl-theme owl-carousel">
-                                                @foreach ($relatedProducts as $relatedProduct)
-                                                    <div class="slide-item">
-                                                        <div class="auction__item bg--body">
-                                                            <div class="auction__item-thumb">
-                                                                <a href="{{ route('product.details', [$relatedProduct->id, slug($relatedProduct->name)]) }}">
-                                                                    <img src="{{getImage(imagePath()['product']['path'].'/thumb_'.$relatedProduct->image,imagePath()['product']['thumb'])}}" alt="auction">
-                                                                </a>
-                                                                <span class="total-bids">
-                                                                    <span><i class="las la-gavel"></i></span>
-                                                                    <span>@lang('x') {{ ($relatedProduct->total_bid) }} @lang('Bids')</span>
-                                                                </span>
-                                                            </div>
-                                                            <div class="auction__item-content">
-                                                                <h6 class="auction__item-title">
-                                                                    <a href="{{ route('product.details', [$relatedProduct->id, slug($relatedProduct->name)]) }}">{{ __($relatedProduct->name) }}</a>
-                                                                </h6>
-                                                                <div class="auction__item-countdown">
-                                                                    <div class="inner__grp">
-                                                                        <ul class="countdown" data-date="{{ showDateTime($relatedProduct->expired_at, 'm/d/Y H:i:s') }}">
-                                                                            <li>
-                                                                                <span class="days">@lang('00')</span>
-                                                                            </li>
-                                                                            <li>
-                                                                                <span class="hours">@lang('00')</span>
-                                                                            </li>
-                                                                            <li>
-                                                                                <span class="minutes">@lang('00')</span>
-                                                                            </li>
-                                                                            <li>
-                                                                                <span class="seconds">@lang('00')</span>
-                                                                            </li>
-                                                                        </ul>
-                                                                        <div class="total-price">
-                                                                            {{ $general->cur_sym }}{{ showAmount($relatedProduct->price) }}
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="auction__item-footer">
-                                                                    <a href="{{ route('product.details', [$relatedProduct->id, slug($relatedProduct->name)]) }}" class="cmn--btn w-100">@lang('Details')</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                @endforeach
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="max-banner mt-5">
@@ -247,8 +175,8 @@
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <aside class="product-single-sidebar ms-xl-3 ms-xxl-5">
-                            <div class="countdown-area bg--section mb-4">
+                        <aside class="product-single-sidebar ms-xl-3 ms-xxl-5 position-sticky" style="top:100px">
+                            <div class="countdown-area bg--section mb-4" style="box-shadow: 0 0 13px #214ab036;">
                                 <ul class="countdown sidebar-countdown" data-date="{{ showDateTime($product->expired_at, 'm/d/Y H:i:s') }}">
                                     <li>
                                         <span class="days">@lang('00')</span>
@@ -264,7 +192,15 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="seller-area bg--section mb-4">
+                            <div class="p-3 bg--section mb-4">
+                                <livewire:product.new-bid :product_id="$product->id" />
+                            </div>
+
+                            <div class="product-bid-history">
+                                <livewire:product.product-bid-history :product="$product"/>
+                            </div>
+
+                            <div class="seller-area bg--section mb-4 d-none">
                                 <h6 class="about-seller mb-4">
                                     @lang('About Seller')
                                 </h6>
@@ -310,6 +246,9 @@
 
                                 </ul>
                             </div>
+
+                            <x-front.related-products :relatedProducts="$relatedProducts" :general="$general"/>
+
                             <div class="mini-banner">
                                 @php
                                     showAd('370x670')

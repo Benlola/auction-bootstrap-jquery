@@ -1628,7 +1628,7 @@ body.bg--section {
     background: #f3f3f3;
 }
 .form-control:focus {
-    background: #37485c;
+    background: #37485c!important;
     box-shadow: none;
     outline: 0;
     color: #fff;
@@ -5975,20 +5975,37 @@ textarea.form--control {
 }
 
 .sidebar-countdown li {
-    margin: 5px;
     width: 60px;
-    height: 60px;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    border: 1px dashed #c151cc;
+    font-size: 27px;
 
 }
 
+.specification-table {
+    background: #eaeaea;
+}
+/*
+.product-price.last-bid {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    text-align: left;
+}
+*/
+.product-price.last-bid {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    margin-top: 0;
+    text-align: left;
+    background: #0d6efd40;
+    padding: 15px;
+    border-radius: 5px;
+}
 /*Vendor Section*/
 .vendor__item {
     box-shadow: 0 0 5px rgba(193, 81, 204, 0.4);

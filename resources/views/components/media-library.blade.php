@@ -5,14 +5,14 @@
     @foreach($model->getMedia($category)->chunk(6) ?? [] as $chunk)
         <div class="row my-10">
             @foreach ($chunk as $file)
-                <div class="card position-relative col-md-2">
+                <div class="card position-relative col-md-1">
                     <div class="position-absolute my-2 mx-2">
                         <a href="{{ route("remove.media", $file) }}" onclick="return confirm('Are you sure?')" class="btn btn-danger pull-right btn-sm delete confirmable">
                             delete
                         </a>
                     </div>
                     <div class="card-img-top">
-                        <img class="rounded-md" alt="" src="{{ $file->getUrl('thumb') }}">
+                        <img class="rounded-md" alt="" src="{{ $file->getUrl('gallery') }}">
                     </div>
                 </div>
             @endforeach
@@ -52,7 +52,7 @@
                     'X-CSRF-TOKEN': '{{ csrf_token() }}'
                 },
                 process: {
-                    url: '{{ route('media.store') }}',
+                    url: '{{ route('media.store',['model' => $model]) }}',
                 },
 
             }

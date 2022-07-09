@@ -48,7 +48,8 @@ class DatabaseSeeder extends Seeder
         $this->call(WithdrawMethodsTableSeeder::class);
         $this->call(WithdrawalsTableSeeder::class);
 
-        Product::factory(1000)->create();
+        Product::factory(1000)->cars()->create();
         Product::factory(20)->expired()->create();
+        Product::factory(1000)->jewerly()->create();
     }
 }
