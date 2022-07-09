@@ -1631,7 +1631,7 @@ body.bg--section {
     background: #37485c!important;
     box-shadow: none;
     outline: 0;
-    color: #fff;
+    color: #ffffff!important;
 }
 .dark-bg {
     background: transparent;

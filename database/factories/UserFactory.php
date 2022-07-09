@@ -20,13 +20,26 @@ class UserFactory extends Factory
      *
      * @return array
      */
-    public function definition()
-    {
+    public function definition(): array {
         return [
-            'name' => $this->faker->name(),
+            'firstname' => $this->faker->firstNameMale(),
+            'lastname' => $this->faker->lastName(),
+            'username' => $this->faker->userName(),
             'email' => $this->faker->unique()->safeEmail(),
-            'email_verified_at' => now(),
-            'password' => bcrypt('password'), // password
+            'country_code' => 'LK',
+            'mobile' => '94+1 (584) 158-4298',
+            'balance' => '0.00000000',
+            'password' => bcrypt('password'),//Pa$$w0rd!
+            'image' => NULL,
+            'address' => '{"address":"","state":"","zip":"","country":"Sri Lanka","city":""}',
+            'status' => 1,
+            'ev' => 1,
+            'sv' => 1,
+            'ver_code' => NULL,
+            'ver_code_send_at' => NULL,
+            'ts' => 0,
+            'tv' => 1,
+            'tsc' => NULL,
             'remember_token' => Str::random(10),
         ];
     }
@@ -36,11 +49,29 @@ class UserFactory extends Factory
      *
      * @return \Illuminate\Database\Eloquent\Factories\Factory
      */
-    public function unverified()
-    {
+    public function unverified(): Factory {
         return $this->state(function (array $attributes) {
             return [
                 'email_verified_at' => null,
+            ];
+        });
+    }
+
+    /**
+     * Generate Bidder users counted.
+     *
+     * @param $count
+     *
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     */
+    public function bidders($count): Factory {
+        return $this->state(function (array $attributes) use($count) {
+            return [
+                'firstname' => 'Bidder',
+                'lastname' => 'Bidder'.$count,
+                'username' => 'bidder'.$count,
+                'email' => 'bidder'.$count.'@site.com',
+                'password' => '$2y$10$vFbiXJaIWQCEFI9Bvr5LI.LI.y2b9bjYqR2cvilelednsjHzxpreu',//Pa$$w0rd!
             ];
         });
     }

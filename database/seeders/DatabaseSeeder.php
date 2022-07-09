@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -49,7 +50,12 @@ class DatabaseSeeder extends Seeder
         $this->call(WithdrawalsTableSeeder::class);
 
         Product::factory(1000)->cars()->create();
-        Product::factory(20)->expired()->create();
-        Product::factory(1000)->jewerly()->create();
+        Product::factory(10)->jewerly()->create();
+        Product::factory(20)->cars()->expired()->create();
+        Product::factory(20)->jewerly()->expired()->create();
+
+        foreach(range(1,4) as $i => $b){
+            User::factory(1)->bidders($i)->create();
+        }
     }
 }

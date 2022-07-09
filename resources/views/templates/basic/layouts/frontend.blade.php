@@ -115,7 +115,7 @@
                     position: 'center',
                     buttons: [
                         ['<button><b>YES</b></button>', function (instance, toast) {
-                            window.livewire.emit('save');
+                            window.livewire.emit('saveNewBid');
                             instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
 
                         }],

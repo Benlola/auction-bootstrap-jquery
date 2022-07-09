@@ -15,8 +15,7 @@ class ProductFactory extends Factory {
      * @return array
      */
     public function definition() {
-        return [
-            'category_id' => 1,//Car Category::factory()
+        return [//Car Category::factory()
             'merchant_id' => 2,//Seller Merchant::factory()
             'admin_id'    => 1,
             'status'      => 1,
@@ -36,6 +35,7 @@ class ProductFactory extends Factory {
     public function cars() {
         return $this->state( function ( array $attributes ) {
             return [
+                'category_id' => 1,
                 'name'              => $this->faker->randomElement( [
                     '2019 PORSCHE 911 (991.2) GT3 RS WEISSACH PACK',
                     '2016 AUDI R8 V10 PLUS',
@@ -49,7 +49,7 @@ class ProductFactory extends Factory {
                 'started_at'        => $this->faker->randomElement( [ now(), now()->addDays( random_int( 1, 20 ) ) ] ),
                 'expired_at'        => now()->addDays( random_int( 30, 50 ) ),
                 'image'             => $this->faker->randomElement( [
-                    '62a90aa5e227a1655245477.jpeg',
+                    '62a99889972e91655281801.jpeg',
                     '62c85c9591a4e1657298069.jpeg',
                     '62c85cc74125d1657298119.png'
                 ] ),
@@ -76,22 +76,19 @@ class ProductFactory extends Factory {
     public function jewerly() {
         return $this->state( function ( array $attributes ) {
             return [
+                'category_id' => 2,
                 'name'              => $this->faker->randomElement( [
-                    'Porsche',
-                    'Audi',
-                    'Nissan',
-                    'Mercedes-Benz',
-                    'Acura',
-                    'Opel',
-                    'Toyota'
+                    'Natural Baltic Amber Sterling Silver Ring size 6 code GI 101',
+                    '10.30 CTS RUBY SILVER RING SG-2664',
+                    'Gold and Diamond Double Fleurette Ring',
                 ] ),
-                'price'             => random_int( 10000, 60000 ),
+                'price'             => random_int( 10, 200 ),
                 'started_at'        => $this->faker->randomElement( [ now(), now()->addDays( random_int( 1, 20 ) ) ] ),
                 'expired_at'        => now()->addDays( random_int( 30, 50 ) ),
                 'image'             => $this->faker->randomElement( [
-                    '62a90aa5e227a1655245477.jpeg',
-                    '62c85c9591a4e1657298069.jpeg',
-                    '62c85cc74125d1657298119.png'
+                    '6004cf33b46d6.jpeg',
+                    '5d1013e3d496c.jpeg',
+                    '5d81013edsf3d8496c.jpeg'
                 ] ),
                 'short_description' => $this->faker->realText( '250' ),
                 'long_description'  => $this->faker->realText( '650' ),
@@ -101,12 +98,12 @@ class ProductFactory extends Factory {
                         'value' => $this->faker->randomElement( [ 'Green', 'Pink', 'Black', 'White', 'Yellow' ] )
                     ],
                     [
-                        'name'  => 'Size',
-                        'value' => $this->faker->randomElement( [ '5m', '4.50m', '4.75m' ] )
+                        'name'  => 'SHAPE',
+                        'value' => $this->faker->randomElement( [ 'TP','ROUND' ] )
                     ],
                     [
-                        'name'  => 'Tires size',
-                        'value' => $this->faker->randomElement( [ '18"', '19"', '20"', '21"' ] )
+                        'name'  => 'Size',
+                        'value' => $this->faker->randomElement( [ '2.3   MM PCS-2 CTS- 0.07', '1.2  MM PCS-12 CTS- 0.13' ] )
                     ]
                 ],
             ];

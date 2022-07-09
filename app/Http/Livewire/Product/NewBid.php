@@ -23,16 +23,21 @@ class NewBid extends Component
 
     public $product;
 
-    private $general;
+    public $general;
     public $percent_rules;
     public $next_bid_price;
 
     protected $listeners
         = [
-            'save'     => 'save',
+            'saveNewBid'     => 'save',
             'bidAdded' => 'updateLastBid',
         ];
-
+    /**
+     * @var int
+     */
+    public $bid_history;
+// wire:poll="sync_bid_history"
+//wire:poll="next_bid_price"
 
     public function mount(int $product_id)
     {
@@ -43,6 +48,8 @@ class NewBid extends Component
         $this->latest_bid = $this->product->latest_bid->amount ?? null;
 
         $this->next_bid_price = $this->getNextBidPrice();
+
+        $this->bid_history = $this->product->bids()->orderBy( 'created_at', 'desc' )->limit( 7 )->get();
 
         $this->percent_rules = [
             [
@@ -81,7 +88,7 @@ class NewBid extends Component
     public function render()
     {
         return view('livewire.product.new-bid', [
-            'product' => $this->product,
+            'product' => $this->product
         ]);
     }
 
@@ -124,12 +131,14 @@ class NewBid extends Component
             }
 
             if ($this->product->latest_bid) {
+
                 if ($this->checkRules($this->amount)) {
                     $this->addError('amount', __('Bid amount must be greater than last bid'));
 
                     return back();
                 }
             }
+            /**/
 
 //            if ( $this->product->latest_bid ) {
 //                if ( $this->checkRules($this)  ) {
@@ -149,7 +158,8 @@ class NewBid extends Component
     {
         $validatedData = $this->validate();
 
-        $this->confirm($this->product->id, __("Are you sure to bid on this product?"), 'saveBid');
+        //Fixme: Why this confirmation needs here if you have it on checkData?
+        //$this->confirm($this->product->id, __("Are you sure to bid on this product?"), 'saveBid');
 
         try {
             DB::beginTransaction();
@@ -239,24 +249,32 @@ class NewBid extends Component
     {
         $this->latest_bid = $this->product->latest_bid->amount;
         $this->next_bid_price = $this->getNextBidPrice();
+        $this->bid_history = $this->product->bids()->orderBy( 'created_at', 'desc' )->limit( 7 )->get();
 
     }
 
-    public function last_bid()
+    public function sync_product_data()
     {
-        $this->latest_bid = $this->product->latest_bid->amount ?? 0;
+        $this->latest_bid = $this->product->latest_bid->amount ?? $this->product->price;
+        $this->next_bid_price = $this->getNextBidPrice();
+        $this->bid_history = $this->product->bids()->orderBy( 'created_at', 'desc' )->limit( 7 )->get();
+    }
+
+    public function next_bid_price()
+    {
+        $this->next_bid_price = $this->getNextBidPrice();
     }
 
     private function getNextBidPrice(): int
     {
-
         $value = nextBidPrice($this->product->latest_bid->amount ?? $this->product->price);
 
-        return $this->product->price + $value;
+        return ($this->product->latest_bid->amount ?? $this->product->price ) + $value;
     }
 
     private function checkRules($amount): bool
     {
+        //return true;
         /*
          * Rules for %
          * 1) 1-500 = 50
@@ -267,8 +285,9 @@ class NewBid extends Component
          * */
         //Fixme: Add rules and condition from Adly
         foreach ($this->percent_rules as $rule) {
-            if (in_range($amount, $rule['condition'][0], $rule['condition'][1] ?? $rule['condition'][0], true)) {
-                if ($amount + $rule['rule'] >= (int)$this->product->amount) {
+            //dd(in_range(intval($amount), $rule['condition'][0], $rule['condition'][1] ?? $rule['condition'][0], true));
+            if ( in_range(intval($amount), $rule['condition'][0], $rule['condition'][1] ?? PHP_INT_MAX, true) ) {
+                if ( intval($amount) + $rule['rule'] >= intval($this->product->amount) ) {
                     return false;
                 }
             }

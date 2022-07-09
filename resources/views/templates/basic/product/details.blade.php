@@ -192,13 +192,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="p-3 bg--section mb-4">
-                                <livewire:product.new-bid :product_id="$product->id" />
-                            </div>
-
-                            <div class="product-bid-history">
-                                <livewire:product.product-bid-history :product="$product"/>
-                            </div>
+                            <livewire:product.new-bid :product_id="$product->id" />
 
                             <div class="seller-area bg--section mb-4 d-none">
                                 <h6 class="about-seller mb-4">
