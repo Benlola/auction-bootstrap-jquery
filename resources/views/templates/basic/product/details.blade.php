@@ -95,6 +95,8 @@
                                         <a href="#related-products" data-bs-toggle="tab">@lang('Related Products')</a>
                                     </li>
                                 </ul>
+                                <x-front.product-gallery :product="$product" />
+
                                 <div class="tab-content">
                                     <div class="tab-pane fade fade  show active" id="description">
                                         @php

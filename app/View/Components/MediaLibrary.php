@@ -25,9 +25,9 @@ class MediaLibrary extends Component
 
     public function __construct(Model $model, $collection_name = 'product')
     {
-        $this->model           = $model;
-        $this->table           = with(new $model())->getTable();
-        $this->route           = Route::currentRouteName();
+        $this->model = $model;
+        $this->table = with(new $model())->getTable();
+        $this->route = Route::currentRouteName();
         $this->collection_name = $collection_name;
     }
 
@@ -38,19 +38,18 @@ class MediaLibrary extends Component
      */
     public function render(): View
     {
-
-        if($this->model instanceof Product){
-           $this->categories = Category::query()
-               ->where("id", $this->model->category_id)
-               ->first("media_category");
+        if ($this->model instanceof Product) {
+            $this->categories = Category::query()
+                ->where("id", $this->model->category_id)
+                ->first("media_category");
         }
 
         return view('components.media-library', [
-            'model' => $this->model,
-            'table' => $this->table,
-            'route' => $this->route,
+            'model'           => $this->model,
+            'table'           => $this->table,
+            'route'           => $this->route,
             'collection_name' => $this->collection_name,
-            'media_category' => $this->categories->media_category ?? [],
+            'media_category'  => $this->categories->media_category ?? [],
         ]);
     }
 

@@ -84,6 +84,11 @@ class Product extends Model implements HasMedia
     public function registerMediaCollections(): void
     {
         $this
+            ->addMediaConversion('preview')
+            ->fit(Manipulations::FIT_CROP, 800, 600)
+            ->nonQueued();
+
+        $this
             ->addMediaConversion('thumb')
             ->fit(Manipulations::FIT_CROP, 400, 270)
             ->nonQueued();
