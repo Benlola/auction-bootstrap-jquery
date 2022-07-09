@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Merchant;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -55,7 +56,8 @@ class DatabaseSeeder extends Seeder
         Product::factory(20)->jewerly()->expired()->create();
 
         foreach(range(1,4) as $i => $b){
-            User::factory(1)->bidders($i)->create();
+            User::factory(1)->bidders($i+1)->create();
+            Merchant::factory(1)->merchants($i+1)->create();
         }
     }
 }

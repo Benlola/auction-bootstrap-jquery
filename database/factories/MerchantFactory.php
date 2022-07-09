@@ -2,18 +2,18 @@
 
 namespace Database\Factories;
 
-use App\Models\User;
+use App\Models\Merchant;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
-class UserFactory extends Factory
+class MerchantFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = User::class;
+    protected $model = Merchant::class;
 
     /**
      * Define the model's default state.
@@ -26,6 +26,7 @@ class UserFactory extends Factory
             'lastname' => $this->faker->lastName(),
             'username' => $this->faker->userName(),
             'email' => $this->faker->unique()->safeEmail(),
+            'email_verified_at' => now(),
             'country_code' => 'LK',
             'mobile' => '94+1 (584) 158-4298',
             'balance' => '9999999.00000000',
@@ -40,7 +41,7 @@ class UserFactory extends Factory
             'ts' => 0,
             'tv' => 1,
             'tsc' => NULL,
-            'remember_token' => Str::random(10),
+            //'remember_token' => Str::random(10),
         ];
     }
 
@@ -64,13 +65,13 @@ class UserFactory extends Factory
      *
      * @return \Illuminate\Database\Eloquent\Factories\Factory
      */
-    public function bidders($count): Factory {
+    public function merchants($count): Factory {
         return $this->state(function (array $attributes) use($count) {
             return [
-                'firstname' => 'Bidder',
-                'lastname' => 'Bidder'.$count,
-                'username' => 'bidder'.$count,
-                'email' => 'bidder'.$count.'@site.com',
+                'firstname' => 'Seller',
+                'lastname' => 'Seller'.$count,
+                'username' => 'seller'.$count,
+                'email' => 'seller'.$count.'@site.com',
                 'password' => '$2y$10$vFbiXJaIWQCEFI9Bvr5LI.LI.y2b9bjYqR2cvilelednsjHzxpreu',//Pa$$w0rd!
             ];
         });

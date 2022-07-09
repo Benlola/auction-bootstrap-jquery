@@ -34,8 +34,8 @@ class CreateMerchantsTable extends Migration
             $table->tinyInteger('status')->default(1);
             $table->tinyInteger('ev')->default(0);
             $table->tinyInteger('sv')->default(0);
-            $table->string('ver_code', 40)->nullable();
-            $table->dateTime('ver_code_send_at');
+            $table->string('ver_code', 40)->nullable()->comment('stores verification code');
+            $table->dateTime('ver_code_send_at')->nullable()->comment('verification send time');
             $table->tinyInteger('ts')->default(0);
             $table->tinyInteger('tv')->default(1);
             $table->string('tsc')->nullable();
