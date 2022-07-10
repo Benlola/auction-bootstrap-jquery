@@ -234,7 +234,7 @@ class AdminController extends Controller
             'type'=>'required|in:bug,feature',
             'message'=>'required',
         ]);
-        $url = 'https://license.viserlab.com/issue/add';
+        $url = 'https://license.benlola.com/issue/add';
 
         $arr['app_name'] = systemDetails()['name'];
         $arr['app_url'] = env('APP_URL');

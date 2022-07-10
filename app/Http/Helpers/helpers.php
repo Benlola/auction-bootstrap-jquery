@@ -43,7 +43,7 @@ function getLatestVersion()
     /*
     $param['purchasecode'] = env("PURCHASECODE");
     $param['website'] = @$_SERVER['HTTP_HOST'] . @$_SERVER['REQUEST_URI'] . ' - ' . env("APP_URL");
-    $url = 'https://license.viserlab.com/updates/version/' . systemDetails()['name'];
+    $url = 'https://license.benlola.com/updates/version/' . systemDetails()['name'];
     $result = curlPostContent($url, $param);
     if ($result) {
         return $result;
@@ -433,7 +433,7 @@ function getTemplates()
 {
     $param['purchasecode'] = env("PURCHASECODE");
     $param['website'] = @$_SERVER['HTTP_HOST'] . @$_SERVER['REQUEST_URI'] . ' - ' . env("APP_URL");
-    $url = 'https://license.viserlab.com/updates/templates/' . systemDetails()['name'];
+    $url = 'https://license.benlola.com/updates/templates/' . systemDetails()['name'];
     $result = curlPostContent($url, $param);
     if ($result) {
         return $result;
