@@ -28,7 +28,7 @@ class CountDownAuction extends Component
         $this->product = $product;
         $this->final_step = Carbon::parse($this->product->expired_at)->diffInMinutes(Carbon::now()) < 3;
         $this->product_expire = (!$product->isExpired())?$product->elapsed('expired_at')->toHuman(
-            '<ul>'.
+            '<ul class="sidebar-countdown">'.
             '<li><span class="days">{days}d</span></li>'.
             '<li><span class="hours">{hours}h</span></li>'.
             '<li><span class="minutes">{minutes}m</span></li>'.
@@ -40,7 +40,7 @@ class CountDownAuction extends Component
 
     public function check_expired_product() {
         $this->product_expire = (!$this->product->isExpired())?$this->product->elapsed('expired_at')->toHuman(
-             '<ul>'.
+             '<ul class="sidebar-countdown">'.
             '<li><span class="days">{days}d</span></li>'.
             '<li><span class="hours">{hours}h</span></li>'.
             '<li><span class="minutes">{minutes}m</span></li>'.
