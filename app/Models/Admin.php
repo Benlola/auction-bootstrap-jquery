@@ -3,6 +3,7 @@
 namespace App\Models;
 
 
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Admin extends Authenticatable
@@ -23,7 +24,6 @@ class Admin extends Authenticatable
         'password', 'remember_token',
     ];
 
-
     public function products()
     {
         return $this->hasMany(Product::class);
@@ -37,6 +37,14 @@ class Admin extends Authenticatable
     public function bids()
     {
         return $this->hasManyThrough(Bid::class, Product::class);
+    }
+
+    public function roles(): BelongsToMany {
+        return $this->belongsToMany(Role::class, 'user_roles', 'admin_id');
+    }
+
+    public function isAdministrator() {
+        return $this->roles()->where('name', 'Administrator')->exists();
     }
 
 }

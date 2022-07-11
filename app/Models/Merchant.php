@@ -5,13 +5,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Merchant extends Authenticatable
 {
     use hasFactory;
 
-    protected $guarded = ['id'];
+    protected $guarded = [];//'id'
+
     /**
      * The attributes that should be cast to native types.
      *
@@ -49,10 +51,17 @@ class Merchant extends Authenticatable
         return $this->hasMany(Review::class);
     }
 
-
     public function bids()
     {
         return $this->hasManyThrough(Bid::class, Product::class);
+    }
+
+    public function roles(): BelongsToMany {
+        return $this->belongsToMany(Role::class, 'user_roles', 'merchant_id');
+    }
+
+    public function isMerchant(): bool {
+        return $this->roles()->where('name', 'Merchant')->exists();
     }
 
     // SCOPES

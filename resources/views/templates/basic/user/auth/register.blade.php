@@ -40,11 +40,20 @@
                             <input type="text" id="lastname" name="lastname" class="form-control" autocomplete="off" required>
                         </div>
 
+                        <div class="col-sm-12 mb-3">
+                            <label for="username">@lang('Username')</label>
+                            <input type="text" id="username" name="username" class="form-control checkUser" autocomplete="off" required>
+                        </div>
+                        <div class="col-sm-12 mb-3">
+                            <label for="email">@lang('E-Mail Address')</label>
+                            <input type="text" id="email" name="email" class="form-control checkUser" autocomplete="off" required>
+                        </div>
+
                         <div class="col-sm-6 mb-3">
                             <label for="country">@lang('Country')</label>
                             <select name="country" id="country" class="form-control">
                                 @foreach($countries as $key => $country)
-                                    <option data-mobile_code="{{ $country->dial_code }}" value="{{ $country->country }}" data-code="{{ $key }}">{{ __($country->country) }}</option>
+                                    <option @if(\Cookie::has('current_country_code') && $key === \Cookie::get('current_country_code')) selected @endif data-mobile_code="{{ $country->dial_code }}" value="{{ $country->country }}" data-code="{{ $key }}">{{ __($country->country) }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -57,14 +66,6 @@
                                 <span class="input-group-text mobile-code bg--base text-white border-0"></span>
                                 <input type="tel" id="mobile" name="mobile" value="{{ old('mobile') }}" class="form-control checkUser" autocomplete="off" required>
                             </div>
-                        </div>
-                        <div class="col-sm-6 mb-3">
-                            <label for="username">@lang('Username')</label>
-                            <input type="text" id="username" name="username" class="form-control checkUser" autocomplete="off" required>
-                        </div>
-                        <div class="col-sm-6 mb-3">
-                            <label for="email">@lang('E-Mail Address')</label>
-                            <input type="text" id="email" name="email" class="form-control checkUser" autocomplete="off" required>
                         </div>
                         <div class="col-sm-6 mb-3 hover-input-popup">
                             <label for="password">@lang('Password')</label>
@@ -110,9 +111,14 @@
                         </div>
                     @endif
 
-                    <button type="submit" class="cmn--btn w-100">@lang('Register')</button>
+                    <div class="row mt-xs-3 mt-sm-4">
+                        <div class="col-xs-12 text-center">
+                            <button type="submit" class="cmn--btn w-75">@lang('Register')</button>
+                        </div>
+                    </div>
+
                 </form>
-                <div class="mt-5 text-center">
+                <div class="mt-3 text-center">
                     @lang('Already have an Account ? ')<a href="{{ route('user.login') }}" class="text--base">@lang('Login')</a>
                 </div>
             </div>

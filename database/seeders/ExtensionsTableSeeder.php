@@ -14,12 +14,12 @@ class ExtensionsTableSeeder extends Seeder
      */
     public function run()
     {
-        
+
 
         \DB::table('extensions')->delete();
-        
+
         \DB::table('extensions')->insert(array (
-            0 => 
+            0 =>
             array (
                 'id' => 1,
                 'act' => 'tawk-chat',
@@ -44,7 +44,7 @@ s0.parentNode.insertBefore(s1,s0);
                 'created_at' => '2019-10-19 02:16:05',
                 'updated_at' => '2021-05-18 08:37:12',
             ),
-            1 => 
+            1 =>
             array (
                 'id' => 2,
                 'act' => 'google-recaptcha2',
@@ -62,7 +62,7 @@ s0.parentNode.insertBefore(s1,s0);
                 'created_at' => '2019-10-19 02:16:05',
                 'updated_at' => '2022-03-07 13:22:07',
             ),
-            2 => 
+            2 =>
             array (
                 'id' => 3,
                 'act' => 'custom-captcha',
@@ -72,12 +72,12 @@ s0.parentNode.insertBefore(s1,s0);
                 'script' => NULL,
                 'shortcode' => '{"random_key":{"title":"Random String","value":"SecureString"}}',
                 'support' => 'na',
-                'status' => 1,
+                'status' => 0,
                 'deleted_at' => NULL,
                 'created_at' => '2019-10-19 02:16:05',
                 'updated_at' => '2022-06-14 22:34:37',
             ),
-            3 => 
+            3 =>
             array (
                 'id' => 4,
                 'act' => 'google-analytics',
@@ -99,7 +99,7 @@ gtag("config", "{{app_key}}");
                 'created_at' => NULL,
                 'updated_at' => '2021-05-04 13:19:12',
             ),
-            4 => 
+            4 =>
             array (
                 'id' => 5,
                 'act' => 'fb-comment',
@@ -115,7 +115,7 @@ gtag("config", "{{app_key}}");
                 'updated_at' => '2022-03-05 13:48:01',
             ),
         ));
-        
-        
+
+
     }
 }

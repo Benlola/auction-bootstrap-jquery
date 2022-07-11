@@ -125,7 +125,8 @@ class LoginController extends Controller
         request()->session()->invalidate();
 
         $notify[] = ['success', 'You have been logged out.'];
-        return redirect()->route('user.login')->withNotify($notify);
+        return redirect()->to('/')->withNotify($notify);
+        //return redirect()->route('user.login')->withNotify($notify);
     }
 
 
@@ -165,7 +166,7 @@ class LoginController extends Controller
         $userAgent = osBrowser();
         $userLogin->user_id = $user->id;
         $userLogin->user_ip =  $ip;
-        
+
         $userLogin->browser = @$userAgent['browser'];
         $userLogin->os = @$userAgent['os_platform'];
         $userLogin->save();

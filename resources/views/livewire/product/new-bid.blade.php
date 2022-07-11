@@ -5,26 +5,31 @@
                 <div class="product-price last-bid">
                     <div class="price fs-2 text--black">
                         {{ showAmount($latest_bid) }} <span class="text--base">{{ __($general->cur_text) }}</span>
-
                     </div>
-                    <div class="fs-5 fw-bold text-base ">
+                    <div class="fs-5 fw-bold text-base">
                         @lang('Current Bid')
-                        @if($product->latest_bid && auth()->user()->id === $product->latest_bid->user_id)
+                        @if($product->latest_bid && auth()->id() === $product->latest_bid->user_id)
                             <span class="text-secondary fw-normal small">@lang('(your bid)')</span>
                         @endif
                     </div>
                 </div>
             @else
-                <div class="product-price mb-3">
+                <div class="product-price last-bid">
                     <div class="price fs-2 text--black">
                         {{ showAmount($product->price) }} <span class="text--base">{{ __($general->cur_text) }}</span>
+                    </div>
+                    <div class="fs-5 fw-bold text-base">
+                        @lang('Current Bid')
+                        @if($product->latest_bid && auth()->id() === $product->latest_bid->user_id)
+                            <span class="text-secondary fw-normal small">@lang('(your bid)')</span>
+                        @endif
                     </div>
                 </div>
             @endif
 
 
-            @if ($product->status == 1 && $product->started_at < now() && $product->expired_at > now())
-                <form wire:submit.prevent="checkData">
+            @if (Auth::guard('bidder')->check() && $product->status == 1 && $product->started_at < now() && $product->expired_at > now())
+                <form wire:submit.prevent="checkData" class="mt-3">
                     <div class="mb-0 text-secondary">@lang('Quick Bid')</div>
                     <div class="mb-2">
                         <button value="{{ $next_bid_price }}" wire:model="next_bid_price" name="quick_amount"
@@ -59,7 +64,8 @@
             @endif
         </div>
     </div>
-    <div class="product-bid-history">
+    @if(count($bid_history))
+        <div class="product-bid-history">
         <div class="mt-5">
             <h5 class="title mb-4">@lang('Bid history')</h5>
             <ul>
@@ -79,4 +85,5 @@
             </ul>
         </div>
     </div>
+    @endif
 </div>

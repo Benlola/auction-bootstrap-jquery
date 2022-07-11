@@ -2,8 +2,11 @@
 
 namespace App\Models;
 
+use App\Traits\CalculateTimeDiff;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 use Spatie\Image\Manipulations;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -12,6 +15,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 class Product extends Model implements HasMedia {
     use hasFactory;
     use InteractsWithMedia;
+    use CalculateTimeDiff;
 
 
     protected $guarded = [ 'id' ];
@@ -38,6 +42,9 @@ class Product extends Model implements HasMedia {
 
     public function scopeExpired() {
         return $this->where( 'expired_at', '<', now() );
+    }
+    public function isExpired() {
+        return Carbon::parse($this->expired_at) < Carbon::now();
     }
 
     public function merchant() {

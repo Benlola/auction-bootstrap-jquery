@@ -176,6 +176,9 @@
                     </div>
                     <div class="col-lg-4">
                         <aside class="product-single-sidebar ms-xl-3 ms-xxl-5 position-sticky" style="top:100px">
+
+                            <livewire:product.count-down-auction :product="$product"/>
+
                             <div class="countdown-area bg--section mb-4" style="box-shadow: 0 0 13px #214ab036;">
                                 <ul class="countdown sidebar-countdown" data-date="{{ showDateTime($product->expired_at, 'm/d/Y H:i:s') }}">
                                     <li>

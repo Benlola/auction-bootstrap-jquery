@@ -9,6 +9,7 @@ use App\Models\GeneralSetting;
 use App\Models\Product;
 use App\Models\Transaction;
 use Exception;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
@@ -176,6 +177,7 @@ class NewBid extends Component
             );
 
             $this->product->total_bid += 1;
+            $this->product->expired_ad = Carbon::parse($this->product->expired_ad)->addMinutes(2);
             $this->product->save();
             $user->balance -= $validatedData['amount'];
             $user->save();

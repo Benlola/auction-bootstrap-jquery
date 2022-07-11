@@ -48,5 +48,8 @@ class MerchantsTableSeeder extends Seeder
             ),
         ));
 
+        $user = \App\Models\Merchant::find(1);
+        $user->roles()->attach(\App\Models\Role::find(2)->id);
+
     }
 }

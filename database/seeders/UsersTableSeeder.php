@@ -45,5 +45,8 @@ class UsersTableSeeder extends Seeder
             )
         ));
 
+
+        $user = \App\Models\User::find(1);
+        $user->roles()->attach(\App\Models\Role::find(3)->id);
     }
 }

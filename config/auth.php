@@ -46,7 +46,7 @@ return [
             'provider' => 'users',
             'hash' => true,
         ],
-        
+
         'admin' => [
             'driver' => 'session',
             'provider' => 'admins',
@@ -55,6 +55,11 @@ return [
         'merchant' => [
             'driver' => 'session',
             'provider' => 'merchants',
+        ],
+
+        'bidder' => [
+            'driver' => 'session',
+            'provider' => 'users',
         ],
     ],
 

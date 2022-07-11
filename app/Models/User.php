@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -11,12 +12,12 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
     use Notifiable, HasApiTokens, hasFactory;
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-
     protected $guarded = ['id'];
 
     /**
@@ -43,9 +44,6 @@ class User extends Authenticatable
         'data'=>1
     ];
 
-
-
-
     public function login_logs()
     {
         return $this->hasMany(UserLogin::class);
@@ -65,7 +63,6 @@ class User extends Authenticatable
     {
         return $this->hasMany(Bid::class);
     }
-
 
     // SCOPES
 
@@ -104,6 +101,14 @@ class User extends Authenticatable
     public function scopeSmsVerified()
     {
         return $this->where('sv', 1);
+    }
+
+    public function isBidder(): bool {
+        return $this->roles()->where('name', 'Bidder')->exists();
+    }
+
+    public function roles(): BelongsToMany {
+        return $this->belongsToMany(Role::class, 'user_roles', 'user_id');
     }
 
 }

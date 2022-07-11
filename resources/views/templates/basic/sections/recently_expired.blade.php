@@ -37,12 +37,7 @@
                                     <a href="{{ route('product.details', [$product->id, slug($product->name)]) }}">{{ __($product->name) }}</a>
                                 </h6>
                                 <div class="auction__item-countdown">
-                                    <div class="inner__grp">
-
-                                        <div class="total-price">
-                                            {{ $general->cur_sym }}{{ showAmount($product->price) }}
-                                        </div>
-                                    </div>
+                                    <x-auction_item_countdown :product="$product" :general="$general"/>
                                 </div>
                                 <div class="auction__item-footer">
                                     <a href="{{ route('product.details', [$product->id, slug($product->name)]) }}"

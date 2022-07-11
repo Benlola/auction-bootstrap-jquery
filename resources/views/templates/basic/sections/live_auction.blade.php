@@ -36,26 +36,7 @@
                                     <a href="{{ route('product.details', [$product->id, slug($product->name)]) }}">{{ __($product->name) }}</a>
                                 </h6>
                                 <div class="auction__item-countdown">
-                                    <div class="inner__grp">
-
-                                        <ul class="countdown" data-date="{{ showDateTime($product->expired_at, 'm/d/Y H:i:s') }}">
-                                            <li>
-                                                <span class="days">@lang('00')</span>
-                                            </li>
-                                            <li>
-                                                <span class="hours">@lang('00')</span>
-                                            </li>
-                                            <li>
-                                                <span class="minutes">@lang('00')</span>
-                                            </li>
-                                            <li>
-                                                <span class="seconds">@lang('00')</span>
-                                            </li>
-                                        </ul>
-                                        <div class="total-price">
-                                            {{ $general->cur_sym }}{{ showAmount($product->price) }}
-                                        </div>
-                                    </div>
+                                    <x-auction_item_countdown :product="$product" :general="$general"/>
                                 </div>
                                 <div class="auction__item-footer">
                                     <a href="{{ route('product.details', [$product->id, slug($product->name)]) }}" class="cmn--btn w-100">@lang('Details')</a>

@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         $this->call(AdminNotificationsTableSeeder::class);
+        $this->call(RolesTableSeeder::class);
         $this->call(AdminPasswordResetsTableSeeder::class);
         $this->call(AdminsTableSeeder::class);
         $this->call(AdvertisementsTableSeeder::class);
@@ -56,8 +57,8 @@ class DatabaseSeeder extends Seeder
         Product::factory(20)->jewerly()->expired()->create();
 
         foreach(range(1,4) as $i => $b){
-            User::factory(1)->bidders($i+1)->create();
-            Merchant::factory(1)->merchants($i+1)->create();
+            Merchant::factory()->merchants($i+1)->create()->roles()->attach(\App\Models\Role::find(2)->id);
+            User::factory()->bidders($i+1)->create()->roles()->attach(\App\Models\Role::find(3)->id);
         }
     }
 }

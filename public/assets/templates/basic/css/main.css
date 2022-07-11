@@ -4356,7 +4356,8 @@ div[class*="col"]:nth-of-type(4n + 1) .feature__item-icon {
 }
 
 .auction__item-thumb {
-    padding: 15px 15px 0;
+    padding: 0;
+    /*padding: 15px 15px 0;*/
     position: relative;
 }
 
@@ -5577,7 +5578,6 @@ div[class*="col"]:nth-of-type(4n + 1) .feature__item-icon {
     margin-bottom: 20px;
 }
 
-.countdown-area,
 .seller-area {
     padding: 30px 20px;
     -webkit-border-radius: 3px;
@@ -5969,6 +5969,17 @@ textarea.form--control {
     -webkit-text-fill-color: #fff !important;
 }
 
+.countdown-area {
+    padding: 30px 20px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px dashed rgba(193, 81, 204, 0.1);
+}
+.countdown-area.final-step {
+    background-color: #f39797 !important;
+}
+
 .sidebar-countdown {
     margin: -5px;
     display: flex;
@@ -6000,7 +6011,6 @@ textarea.form--control {
 .product-price.last-bid {
     font-size: 22px;
     font-weight: bold;
-    margin-bottom: 30px;
     margin-top: 0;
     text-align: left;
     background: #0d6efd40;

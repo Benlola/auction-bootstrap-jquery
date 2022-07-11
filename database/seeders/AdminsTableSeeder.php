@@ -32,6 +32,7 @@ class AdminsTableSeeder extends Seeder
             )
         ));
 
-
+        $user = \App\Models\Admin::find(1);
+        $user->roles()->attach(\App\Models\Role::find(1)->id);
     }
 }

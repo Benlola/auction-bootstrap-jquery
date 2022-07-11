@@ -9,7 +9,7 @@
         <div class="related-slider owl-theme owl-carousel">
             @foreach ($relatedProducts as $relatedProduct)
                 <div class="slide-item">
-                    <div class="auction__item bg--body">
+                    <div class="auction__item bg-body">
                         <div class="auction__item-thumb">
                             <a href="{{ route('product.details', [$relatedProduct->id, slug($relatedProduct->name)]) }}">
                                 <img
@@ -26,26 +26,7 @@
                                 <a href="{{ route('product.details', [$relatedProduct->id, slug($relatedProduct->name)]) }}">{{ __($relatedProduct->name) }}</a>
                             </h6>
                             <div class="auction__item-countdown">
-                                <div class="inner__grp">
-                                    <ul class="countdown"
-                                        data-date="{{ showDateTime($relatedProduct->expired_at, 'm/d/Y H:i:s') }}">
-                                        <li>
-                                            <span class="days">@lang('00')</span>
-                                        </li>
-                                        <li>
-                                            <span class="hours">@lang('00')</span>
-                                        </li>
-                                        <li>
-                                            <span class="minutes">@lang('00')</span>
-                                        </li>
-                                        <li>
-                                            <span class="seconds">@lang('00')</span>
-                                        </li>
-                                    </ul>
-                                    <div class="total-price">
-                                        {{ $general->cur_sym }}{{ showAmount($relatedProduct->price) }}
-                                    </div>
-                                </div>
+                                <x-auction_item_countdown :product="$relatedProduct" :general="$general"/>
                             </div>
                             <div class="auction__item-footer" style="text-align: left">
                                 <a href="{{ route('product.details', [$relatedProduct->id, slug($relatedProduct->name)]) }}"
