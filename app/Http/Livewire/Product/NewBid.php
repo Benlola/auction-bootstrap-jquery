@@ -178,10 +178,22 @@ class NewBid extends Component
             );
 
             $this->product->total_bid += 1;
-            $this->product->expired_ad = Carbon::parse($this->product->expired_ad)->addMinutes(2);
-            $this->product->save();
-            $user->balance -= $validatedData['amount'];
-            $user->save();
+
+            /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+             * If expiration less than now for 2 minutes and made new bid,
+             * increase expiration to 2 minutes adn update all countdown's
+             * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+            if(Carbon::parse($this->product->expired_at)->diffInMinutes(Carbon::now()) < 2){
+                $this->product->expired_at = Carbon::parse($this->product->expired_at)->addMinutes(2);
+                //broadcast('product'.$this->product->id.'expiration.update')->toOthers();
+            }
+            //dd($validatedData['amount'], nextBidPrice($validatedData['amount'])+$validatedData['amount']);
+            event(new \App\Events\NewBid($this->product, $validatedData['amount'], nextBidPrice($validatedData['amount'])+$validatedData['amount'])); //send notification to all users
+            event(new \App\Events\BidHistory($this->product)); //send notification to all users
+            $this->product->save();//Save product
+            $user->balance -= $validatedData['amount']; //decrease user amount
+            $user->save();//save to user
+
             $trx = getTrx();
             Transaction::create(
                 [

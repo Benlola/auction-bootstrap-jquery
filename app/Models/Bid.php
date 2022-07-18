@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Events\NewBid;
+use http\Client\Request;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -35,6 +37,10 @@ class Bid extends Model
     public function scopeLast()
     {
         return $this->orderBy('created_at', 'desc')->limit(1)->pluck('amount');
+    }
+
+    public function store ( Request $request, Bid $bid) {
+        broadcast(new NewBid($bid))->toOthers();
     }
 
 }

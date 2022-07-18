@@ -543,6 +543,7 @@ Route::get('search-products', 'ProductController@products')->name('product.searc
 Route::get('category/{category_id}/{slug}', 'ProductController@products')->name('category.products');
 Route::get('search-products/filter', 'ProductController@filter')->name('product.search.filter');
 Route::get('product-details/{id}/{slug}', 'ProductController@productDetails')->name('product.details');
+Route::get('product-details/{id}/specifications/{slug}', 'ProductController@productDetailsSpecifications')->name('product.details.specifications');
 Route::get('reviews', 'ProductController@loadMore')->name('product.review.load');
 
 

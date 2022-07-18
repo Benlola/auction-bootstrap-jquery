@@ -7,7 +7,7 @@ use App\Models\Product;
 use Illuminate\View\Component;
 use Illuminate\View\View;
 
-class ProductGallery extends Component
+class ProductMediaCategories extends Component
 {
     /**
      * @var Product
@@ -39,7 +39,7 @@ class ProductGallery extends Component
      */
     public function render(): View
     {
-        return view('components.front.product-gallery',[
+        return view('components.front.product-media-categories',[
             'all_gallery' => $this->product->media()->get(),
             'gallery_category'  => $this->categories->media_category ?? [],
         ]);

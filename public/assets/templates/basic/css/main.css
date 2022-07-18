@@ -4349,7 +4349,7 @@ div[class*="col"]:nth-of-type(4n + 1) .feature__item-icon {
 
 /*Auction Starts Here*/
 .auction__item {
-    box-shadow: 0 0 20px #37485c33;
+    /*box-shadow: 0 0 20px #37485c33;*/
     -webkit-border-radius: 5px 5px 0 0;
     -moz-border-radius: 5px 5px 0 0;
     border-radius: 5px 5px 0 0;
@@ -4491,8 +4491,8 @@ div[class*="col"]:nth-of-type(4n + 1) .feature__item-icon {
 }
 
 .auction__item:hover {
-    box-shadow: 0 0 20px #37485c33;
-    transform: scale(1.05);
+    /*box-shadow: 0 0 20px #37485c33;
+    transform: scale(1.05);*/
     transition: 300ms;
 }
 
@@ -5975,8 +5975,10 @@ textarea.form--control {
     -moz-border-radius: 3px;
     border-radius: 3px;
     border: 1px dashed rgba(193, 81, 204, 0.1);
+    background-color: #ffffff;
 }
-.countdown-area.final-step {
+.countdown-area.final-step,
+.countdown-area.last-minutes{
     background-color: #f39797 !important;
 }
 

@@ -20,7 +20,7 @@
   }
 
     function copyBtn() {
-        var copyText = document.getElementById('referral-link');
+        let copyText = document.getElementById('referral-link');
         copyText.select();
         copyText.setSelectionRange(0, 99999);
         document.execCommand('copy')
@@ -29,7 +29,7 @@
     $('#referral-link').on('click', copyBtn)
 
       $('.countdown').each(function(){
-        var date = $(this).data('date');
+        let date = $(this).data('date');
           $(this).countdown({
             date: date,
             offset: +6,

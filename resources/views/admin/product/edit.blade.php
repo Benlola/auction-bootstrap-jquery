@@ -213,7 +213,7 @@
             $('#endDateTime').datepicker({
                 timepicker: true,
                 language: 'en',
-                dateFormat: 'dd-mm-yyyy',
+                dateFormat: 'dd-mm-yyyy H:i:s',
                 startDate: start,
                 minHours: startHours,
                 maxHours: 23,

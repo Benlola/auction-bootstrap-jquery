@@ -77,6 +77,22 @@ class ProductController extends Controller
         return view($this->activeTemplate.'product.details', compact('pageTitle', 'product', 'relatedProducts', 'seoContents', 'images'));
     }
 
+    public function productDetailsSpecifications($id)
+    {
+        $pageTitle = 'Product Specifications';
+
+        $product = Product::with(['reviews', 'merchant', 'reviews.user', 'latest_bid'])->where('status', '!=', 0)->findOrFail($id);
+
+        $relatedProducts = Product::live()->where('category_id', $product->category_id)->where('id', '!=', $id)->limit(10)->get();
+
+        $imageData = imagePath()['product'];
+
+        $seoContents = getSeoContents($product, $imageData, 'image');
+        $images = $product->getMedia('product');
+
+        return view($this->activeTemplate.'product.details_specifications', compact('pageTitle', 'product', 'relatedProducts', 'seoContents', 'images'));
+    }
+
 
     public function loadMore(Request $request)
     {

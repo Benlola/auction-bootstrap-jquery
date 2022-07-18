@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
     <title> {{ $general->sitename(__($pageTitle)) }}</title>
@@ -84,6 +85,7 @@
     <script src="{{ asset($activeTemplateTrue.'js/countdown.min.js') }}"></script>
     <script src="{{ asset($activeTemplateTrue.'js/headline.js') }}"></script>
     <script src="{{ asset($activeTemplateTrue.'js/main.js') }}"></script>
+    <script src="{{ mix('js/app.js') }}"></script>
 
     @stack('script-lib')
 
@@ -152,6 +154,8 @@
 
 
         })(jQuery);
+
+
     </script>
 
     @livewireScripts

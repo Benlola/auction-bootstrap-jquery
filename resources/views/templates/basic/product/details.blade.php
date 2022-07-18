@@ -78,7 +78,7 @@
 
                                     <div class="mt-5" id="specification">
                                         <div class="specification-wrapper">
-                                            <h5 class="title">@lang('Specification')</h5>
+                                            <h5 class="title">@lang('Specification') <a href="{{ route('product.details.specifications',[ 'id' => $product->id, 'slug' => slug($product->name) ]) }}" class="btn btn-primary float-end">@lang('Full specification')</a></h5>
                                             <div class="table-wrapper">
                                                 <table class="specification-table">
                                                     <tr>
@@ -98,7 +98,7 @@
                                         </div>
                                     </div>
 
-                                    <x-front.product-gallery :product="$product" />
+                                    <x-front.product-media-categories :product="$product" />
 
                                     <div class="mt-5" id="reviews">
                                         <h5 class="title pb-4">@lang('Reviews') <span class="text-secondary fw-normal fs-6">({{ $product->reviews->count() }})</span></h5>
@@ -176,9 +176,13 @@
                     </div>
                     <div class="col-lg-4">
                         <aside class="product-single-sidebar ms-xl-3 ms-xxl-5 position-sticky" style="top:100px">
-
+                            {{--
+                            Now: {{showDateTime(now(), 'm/d/Y H:i:s')}}<br>
+                            Expire At: {{showDateTime($product->expired_at, 'm/d/Y H:i:s')}}
                             <livewire:product.count-down-auction :product="$product"/>
-
+                            --}}
+                            <x-front.count-down-auction :product="$product"/>
+                            {{--
                             <div class="countdown-area bg--section mb-4" style="box-shadow: 0 0 13px #214ab036;">
                                 <ul class="countdown sidebar-countdown" data-date="{{ showDateTime($product->expired_at, 'm/d/Y H:i:s') }}">
                                     <li>
@@ -195,6 +199,7 @@
                                     </li>
                                 </ul>
                             </div>
+                            --}}
                             <livewire:product.new-bid :product_id="$product->id" />
 
                             <div class="seller-area bg--section mb-4 d-none">
@@ -225,10 +230,8 @@
                                     @if(!$admin)
                                     <li>
                                         <div class="ratings">
-                                            @php
-                                                echo displayAvgRating($star = $admin ? $product->admin->avg_rating : $product->merchant->avg_rating)
-                                            @endphp
-                                            ({{ __($admin ? $product->admin->review_count : $product->merchant->review_count) }})
+                                            {!! displayAvgRating($star = $admin ? $product->admin->avg_rating : $product->merchant->avg_rating) !!}
+                                            ( {{ __($admin ? $product->admin->review_count : $product->merchant->review_count) }})
                                         </div>
                                     </li>
                                     @endif
@@ -283,65 +286,6 @@
         </div>
 @endsection
 
-@push('style')
-    <style>
-        /* Chrome, Safari, Edge, Opera */
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-        }
-
-        /* Firefox */
-        input[type=number] {
-        -moz-appearance: textfield;
-        }
-    </style>
-@endpush
-
-@push('script')
-<script>
-    (function ($) {
-        "use strict";
-        var pid = '{{ $product->id }}';
-        loadData(pid);
-
-        function loadData(pid, url="{{ route('product.review.load') }}") {
-            $.ajax({
-                url: url,
-                method: "GET",
-                data: { pid: pid },
-                success: function (data) {
-                    $('#load_more_button').remove();
-                    $('.review-area').append(data);
-                }
-            });
-        }
-
-        $(document).on('click', '#load_more_button', function () {
-            var id  = $(this).data('id');
-            var url = $(this).data('url');
-            $('#load_more_button').html(`<b>{{ __('Loading') }} <i class="fa fa-spinner fa-spin"></i> </b>`);
-            loadData(pid, url);
-        });
-
-        $('.empty-message').hide();
-        {{--$('.bid_now').on('click', function () {--}}
-        {{--    var modal = $('#bidModal');--}}
-        {{--    var cur_sym = $(this).data('cur_sym');--}}
-        {{--    var amount = $('#amount').val();--}}
-        {{--    modal.find('.message').html('@lang("Are you sure to bid on this product?")');--}}
-        {{--    if(!amount){--}}
-        {{--        modal.find('.message').html('@lang("Please enter an amount to bid")');--}}
-        {{--        $('.empty-message').show();--}}
-        {{--    }else{--}}
-        {{--        $('.empty-message').hide();--}}
-        {{--        modal.find('.amount').val(amount);--}}
-        {{--        modal.modal('show');--}}
-        {{--    }--}}
-        {{--});--}}
-    })(jQuery);
-</script>
-@endpush
+@include('templates.basic.product.product_bid_actions')
 
 

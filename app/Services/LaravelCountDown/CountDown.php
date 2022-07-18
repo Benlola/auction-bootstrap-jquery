@@ -202,6 +202,22 @@ class CountDown
         return $this;
     }
 
+    private function project_bcmod( $x, $y )
+    {
+        $take = 5;
+        $mod = '';
+
+        do
+        {
+            $a = (int) $mod.substr( $x, 0, $take );
+            $x = substr( $x, $take );
+            $mod = $a % $y; //here can be problems
+        }
+        while ( strlen($x) );
+
+        return (int) $mod;
+    }
+
     /**
      * Compute the number of weeks for the countdown
      *
@@ -209,7 +225,9 @@ class CountDown
      */
     private function computeWeeks(): self
     {
-        $this->weeks = intval(bcmod((intval($this->delta) / self::SECONDS_PER_WEEK), self::WEEKS_PER_YEAR));
+        //number_format()
+        //dd(bcmod((intval($this->delta) / self::SECONDS_PER_WEEK), self::WEEKS_PER_YEAR));
+        $this->weeks = intval($this->project_bcmod((intval($this->delta) / self::SECONDS_PER_WEEK), self::WEEKS_PER_YEAR));
 
         return $this;
     }

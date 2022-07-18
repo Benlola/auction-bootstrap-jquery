@@ -1,12 +1,12 @@
-<div wire:poll="sync_product_data">
+<div>{{-- wire:poll="sync_product_data"--}}
     <div class="p-3 bg--section mb-4">
         <div class="col-12">
             @if(isset($latest_bid))
                 <div class="product-price last-bid">
                     <div class="price fs-2 text--black">
-                        {{ showAmount($latest_bid) }} <span class="text--base">{{ __($general->cur_text) }}</span>
+                        <span class="amount">{{ showAmount($latest_bid) }}</span> <span class="text--base">{{ __($general->cur_text) }}</span>
                     </div>
-                    <div class="fs-5 fw-bold text-base">
+                    <div class="fs-5 fw-bold text-base amount-text">
                         @lang('Current Bid')
                         @if($product->latest_bid && auth()->id() === $product->latest_bid->user_id)
                             <span class="text-secondary fw-normal small">@lang('(your bid)')</span>
@@ -15,8 +15,8 @@
                 </div>
             @else
                 <div class="product-price last-bid">
-                    <div class="price fs-2 text--black">
-                        {{ showAmount($product->price) }} <span class="text--base">{{ __($general->cur_text) }}</span>
+                    <div class="price fs-2 text--black amount-text">
+                        <span class="amount">{{ showAmount($product->price) }}</span> <span class="text--base">{{ __($general->cur_text) }}</span>
                     </div>
                     <div class="fs-5 fw-bold text-base">
                         @lang('Current Bid')
@@ -27,14 +27,15 @@
                 </div>
             @endif
 
+            {{--Auth::guard('bidder')->check() &&   @dd($product->expired_at, now())--}}
 
-            @if (Auth::guard('bidder')->check() && $product->status == 1 && $product->started_at < now() && $product->expired_at > now())
-                <form wire:submit.prevent="checkData" class="mt-3">
+            @if ($product->status == 1 && $product->started_at < now() && $product->expired_at > now())
+                <form wire:submit.prevent="checkData" class="mt-3 add-bid-form">
                     <div class="mb-0 text-secondary">@lang('Quick Bid')</div>
                     <div class="mb-2">
                         <button value="{{ $next_bid_price }}" wire:model="next_bid_price" name="quick_amount"
-                                class="cmn--btn btn--sm" type="submit" style="padding:2px 10px; font-size: 13px">
-                            <i class="las la-gavel me-2"></i> {{ $general->cur_sym }} {{ number_format($next_bid_price, 2, '.', ',') }}
+                                class="cmn--btn btn--sm quick_amount" type="submit" style="padding:2px 10px; font-size: 13px">
+                            <i class="las la-gavel me-2"></i> {{ $general->cur_sym }} {{ showAmount($next_bid_price) }}
                         </button>
                     </div>
 
@@ -49,7 +50,7 @@
                         <div class="col-4 ps-0">
                             <button class="cmn--btn btn--sm bid_now w-100"
                                     type="submit"
-                                    style="height:40px"
+                                    style="height:40px;white-space: nowrap;"
                                     data-cur_sym="{{ $general->cur_sym }}">@lang('Bid Now')
                             </button>
                         </div>
