@@ -5,7 +5,7 @@
     @foreach($model->getMedia($category)->chunk(6) ?? [] as $chunk)
         <div class="row my-10">
             @foreach ($chunk as $file)
-                <div class="card position-relative col-md-1">
+                <div class="card position-relative col-6 col-sm-4 col-md-2">
                     <div class="position-absolute my-2 mx-2">
                         <a href="{{ route("remove.media", $file) }}" onclick="return confirm('Are you sure?')" class="btn btn-danger pull-right btn-sm delete confirmable">
                             delete

@@ -109,6 +109,7 @@ class NewBid extends Component
             $this->amount = filter_var(str_replace(['.', '+', '-'], '', $this->amount), FILTER_SANITIZE_NUMBER_INT);
 
             if ((int)$this->amount < (int)$this->product->price) {
+                //dd((int)$this->amount .'<'. (int)$this->product->price);
                 $this->addError('amount', __('Bid amount must be greater than product price'));
 
                 return back();
