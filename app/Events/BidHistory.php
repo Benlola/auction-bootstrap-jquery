@@ -40,7 +40,9 @@ class BidHistory implements ShouldBroadcastNow {
 
     public function broadcastWith() {
         $bid_history      = $this->product->bids()->orderBy( 'created_at', 'desc' )->limit( 7 )->get();
-        $bid_history_html = '<ul>';
+
+        $bid_history_html = '<h5 class="title mb-4">'.__('Bid history').'</h5>';
+        $bid_history_html .= '<ul>';
         foreach($bid_history as $key => $bid) {
             $bid_history_html .= '<li class="row py-2 m-0"
                         style="border-bottom: 1px solid #e2e2e2f4; opacity:0.' . ( $key+1 - 10 ) * ( - 1 ) . '">

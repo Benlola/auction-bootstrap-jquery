@@ -90,7 +90,7 @@
 
         Echo.channel('product.bid-history.{{ $product->id }}')
             .listen('BidHistory', (e) => {
-                document.querySelector('.product-bid-history ul').innerHTML = e.history;
+                document.querySelector('.product-bid-history > div').innerHTML = e.history;// > div - This means first div
                 console.log('Listen Bid History => ');
                 console.log(e);
             })

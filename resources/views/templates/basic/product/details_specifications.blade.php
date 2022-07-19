@@ -96,7 +96,7 @@
                                     </div>
                                 </div>
 
-                                <x-front.product-gallery :product="$product" />
+                                <x-front.product-media-categories :product="$product" />
 
                                 <div class="mt-5" id="reviews">
                                     <h5 class="title pb-4">@lang('Reviews') <span class="text-secondary fw-normal fs-6">({{ $product->reviews->count() }})</span></h5>
