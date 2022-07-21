@@ -1,7 +1,9 @@
 @foreach($media_category ?? [] as $category)
+    @if(count($model->getMedia($category))) > 0)
     <div class="row my-10">
         {{ $category }}
     </div>
+    @endif
     @foreach($model->getMedia($category)->chunk(6) ?? [] as $chunk)
         <div class="row my-10">
             @foreach ($chunk as $file)

@@ -9,6 +9,7 @@ use App\Models\GeneralSetting;
 use App\Models\Product;
 use App\Models\Winner;
 use App\Rules\FileTypeValidate;
+use App\ViewModels\CarReport;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -85,8 +86,8 @@ class ProductController extends Controller
         $pageTitle = 'Update Product';
         $categories = Category::where('status', 1)->get();
         $product = Product::findOrFail($id);
-
-        return view('admin.product.edit', compact('pageTitle', 'categories', 'product'));
+        $report =  CarReport::getReportData();
+        return view('admin.product.edit', compact('pageTitle', 'categories', 'product', 'report'));
     }
 
     public function store(Request $request)
@@ -129,6 +130,7 @@ class ProductController extends Controller
         $product->short_description = $request->short_description;
         $product->long_description = $request->long_description;
         $product->specification = $request->specification ?? null;
+        $product->report = $request->report ?? null;
 
         $product->save();
 
