@@ -31,7 +31,13 @@ class UserFactory extends Factory
             'balance' => '9999999.00000000',
             'password' => bcrypt('password'),//Pa$$w0rd!
             'image' => NULL,
-            'address' => '{"address":"","state":"","zip":"","country":"Sri Lanka","city":""}',
+            'address' => [
+                "address" => "",
+                "state"   => "",
+                "zip"     => "",
+                "country" => "Sri Lanka",
+                "city"    => ""
+            ],
             'status' => 1,
             'ev' => 1,
             'sv' => 1,
