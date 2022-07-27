@@ -3,6 +3,8 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
+
+
                 <form action="{{ route('admin.product.update', $product->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="card-body">

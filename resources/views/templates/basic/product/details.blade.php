@@ -100,6 +100,8 @@
 
                                     <x-front.product-media-categories :product="$product" />
 
+                                    <x-front.product-report :product="$product" />
+
                                     <div class="mt-5" id="reviews">
                                         <h5 class="title pb-4">@lang('Reviews') <span class="text-secondary fw-normal fs-6">({{ $product->reviews->count() }})</span></h5>
                                         <div class="review-area"></div>
@@ -165,6 +167,8 @@
                                             </div>
                                         @endif
                                     </div>
+
+
                                 </div>
                                 <div class="max-banner mt-5">
                                     @php

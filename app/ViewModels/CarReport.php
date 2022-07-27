@@ -8,7 +8,8 @@ class CarReport
     public static function getReportData(): array
     {
         return [
-            'Exterior' => (new CarReport)->getExterior(),
+            'Exterior'    => (new CarReport)->getExterior(),
+            'TRUNK / BED' => (new CarReport)->getTrunkBed(),
         ];
     }
 
@@ -51,9 +52,9 @@ class CarReport
                             'Part Re-spray Req',
                             'Full Re-spray Req',
                         ],
-                    'notice'   =>
+                    'notes'    =>
                         [
-                            'Notice',
+                            'Notes',
                         ],
                 ],
             'Alignment of Body Panels (gaps)' =>
@@ -85,18 +86,18 @@ class CarReport
                             'R Valence',
                             'Roof',
                         ],
-                    'notice'   =>
+                    'notes'    =>
                         [
-                            'Notice',
+                            'Notes',
                         ],
 
                 ],
             'Collision Damage'                =>
                 [
-                    'label'  => [
-                        'text' => 'Is there any obvious collision damage?'
+                    'label' => [
+                        'text' => 'Is there any obvious collision damage?',
                     ],
-                    'radio'  =>
+                    'radio' =>
                         [
                             'Yes',
                             'No',
@@ -105,9 +106,63 @@ class CarReport
                             'See',
                             'Notes',
                         ],
-                    'notice' =>
+                    'notes' =>
                         [
-                            'Notice',
+                            'Notes',
+                        ],
+                ],
+        ];
+    }
+
+    public function getTrunkBed(): array
+    {
+        return [
+            'Is there a jack?' =>
+                [
+                    'radio' =>
+                        [
+                            'Yes',
+                            'No',
+                            'Not',
+                            'Applicable',
+                            'See Notes',
+                        ],
+                    'notes' =>
+                        [
+                            'Notes',
+                        ],
+                ],
+
+            'Is it the correct one for the car?' =>
+                [
+                    'radio' =>
+                        [
+                            'Yes',
+                            'No',
+                            'Not',
+                            'Applicable',
+                            'See Notes',
+                        ],
+                    'notes' =>
+                        [
+                            'Notes',
+                        ],
+                ],
+
+
+            'Is there a lug wrench?' =>
+                [
+                    'radio' =>
+                        [
+                            'Yes',
+                            'No',
+                            'Not',
+                            'Applicable',
+                            'See Notes',
+                        ],
+                    'notes' =>
+                        [
+                            'Notes',
                         ],
                 ],
         ];

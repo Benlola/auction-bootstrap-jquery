@@ -64,7 +64,6 @@ class ProductController extends Controller
     public function productDetails($id)
     {
         $pageTitle = 'Auction Details';
-
         $product = Product::with(['reviews', 'merchant', 'reviews.user', 'latest_bid'])->where('status', '!=', 0)->findOrFail($id);
 
         $relatedProducts = Product::live()->where('category_id', $product->category_id)->where('id', '!=', $id)->limit(10)->get();
@@ -73,7 +72,6 @@ class ProductController extends Controller
 
         $seoContents = getSeoContents($product, $imageData, 'image');
         $images = $product->getMedia('product');
-
         return view($this->activeTemplate.'product.details', compact('pageTitle', 'product', 'relatedProducts', 'seoContents', 'images'));
     }
 
