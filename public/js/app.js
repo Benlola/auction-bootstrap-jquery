@@ -2073,6 +2073,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var laravel_echo__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! laravel-echo */ "./node_modules/laravel-echo/dist/echo.js");
+/* provided dependency */ var process = __webpack_require__(/*! process/browser.js */ "./node_modules/process/browser.js");
 window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 
 try {
@@ -2101,9 +2102,12 @@ window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   broadcaster: 'pusher',
   key: "pNvbKeJNbiTbIkGmmU6fUGXYkppNvbKeJNbiTbIkGmmU6fUGXYkp",
   cluster: "mt1",
-  forceTLS: false,
   wsHost: window.location.hostname,
-  wsPort: 6001
+  wsPort: process.env.MIX_PUSHER_APP_PORT,
+  wssPort: process.env.MIX_PUSHER_APP_PORT,
+  forceTLS: process.env.MIX_PUSHER_APP_FORCE_TLS,
+  encrypted: process.env.MIX_PUSHER_APP_ENCRYPTED,
+  disableStats: process.env.MIX_PUSHER_APP_DISABLE_STATS
 });
 
 /***/ }),

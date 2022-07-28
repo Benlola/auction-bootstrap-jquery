@@ -57,8 +57,28 @@ class ProductFactory extends Factory {
                 'long_description'  => $this->faker->realText( '650' ),
                 'specification'     => [
                     [
+                        'name'  => 'Make',
+                        'value' => $this->faker->randomElement( [ 'Sedan', 'Hatchback', 'Coupe' ] )
+                    ],
+                    [
+                        'name'  => 'Model',
+                        'value' => $this->faker->randomElement( [ 'Premium Plus', 'Off-road package', 'Sport package', 'Standard', 'Damage history' ] )
+                    ],
+                    [
+                        'name'  => 'Drive Train',
+                        'value' => $this->faker->randomElement( [ 'AWD', '4WD', 'FWD', 'RWD'] )
+                    ],
+                    [
+                        'name'  => 'Year',
+                        'value' => $this->faker->randomElement( [ '2019', '2020', '2021', '2022' ] )
+                    ],
+                    [
+                        'name'  => 'Miles',
+                        'value' => $this->faker->randomNumber( rand(5,6) )
+                    ],
+                    [
                         'name'  => 'Color',
-                        'value' => $this->faker->randomElement( [ 'Green', 'Pink', 'Black', 'White', 'Yellow' ] )
+                        'value' => $this->faker->randomElement( [ 'White', 'Black', 'Red', 'Green', 'Yellow' ] )
                     ],
                     [
                         'name'  => 'Size',

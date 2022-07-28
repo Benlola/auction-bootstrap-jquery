@@ -20,7 +20,7 @@
             @foreach ($upcomingProducts as $product)
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-10">
                     <div class="slide-item">
-                        <div class="auction__item bg--body">
+                        <div class="auction__item bg-body">
                             <div class="auction__item-thumb">
                                 <a href="{{ route('product.details', [$product->id, slug($product->name)]) }}">
                                     <img src="{{getImage(imagePath()['product']['path'].'/thumb_'.$product->image,imagePath()['product']['thumb'])}}" alt="auction">

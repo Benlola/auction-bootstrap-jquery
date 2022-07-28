@@ -4423,6 +4423,7 @@ div[class*="col"]:nth-of-type(4n + 1) .feature__item-icon {
 .auction__item-footer {
     text-align: center;
     padding: 18px 0;
+    display: none;/*FIXME*/
 }
 
 .auction__item-footer .cmn--btn {

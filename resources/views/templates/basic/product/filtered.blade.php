@@ -11,7 +11,7 @@
 <div class="row g-4">
     @forelse ($products as $product)
         <div class="col-sm-6 col-xl-4">
-            <div class="auction__item bg--body">
+            <div class="auction__item bg-body">
                 <div class="auction__item-thumb">
                     <a href="{{ route('product.details', [$product->id, slug($product->name)]) }}">
                         <img src="{{getImage(imagePath()['product']['path'].'/thumb_'.$product->image,imagePath()['product']['thumb'])}}" alt="auction">

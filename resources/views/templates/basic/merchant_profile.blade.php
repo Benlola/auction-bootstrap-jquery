@@ -78,7 +78,7 @@
         <div class="row g-4 justify-content-center">
             @foreach ($products as $product)
                 <div class="col-sm-6 col-lg-4 col-xl-3">
-                    <div class="auction__item bg--body">
+                    <div class="auction__item bg-body">
                         <div class="auction__item-thumb">
                             <a href="{{ route('product.details', [$product->id, slug($product->name)]) }}">
                                 <img src="{{getImage(imagePath()['product']['path'].'/thumb_'.$product->image,imagePath()['product']['thumb'])}}" alt="auction">

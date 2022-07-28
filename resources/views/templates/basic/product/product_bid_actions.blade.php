@@ -61,7 +61,7 @@
             .listen('NewBid', (e) => {
                 let curr_usr_id = {{ auth()->id()??0 }};
                 let current_bid_amount_text = '{{ __( 'Current Bid' ) }}';
-                console.log(e.current_bid_usr_id + '===' + curr_usr_id);
+                //console.log(e.current_bid_usr_id + '===' + curr_usr_id);
                 if(e.current_bid_usr_id === curr_usr_id){
                     current_bid_amount_text += '<span class="text-secondary fw-normal small" >{{ __( '(your bid)' ) }}</span>';
                 }
@@ -72,7 +72,7 @@
                 document.querySelector('.product-single-sidebar .quick_amount').setAttribute('value', e.next_bid_amount);
                 document.querySelector('#countdown_current_product').setAttribute('data-date',e.expired_at);
                 //current_product_countdown_area countdown-area mb-4 bg--section last_minute last_minutes
-                console.log(e);
+                //console.log(e);
 /*
                 jQuery('.countdown').each(function () {
                     //debugger;
@@ -90,9 +90,14 @@
 
         Echo.channel('product.bid-history.{{ $product->id }}')
             .listen('BidHistory', (e) => {
-                document.querySelector('.product-bid-history > div').innerHTML = e.history;// > div - This means first div
-                console.log('Listen Bid History => ');
-                console.log(e);
+                const p_b_h_el = document.querySelector('.product-bid-history > div');
+                if( p_b_h_el === null ){
+                    console.log('Product Bid History does not exists');
+                }else{
+                    document.querySelector('.product-bid-history > div').innerHTML = e.history;// > div - This means first div
+                }
+                //console.log('Listen Bid History => ');
+                //console.log(e);
             })
 /*
         Echo.channel('product.{ { $product->id }}.expiration.update')
