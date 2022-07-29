@@ -65,7 +65,7 @@
                 if(e.current_bid_usr_id === curr_usr_id){
                     current_bid_amount_text += '<span class="text-secondary fw-normal small" >{{ __( '(your bid)' ) }}</span>';
                 }
-
+                window.livewire.emit('bidAdded');
                 document.querySelector('.product-single-sidebar .product-price .amount').innerHTML = e.current_bid_amount;
                 document.querySelector('.product-single-sidebar .product-price .amount-text').innerHTML = current_bid_amount_text;
                 document.querySelector('.product-single-sidebar .quick_amount').innerHTML = e.next_bid_amount_text;

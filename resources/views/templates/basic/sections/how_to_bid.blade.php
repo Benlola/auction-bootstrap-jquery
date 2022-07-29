@@ -17,7 +17,7 @@
         <div class="how__wrapper">
             @foreach ($bids as $bid)
             <div class="how__item">
-                <div class="how__item-icon text--base">
+                <div class="how__item-icon text--white">
                     @php
                         echo $bid->data_values->icon;
                     @endphp

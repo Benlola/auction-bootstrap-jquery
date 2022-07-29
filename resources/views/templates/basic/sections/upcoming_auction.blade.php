@@ -6,9 +6,11 @@
     <div class="container">
         <div class="section__header text-center icon__contain">
             <h3 class="section__title justify-content-center">
+                {{--
                 <div class="icon">
                     <i class="lar la-hand-point-right"></i>
                 </div>
+                --}}
                 <div class="cont">{{ __($upcomingAuction->data_values->heading) }}</div>
             </h3>
             <p class="section__txt">{{ __($upcomingAuction->data_values->subheading) }}</p>

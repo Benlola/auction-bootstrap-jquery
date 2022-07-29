@@ -68,9 +68,9 @@
             <div class="cookies-card__icon">
                 <i class="fas fa-cookie-bite"></i>
             </div>
-            <p class="mt-4 cookies-card__content"> @php echo @$cookie->data_values->description @endphp <a class="d-inline" href="{{ @$cookie->data_values->link }}">@lang('Read Policy')</a></p>
+            <p class="mt-4 cookies-card__content text--black"> @lang(@$cookie->data_values->description)<br><a class="d-inline" href="{{ @$cookie->data_values->link }}">@lang('Read Policy')</a></p>
             <div class="cookies-card__btn mt-4">
-                <button class="cookies-btn btn--base w-100" id="allow-cookie">@lang('Allow')</button>
+                <button class="cookies-btn btn--base w-75" id="allow-cookie">@lang('Allow')</button>
             </div>
         </div>
     @endif

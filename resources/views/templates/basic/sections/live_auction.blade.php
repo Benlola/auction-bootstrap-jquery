@@ -7,9 +7,11 @@
     <div class="container">
         <div class="section__header text-center icon__contain">
             <h3 class="section__title justify-content-center">
+                {{--
                 <div class="icon">
                     <i class="las la-running"></i>
                 </div>
+                --}}
                 <div class="cont">{{ __($liveAuction->data_values->heading) }}</div>
             </h3>
             <p class="section__txt">{{ __($liveAuction->data_values->subheading) }}</p>

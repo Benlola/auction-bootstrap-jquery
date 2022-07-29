@@ -138,5 +138,5 @@ div[class*="col"]:nth-of-type(4n + 1) .feature__item-icon,
 }
 
 .category__item-icon{
-    color: <?php echo $color; ?>;
+    background-color: <?php echo $color; ?>;
 }
