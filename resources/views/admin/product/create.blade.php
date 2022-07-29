@@ -32,7 +32,7 @@
                                         <div class="col-sm-12 col-xl-4 col-lg-6 mb-15">
                                             <div class="form-group">
                                                 <label class="w-100 font-weight-bold">@lang('Category') <span class="text-danger">*</span></label>
-                                                <select name="category" class="form-control" required>
+                                                <select name="category" class="form-control category" required>
                                                     <option value="">@lang('Select One')</option>
                                                     @foreach ($categories as $category)
                                                         <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -103,6 +103,36 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row" id="product_report">
+                            <div class="col-lg-12">
+                                @foreach($report as $name => $values)
+                                    <div class="card border--primary mt-3">
+                                        <div class="card-hefader bg--primary text-white">
+                                            <div class="card-hefader bg--primary text-white">
+                                                {{ $name }}
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            @foreach($values as $sub_name => $array)
+                                                <div class="row my-10">
+                                                    <div class="col-md-12">
+                                                        <h5 class="mb-2">{{ $sub_name }}</h5>
+                                                        @foreach($array as $type => $values)
+                                                            <x-dynamic-component
+                                                                    :component="$type"
+                                                                    :data="$values"
+                                                                    :name="$sub_name"
+                                                            />
+                                                        @endforeach
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+
                     </div>
                     <div class="card-footer">
                         <button type="submit" class="btn btn--primary btn-block">@lang('Submit')</button>
@@ -139,6 +169,15 @@
         (function ($) {
             "use strict";
 
+            $( ".category" ).change(function () {
+                if ($( this ).val() == 1){
+                    $( "#product_report" ).show()
+                }
+                else{
+                    $( "#product_report" ).hide()
+                }
+            }).change();
+
             var specCount = 1;
             // Create start date
             var start = new Date(),
@@ -158,7 +197,7 @@
             $('#startDateTime').datepicker({
                 timepicker: true,
                 language: 'en',
-                dateFormat: 'dd-mm-yyyy',
+                dateFormat: 'yyyy-mm-dd',
                 startDate: start,
                 minHours: startHours,
                 maxHours: 23,

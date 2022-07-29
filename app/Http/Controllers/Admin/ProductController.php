@@ -77,8 +77,9 @@ class ProductController extends Controller
     {
         $pageTitle = 'Create Product';
         $categories = Category::where('status', 1)->get();
+        $report =  CarReport::getReportData();
 
-        return view('admin.product.create', compact('pageTitle', 'categories'));
+        return view('admin.product.create', compact('pageTitle', 'categories', 'report'));
     }
 
     public function edit($id)

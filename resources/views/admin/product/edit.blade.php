@@ -34,7 +34,7 @@
                                         <div class="col-sm-12 col-xl-4 col-lg-6">
                                             <div class="form-group">
                                                 <label class="font-weight-bold">@lang('Category') <span class="text-danger">*</span></label>
-                                                <select name="category" class="form-control" required>
+                                                <select name="category" class="form-control category" required>
                                                     <option value="">@lang('Select One')</option>
                                                     @foreach ($categories as $category)
                                                         <option value="{{ $category->id }}" {{ $product->category_id == $category->id ? 'Selected':'' }}>{{ $category->name }}</option>
@@ -132,7 +132,7 @@
                             </div>
                         </div>
 
-                        <div class="row">
+                        <div class="row" id="product_report">
                             <div class="col-lg-12">
                                 @foreach($report as $name => $values)
                                     <div class="card border--primary mt-3">
@@ -194,6 +194,15 @@
         (function ($) {
             "use strict";
 
+            $( ".category" ).change(function () {
+                if ($( this ).val() == 1){
+                    $( "#product_report" ).show()
+                }
+                else{
+                    $( "#product_report" ).hide()
+                }
+            }).change();
+
             var specCount = `{{ $product->specification ? count($product->specification) : 0 }}`;
             specCount = parseInt(specCount);
             specCount = specCount ? specCount + 1 : 1;
@@ -216,7 +225,7 @@
             $('#startDateTime').datepicker({
                 timepicker: true,
                 language: 'en',
-                dateFormat: 'dd-mm-yyyy',
+                dateFormat: 'yyyy-mm-dd',
                 startDate: start,
                 minHours: startHours,
                 maxHours: 23,
